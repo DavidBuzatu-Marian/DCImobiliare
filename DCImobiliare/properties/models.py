@@ -13,7 +13,7 @@ class Property(models.Model):
         (HALFACCOMODATED, 'semidecomandat'),
     ]
 
-    name = models.CharField(max_length=150)
+    title = models.CharField(max_length=150)
     details = models.CharField(max_length=500)
     nr_rooms = models.IntegerField()
     nr_kitchens = models.IntegerField()
@@ -27,9 +27,10 @@ class Property(models.Model):
     nr_parking_spots = models.IntegerField()
     nr_balconies = models.IntegerField()
     price = models.IntegerField(default=0)
+    image = models.ImageField(upload_to='post_images')
     owner = models.ForeignKey(
         User, related_name="properties", on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.title

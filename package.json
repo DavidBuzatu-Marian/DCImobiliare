@@ -1,0 +1,37 @@
+{
+  "name": "DCImobiliare",
+  "version": "1.0.0",
+  "description": "A website for the company DCImobiliare from Arad",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development --watch ./DCImobiliare/frontend/src/index.js --output ./DCImobiliare/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./DCImobiliare/frontend/src/index.js --output ./DCImobiliare/frontend/static/frontend/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidBuzatu-Marian/DCImobiliare.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidBuzatu-Marian/DCImobiliare/issues"
+  },
+  "homepage": "https://github.com/DavidBuzatu-Marian/DCImobiliare#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "file-loader": "^4.2.0",
+    "url-loader": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  }
+}
