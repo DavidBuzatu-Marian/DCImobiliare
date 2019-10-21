@@ -1,0 +1,14 @@
+.backgroundImg1 {
+  width: 80vw;
+  height: 80vh;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.bodyBackground {
+  background-image: url("/static/about.png");
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  position: relative;
+}
