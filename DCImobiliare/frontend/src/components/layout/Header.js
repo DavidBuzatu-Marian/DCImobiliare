@@ -5,7 +5,7 @@ export default class Header extends Component {
     return (
       <nav
         className="navbar navbar-expand-sm navbar-light bg-light"
-        style={{ zIndex: "1", position: "fixed", width: "100%" }}
+        style={{ zIndex: "1", width: "100%" }}
       >
         <a className="navbar-brand" href="#">
           <img
@@ -27,7 +27,7 @@ export default class Header extends Component {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+          <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
             <li className="nav-item active">
               <a className="nav-link" href="#">
                 Acasă <span className="sr-only">(current)</span>
