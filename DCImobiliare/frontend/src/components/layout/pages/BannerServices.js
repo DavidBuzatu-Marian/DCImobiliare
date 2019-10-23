@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../../../assets/css/firstSector.css";
 import { Form } from "./Form";
+import { sendEmail } from "../../../actions/emails";
 
 export default class BannerServices extends Component {
   render() {
@@ -33,7 +34,7 @@ export default class BannerServices extends Component {
                 </a>
               </div>
               <div className="col-lg-6 col-xl-6 col-md-12 col-sm-12 col-xs-12 mt-5 align-items-right shadow p-3 mb-5 bg-white rounded">
-                <Form />
+                <Form sendEmail={sendEmail} />
               </div>
               <span className="bg-base-color d-block mt-4 sep-line-extra-thick-long"></span>
             </div>

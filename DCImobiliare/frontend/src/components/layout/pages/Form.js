@@ -15,7 +15,6 @@ export class Form extends Component {
   };
   onChange = e => this.setState({ [e.target.name]: e.target.value });
   onSubmit = e => {
-    console.log("Err");
     e.preventDefault();
     const { name, surname, email, message } = this.state;
     const emailContent = { name, surname, email, message };
@@ -33,7 +32,7 @@ export class Form extends Component {
     return (
       <form
         className="text-center border border-light p-5 bodyForm"
-        action="#!"
+        onSubmit={this.onSubmit}
       >
         <p className="h4 mb-4">Interesat de ofertele mele?</p>
 
@@ -82,10 +81,11 @@ export class Form extends Component {
             onChange={this.onChange}
           ></textarea>
         </div>
-
-        <button className="btn btn-info btn-block" type="submit">
-          Trimite
-        </button>
+        <div className="form-group">
+          <button className="btn btn-info btn-block" type="submit">
+            Trimite
+          </button>
+        </div>
       </form>
     );
   }

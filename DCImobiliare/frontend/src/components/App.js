@@ -1,10 +1,7 @@
 import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
-import axios from "axios";
 import Header from "./layout/Header";
-import BannerInfo from "./layout/BannerInfo";
-import BannerServices from "./layout/BannerServices";
-import Footer from "./layout/Footer";
+import Home from "./layout/Home";
 
 class App extends Component {
   render() {
@@ -12,9 +9,7 @@ class App extends Component {
       <Fragment>
         <Header />
         <div className="h-100 left-0 position-absolute top-0 w-100">
-          <BannerInfo />
-          <BannerServices />
-          <Footer />
+          <Home />
         </div>
       </Fragment>
     );

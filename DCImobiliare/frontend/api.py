@@ -3,7 +3,7 @@ import json
 
 
 class sendEmail():
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
         data = json.loads(request.body.decode('utf-8'))
         send_mail(
             'Subject here',
