@@ -3,26 +3,44 @@ import axios from "axios";
 import { SEND_EMAIL } from "./types";
 
 export const sendEmail = emailContent => {
-  console.log("err");
+  const csrftoken = getCookie("csrftoken");
+  console.log(csrftoken);
   const config = {
-    headers: {
-      "Content-Type": "application/json"
-    }
+    headers: { "Content-Type": "application/json" }
   };
   const body = JSON.stringify(emailContent);
   axios.defaults.xsrfCookieName = "csrftoken";
   axios.defaults.xsrfHeaderName = "X-CSRFToken";
-  axios.defaults.withCredentials = true;
   axios
-    .post("/api/sendEmail", body, config)
+    .put("/mail", body, config)
     .then(res => {
       // dispatch(createMessage({ sendEmail: "Email sent!" }));
-      dispatch({
-        type: SEND_EMAIL,
-        payload: res.data
-      });
+      // dispatch({
+      //   type: SEND_EMAIL,
+      //   payload: res.data
+      // });
+      console.log("Test: success");
     })
-    .catch(err =>
-      dispatch(returnErrors(err.response.data, err.response.status))
-    );
+    .catch(err => console.log(err));
+};
+
+function getCookie(name) {
+  if (!document.cookie) {
+    return null;
+  }
+  const token = document.cookie
+    .split(";")
+    .map(c => c.trim())
+    .filter(c => c.startsWith(name + "="));
+
+  if (token.length === 0) {
+    return null;
+  }
+  return decodeURIComponent(token[0].split("=")[1]);
+}
+
+const validateForm = errors => {
+  let valid = true;
+  Object.values(errors).forEach(val => val.length > 0 && (valid = false));
+  return valid;
 };

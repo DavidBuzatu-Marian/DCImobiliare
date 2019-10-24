@@ -38,14 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'properties',
+    'corsheaders',
     'rest_framework',
     'frontend'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -125,4 +127,18 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'media'),
     os.path.join(BASE_DIR, 'resources'),
 )
-CSRF_COOKIE_NAME = "XSRF-TOKEN"
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'david.efno@gmail.com'
+SERVER_EMAIL = 'david.efno@gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'david.efno@gmail.com'
+EMAIL_HOST_PASSWORD = 'IsacIsTheBrain99!'

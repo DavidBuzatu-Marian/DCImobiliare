@@ -2,6 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('api/sendEmail', views.sendEmail),
+    path('mail', views.sendEmail, name="sendEmail"),
     path('', views.index)
 ]

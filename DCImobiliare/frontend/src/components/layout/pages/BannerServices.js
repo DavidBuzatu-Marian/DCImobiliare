@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "../../../assets/css/firstSector.css";
 import { Form } from "./Form";
 import { sendEmail } from "../../../actions/emails";
 
