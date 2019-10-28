@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.core.mail import EmailMessage
 from django.views.decorators.csrf import ensure_csrf_cookie
-from django.core.mail import BadHeaderError, send_mail
+from django.core.mail import BadHeaderError
 from django.http import HttpResponse
 import json
 
@@ -10,15 +11,14 @@ def sendEmail(request):
     data = json.loads(request.body)
     subject = 'Informatii client nou'
     from_email = data['email']
-    message = data['message'] + from_email
+    message = data['message'] + "\n\n Email: " + from_email
     try:
-        send_mail(
+        email = EmailMessage(
             subject,
             message,
-            'detectivul_08@yahoo.com',
-            ['bboy_efno@yahoo.com'],
-            fail_silently=False,
-        )
+            'david.efno@gmail.com',
+            ['bboy_efno@yahoo.com']
+        ).send()
     except BadHeaderError:
         return HttpResponse('Invalid header found.')
     return render(request, 'frontend/index.html')

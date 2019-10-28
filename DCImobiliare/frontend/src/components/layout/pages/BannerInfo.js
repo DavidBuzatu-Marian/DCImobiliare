@@ -4,7 +4,7 @@ export default class BannerInfo extends Component {
   render() {
     return (
       <section
-        id="home-bg-parallax"
+        id="home"
         className="h-100 overflow-hidden p-0 w-100 d-inline-block"
       >
         <div className="bg-parallax bg-overlay-black-8 "></div>

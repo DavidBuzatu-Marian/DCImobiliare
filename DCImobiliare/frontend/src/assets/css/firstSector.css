@@ -12,11 +12,16 @@
   background-size: cover !important;
   position: relative;
 }
-
+.hidden {
+  display: none;
+}
 textarea {
   resize: none;
 }
 
+.active {
+  color: aqua;
+}
 .bodyForm {
   background-color: #ffffff;
 }

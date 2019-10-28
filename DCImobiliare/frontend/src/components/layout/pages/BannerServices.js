@@ -6,7 +6,7 @@ export default class BannerServices extends Component {
   render() {
     return (
       <section
-        id="services-bg-parallax"
+        id="services"
         className="overflow-hidden p-0 w-100 inline-block"
         style={{ marginTop: "-6px !important" }}
       >
