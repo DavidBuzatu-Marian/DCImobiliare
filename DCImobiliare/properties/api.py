@@ -6,7 +6,7 @@ from .serializers import PropertySerializer
 
 
 class PropertyViewSet(viewsets.ModelViewSet):
-    queryset = Property.objects.order_by('-year')[:5]
+    queryset = Property.objects.all()
     permission_classes = [
         permissions.AllowAny
     ]

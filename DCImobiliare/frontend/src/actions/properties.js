@@ -11,6 +11,7 @@ export const getProperties = () => {
       //   payload: res.data
       // });
       console.log(res.data);
+      return res.data;
     })
     .catch(err => console.log(err.response.data, err.response.status));
 };
