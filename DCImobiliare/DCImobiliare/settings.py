@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -142,3 +143,9 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'david.efno@gmail.com'
 EMAIL_HOST_PASSWORD = 'pzunlczcddkbvgxr'
+
+
+ENV_PATH = os.path.abspath(os.path.dirname(__file__))
+MEDIA_ROOT = os.path.join(ENV_PATH, 'static', 'media')
+MEDIA_URL = '/media/'
+# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")

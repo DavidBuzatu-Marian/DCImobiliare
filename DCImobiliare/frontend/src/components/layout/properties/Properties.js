@@ -5,6 +5,7 @@ import { getProperties } from "../../../actions/properties";
 
 export class Properties extends Component {
   static propTypes = {
+    properties: PropTypes.array.isRequired,
     getProperties: PropTypes.func.isRequired
   };
 

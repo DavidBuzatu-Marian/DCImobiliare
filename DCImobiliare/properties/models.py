@@ -1,5 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
+import os
+from django.conf import settings
+from django.template.defaultfilters import slugify
+
+
+def get_image_name(instance, filename):
+    title = instance.title
+    slug = slugify(title)
+    return "post_images/%s-%s" % (slug, filename)
 
 
 class Property(models.Model):
@@ -27,10 +36,26 @@ class Property(models.Model):
     nr_parking_spots = models.IntegerField()
     nr_balconies = models.IntegerField()
     price = models.IntegerField(default=0)
-    image = models.ImageField(upload_to='post_images')
     owner = models.ForeignKey(
         User, related_name="properties", on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    image_presentation = models.FileField(
+        upload_to=get_image_name, verbose_name='Image')
 
     def __str__(self):
         return self.title
+
+    # def image(self):
+    #     if(self.image == null):
+    #         return mark_safe('<img src="%s/media/property_images/%s" width="150" height="150" />' % settings.MEDIA_ROOT % (self.image))
+
+
+class Images(models.Model):
+    property = models.ForeignKey(Property, on_delete=models.CASCADE)
+    image = models.FileField(upload_to=get_image_name, verbose_name='Image')
+
+    # def image(self, obj):
+    #     return format_html('<img src="{}" style="width: 130px; \
+    #                        height: 100px"/>'.format(obj.img))
+    # image.short_description = 'Image'
+    # image.allow_tags = True

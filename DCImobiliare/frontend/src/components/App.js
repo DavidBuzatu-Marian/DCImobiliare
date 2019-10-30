@@ -19,7 +19,11 @@ class App extends Component {
                 exact
                 path="/properties"
                 render={props => (
-                  <Properties {...props} getProperties={getProperties} />
+                  <Properties
+                    {...props}
+                    getProperties={getProperties}
+                    properties={[]}
+                  />
                 )}
               />
             </Switch>
