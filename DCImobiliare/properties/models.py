@@ -45,10 +45,6 @@ class Property(models.Model):
     def __str__(self):
         return self.title
 
-    # def image(self):
-    #     if(self.image == null):
-    #         return mark_safe('<img src="%s/media/property_images/%s" width="150" height="150" />' % settings.MEDIA_ROOT % (self.image))
-
 
 class Images(models.Model):
     property = models.ForeignKey(Property, on_delete=models.CASCADE)

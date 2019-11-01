@@ -5,7 +5,12 @@ import { HashLink as Link } from "react-router-hash-link";
 import { getProperties } from "../../actions/properties";
 
 export default class Header extends Component {
-  state = { isHidden: false };
+  state = {
+    isHidden: false,
+    homeLink: "",
+    servicesLink: "",
+    propertiesLink: ""
+  };
 
   hideBar = () => {
     const { isHidden } = this.state;
@@ -17,6 +22,15 @@ export default class Header extends Component {
     this.prev = window.scrollY;
   };
 
+  onClick = e => {
+    this.setState({
+      homeLink: "",
+      servicesLink: "",
+      propertiesLink: ""
+    });
+    this.setState({ [e.target.id]: "active" });
+  };
+
   componentDidMount() {
     window.addEventListener("scroll", this.hideBar);
   }
@@ -26,20 +40,25 @@ export default class Header extends Component {
   }
   render() {
     const classHidden = this.state.isHidden ? "hidden" : "";
+    const homeLink = this.state.homeLink;
+    const servicesLink = this.state.servicesLink;
+    const propertiesLink = this.state.propertiesLink;
     return (
       <nav
         id="navbar"
         className={` ${classHidden} navbar navbar-expand-sm navbar-light bg-light fixed-top`}
         style={{ zIndex: "1", width: "100%" }}
       >
-        <a className="navbar-brand" href="#">
+        <Link className={`navbar-brand ${homeLink}`} to="/#home">
           <img
+            id="homeLink"
             src={"/static/logo.png"}
             alt="DCImobiliare"
             height="80px"
             width="80px"
+            onClick={this.onClick}
           />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -54,18 +73,35 @@ export default class Header extends Component {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
             <li className="nav-item">
-              <Link smooth className="nav-link" to="/#home">
+              <Link
+                id="homeLink"
+                smooth
+                className={`nav-link ${homeLink}`}
+                to="/#home"
+                onClick={this.onClick}
+              >
                 Acasă <span className="sr-only">(current)</span>
               </Link>
             </li>
             <li className="nav-item">
-              <Link smooth className="nav-link" to="/#services">
+              <Link
+                id="servicesLink"
+                smooth
+                className={`nav-link ${servicesLink}`}
+                to="/#services"
+                onClick={this.onClick}
+              >
                 Vinde/ Închiriază
               </Link>
             </li>
             <li className="nav-item">
               <Router>
-                <LinkRedirect className="nav-link" to="/properties">
+                <LinkRedirect
+                  className={`nav-link ${propertiesLink}`}
+                  to="/properties"
+                  onClick={this.onClick}
+                  id="propertiesLink"
+                >
                   Cumpără/ Închiriază
                 </LinkRedirect>
               </Router>

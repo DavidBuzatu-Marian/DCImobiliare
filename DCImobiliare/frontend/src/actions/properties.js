@@ -15,3 +15,12 @@ export const getProperties = () => {
     })
     .catch(err => console.log(err.response.data, err.response.status));
 };
+
+export const getProperty = id => {
+  axios
+    .get(`/api/properties/${id}`)
+    .then(res => {
+      console.log(res.data[0].fields);
+    })
+    .catch(err => console.log(err));
+};

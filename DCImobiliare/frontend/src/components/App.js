@@ -4,7 +4,8 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./layout/Header";
 import Home from "./layout/Home";
 import { Properties } from "./layout/properties/Properties";
-import { getProperties } from "../actions/properties";
+import { Property } from "./layout/properties/Property";
+import { getProperties, getProperty } from "../actions/properties";
 
 class App extends Component {
   render() {
@@ -17,13 +18,20 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route
                 exact
-                path="/properties"
+                path="/properties/"
                 render={props => (
                   <Properties
                     {...props}
                     getProperties={getProperties}
                     properties={[]}
                   />
+                )}
+              />
+              <Route
+                exact
+                path="/properties/:id"
+                render={props => (
+                  <Property {...props} getProperty={getProperty} />
                 )}
               />
             </Switch>

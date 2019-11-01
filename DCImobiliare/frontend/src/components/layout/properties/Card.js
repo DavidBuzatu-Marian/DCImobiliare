@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { getProperty } from "../../../actions/properties";
 export default class Card extends Component {
   state = {
     property: {},
@@ -28,7 +29,11 @@ export default class Card extends Component {
       <Link
         to={`/properties/${property.id}`}
         className="col-12 card card-cascade narrower mt-5 p-3 mb-1 bg-white rounded"
-        style={{ maxWidth: "768px", cursor: "pointer", textDecoration: "none" }}
+        style={{
+          maxWidth: "768px",
+          cursor: "pointer",
+          textDecoration: "none"
+        }}
         onClick={this.onClick}
       >
         <div className="row no-gutters">
