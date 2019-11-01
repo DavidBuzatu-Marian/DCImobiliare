@@ -20,7 +20,6 @@ export class Properties extends Component {
     axios
       .get("/api/properties")
       .then(res => {
-        console.log(res.data);
         this.setState({
           isLoading: false,
           properties: res.data
@@ -37,18 +36,13 @@ export class Properties extends Component {
         {this.state.isLoading ? (
           loadingMessage
         ) : (
-          // <div className="p-0 w-100 d-inline-block">
-          //   <div className="bg-parallax bg-overlay-black-8 "></div>
-          //   <div className="left-0 top-0">
           <div className="container" style={{ marginTop: "120px" }}>
-            <div className="row align-items-center">
+            <div className="row align-items-center margin-sm">
               {this.state.properties.map(property => (
                 <Card key={property.id} property={property}></Card>
               ))}
             </div>
           </div>
-          //   </div>
-          // </div>
         )}
       </Fragment>
     );

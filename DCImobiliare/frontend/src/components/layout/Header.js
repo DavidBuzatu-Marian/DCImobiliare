@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link as LinkRedirect, HashRouter as Router } from "react-router-dom";
-import { Link, animateScroll as scroll } from "react-scroll";
+// import { Link, animateScroll as scroll } from "react-scroll";
+import { HashLink as Link } from "react-router-hash-link";
 import { getProperties } from "../../actions/properties";
 
 export default class Header extends Component {
@@ -53,28 +54,12 @@ export default class Header extends Component {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
             <li className="nav-item">
-              <Link
-                className="nav-link"
-                activeClass="active"
-                to="home"
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={500}
-              >
+              <Link smooth className="nav-link" to="/#home">
                 Acasă <span className="sr-only">(current)</span>
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                className="nav-link"
-                activeClass="active"
-                to="services"
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={500}
-              >
+              <Link smooth className="nav-link" to="/#services">
                 Vinde/ Închiriază
               </Link>
             </li>
