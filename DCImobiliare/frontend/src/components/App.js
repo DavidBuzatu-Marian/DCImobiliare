@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./layout/Header";
 import Home from "./layout/Home";
+import Footer from "./layout/Footer";
+import "../assets/css/mainPages.css";
 import { Properties } from "./layout/properties/Properties";
 import { Property } from "./layout/properties/Property";
 import { getProperties, getProperty } from "../actions/properties";
@@ -30,11 +32,10 @@ class App extends Component {
               <Route
                 exact
                 path="/properties/:id"
-                render={props => (
-                  <Property {...props} getProperty={getProperty} />
-                )}
+                render={props => <Property {...props} />}
               />
             </Switch>
+            <Footer />
           </div>
         </Fragment>
       </Router>

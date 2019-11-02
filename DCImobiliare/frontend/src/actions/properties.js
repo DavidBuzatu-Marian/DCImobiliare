@@ -20,7 +20,7 @@ export const getProperty = id => {
   axios
     .get(`/api/properties/${id}`)
     .then(res => {
-      console.log(res.data[0].fields);
+      console.log(res.data);
     })
     .catch(err => console.log(err));
 };

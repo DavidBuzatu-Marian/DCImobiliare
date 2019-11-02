@@ -4,6 +4,7 @@ from .serializers import PropertySerializer
 from django.core import serializers
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
+from rest_framework.renderers import JSONRenderer
 # load viewsets
 
 
@@ -20,5 +21,7 @@ class PropertyViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, pk=None):
         queryset = Property.objects.all()
         property = get_object_or_404(queryset, pk=pk)
-        serialized_object = serializers.serialize('json', [property, ])
-        return HttpResponse(serialized_object)
+        prop = PropertySerializer(property)
+        json = JSONRenderer().render(prop.data)
+        # print(JSONRenderer().render(prop.data))
+        return HttpResponse(json)

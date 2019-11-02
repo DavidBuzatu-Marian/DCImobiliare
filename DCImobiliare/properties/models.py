@@ -48,6 +48,7 @@ class Property(models.Model):
 
 class Images(models.Model):
     property = models.ForeignKey(Property, on_delete=models.CASCADE)
+    title = models.CharField(max_length=150)
     image = models.FileField(upload_to=get_image_name, verbose_name='Image')
 
     # def image(self, obj):

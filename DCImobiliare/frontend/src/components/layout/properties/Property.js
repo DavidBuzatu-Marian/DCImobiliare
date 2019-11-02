@@ -1,35 +1,51 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import { getProperty } from "../../../actions/properties";
 import axios from "axios";
-export class Property extends Component {
-  state = {
-    isLoading: true,
-    id: 0
-  };
+import Carousel from "../properties/Carousel";
 
-  static propTypes = {
-    getProperty: PropTypes.func.isRequired
-  };
+export class Property extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: props.match.params.id,
+      isLoading: true,
+      property: []
+    };
+  }
 
   componentDidMount() {
-    // this.props.getProperty(this.props.match.params.id);
-    const id = this.props.match.params.id;
-    this.setState({
-      id: this.props.match.params.id
-    });
+    const id = this.state.id;
+    console.log(id);
     axios
       .get(`/api/properties/${id}`)
       .then(res => {
-        console.log(res.data[0].fields);
+        this.setState({
+          property: res.data,
+          isLoading: false
+        });
+        console.log(this.state.property);
       })
       .catch(err => console.log(err));
   }
 
   render() {
-    console.log(this.state.id);
-    return <div>Hello</div>;
+    const loadingMessage = <span className="d-flex m-auto">Loading...</span>;
+    return (
+      <Fragment>
+        {this.state.isLoading ? (
+          loadingMessage
+        ) : (
+          <div className="container" style={{ marginTop: "120px" }}>
+            <div className="row align-items-center margin-sm">
+              <Carousel
+                property={this.state.property}
+                images={this.state.property.images}
+              ></Carousel>
+            </div>
+          </div>
+        )}
+      </Fragment>
+    );
   }
 }
 
@@ -37,7 +53,4 @@ const mapStateToProps = state => ({
   property: state.property.property
 });
 
-export default connect(
-  mapStateToProps,
-  { getProperty }
-)(Property);
+export default connect(mapStateToProps)(Property);
