@@ -39,26 +39,22 @@ export default class Header extends Component {
     window.removeEventListener("scroll", this.hideBar);
   }
   render() {
+    const { homeLink, servicesLink, propertiesLink } = this.state;
     const classHidden = this.state.isHidden ? "hidden" : "";
-    const homeLink = this.state.homeLink;
-    const servicesLink = this.state.servicesLink;
-    const propertiesLink = this.state.propertiesLink;
     return (
       <nav
         id="navbar"
         className={` ${classHidden} navbar navbar-expand-sm navbar-light bg-light fixed-top`}
         style={{ zIndex: "1", width: "100%" }}
       >
-        <Link className={`navbar-brand ${homeLink}`} to="/#home">
+        <a className="navbar-brand" href="#">
           <img
-            id="homeLink"
             src={"/static/logo.png"}
             alt="DCImobiliare"
             height="80px"
             width="80px"
-            onClick={this.onClick}
           />
-        </Link>
+        </a>
         <button
           className="navbar-toggler"
           type="button"

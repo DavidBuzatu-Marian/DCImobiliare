@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-import Carousel from "../properties/Carousel";
-
+import { Carousel } from "react-responsive-carousel";
+import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 export class Property extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +15,6 @@ export class Property extends Component {
 
   componentDidMount() {
     const id = this.state.id;
-    console.log(id);
     axios
       .get(`/api/properties/${id}`)
       .then(res => {
@@ -23,13 +22,14 @@ export class Property extends Component {
           property: res.data,
           isLoading: false
         });
-        console.log(this.state.property);
       })
       .catch(err => console.log(err));
   }
 
   render() {
     const loadingMessage = <span className="d-flex m-auto">Loading...</span>;
+    const property = this.state.property;
+    console.log(property.images);
     return (
       <Fragment>
         {this.state.isLoading ? (
@@ -37,10 +37,11 @@ export class Property extends Component {
         ) : (
           <div className="container" style={{ marginTop: "120px" }}>
             <div className="row align-items-center margin-sm">
-              <Carousel
-                property={this.state.property}
-                images={this.state.property.images}
-              ></Carousel>
+              <Carousel>
+                {property.images.map(image => (
+                  <img key={image.id} src={image.image} />
+                ))}
+              </Carousel>
             </div>
           </div>
         )}
