@@ -64,6 +64,10 @@ input[type="email"]:focus {
   font-weight: 700 !important;
 }
 
+.no-decoration {
+  text-decoration: none !important;
+}
+
 .background-full-width-section1 {
   background-image: url("/static/background.jpg");
   background-position: center center !important;
@@ -78,6 +82,10 @@ input[type="email"]:focus {
   background-size: cover !important;
 }
 
+.display-inline {
+  display: inline-block !important;
+}
+
 @media (max-width: 1090px) {
   .text-large {
     font-size: 2.75rem !important;
@@ -90,5 +98,11 @@ input[type="email"]:focus {
   .title-very-large {
     font-size: 3.55rem !important;
     line-height: 3.825rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-center-md {
+    text-align: center !important;
   }
 }

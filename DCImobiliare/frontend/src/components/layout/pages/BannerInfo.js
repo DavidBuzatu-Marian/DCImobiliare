@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { HashLink as Link } from "react-router-hash-link";
 export default class BannerInfo extends Component {
   render() {
     return (
@@ -12,7 +13,12 @@ export default class BannerInfo extends Component {
         <div className="h-100 left-0 top-0 w-100 background-full-width-section1">
           <div className="container h-100">
             <div className="row align-items-center h-100">
-              <a href="#" style={{ textDecoration: "none" }}>
+              <Link
+                className="no-decoration"
+                id="servicesLink"
+                smooth
+                to="/#services"
+              >
                 <div className="col-lg-9 col-xl-9">
                   <span
                     className="letter-spacing-2 text-large text-uppercase"
@@ -30,7 +36,7 @@ export default class BannerInfo extends Component {
 
                   <span className="bg-base-color d-block mt-4 sep-line-extra-thick-long"></span>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
