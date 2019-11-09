@@ -24,6 +24,9 @@ class Property(models.Model):
 
     title = models.CharField(max_length=150)
     details = models.CharField(max_length=500)
+    zone = models.CharField(default="Zona", max_length=100)
+    coordinatesLatitude = models.FloatField(default="0")
+    coordinatesLongitude = models.FloatField(default="0")
     nr_rooms = models.IntegerField()
     nr_kitchens = models.IntegerField()
     nr_bathrooms = models.IntegerField()
@@ -40,7 +43,7 @@ class Property(models.Model):
         User, related_name="properties", on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     image_presentation = models.FileField(
-        upload_to=get_image_name, verbose_name='Image')
+        upload_to=get_image_name, verbose_name='Image', default="")
 
     def __str__(self):
         return self.title

@@ -2,10 +2,13 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
 import { Carousel } from "react-responsive-carousel";
+import { sendEmail } from "../../../actions/emails";
+import { Link, animateScroll as scroll } from "react-scroll";
 import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 
 import L from "leaflet";
+import { Form } from "../pages/Form";
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -41,7 +44,10 @@ export class Property extends Component {
   render() {
     const loadingMessage = <span className="d-flex m-auto">Loading...</span>;
     const property = this.state.property;
-    const location = [51.505, -0.09];
+    const location = [
+      property.coordinatesLatitude,
+      property.coordinatesLongitude
+    ];
     return (
       <Fragment>
         {this.state.isLoading ? (
@@ -49,16 +55,112 @@ export class Property extends Component {
         ) : (
           <div className="container" style={{ marginTop: "140px" }}>
             <div className="row align-items-center margin-sm">
+              <div className="row display-inline p-3">
+                <h3>{property.title}</h3>
+                <h5 className="fontw-300">{property.zone}</h5>
+                <Link
+                  className="link"
+                  to="map"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={400}
+                >
+                  Vezi Harta
+                </Link>
+                <h1 className="mt-5 price-font-presentation">
+                  <strong>{property.price} EUR</strong>
+                </h1>
+              </div>
               <Carousel>
                 {property.images.map(image => (
                   <img key={image.id} src={image.image} />
                 ))}
               </Carousel>
+              <div className="row p-3">
+                <h3 className="border-bottom">Detalii</h3>
+                <p>{property.details}</p>
+              </div>
+              <div className="row p-3">
+                <h3 className="border-bottom">Caracteristici</h3>
+                <table className="table">
+                  <tbody>
+                    <tr>
+                      <td style={{ borderTop: "0" }}>
+                        Nr. camere:{" "}
+                        <strong style={{ color: "#000005", float: "right" }}>
+                          {property.nr_rooms}
+                        </strong>
+                      </td>
+                      <td style={{ borderTop: "0" }}>
+                        Nr. bucătării:{" "}
+                        <strong style={{ color: "#000005", float: "right" }}>
+                          {property.nr_kitchens}
+                        </strong>
+                      </td>
+                      <td style={{ borderTop: "0" }}>
+                        Nr. băi:{" "}
+                        <strong style={{ color: "#000005", float: "right" }}>
+                          {property.nr_bathrooms}
+                        </strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Suprafață utilă(mp):{" "}
+                        <strong style={{ color: "#000005", float: "right" }}>
+                          {property.surface_mp}
+                        </strong>
+                      </td>
+                      <td>
+                        Compartimentare:{" "}
+                        <strong style={{ color: "#000005", float: "right" }}>
+                          {property.accomodated}
+                        </strong>
+                      </td>
+                      <td>
+                        An construcție:
+                        <strong style={{ color: "#000005", float: "right" }}>
+                          {property.year}
+                        </strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Confort:{" "}
+                        <strong style={{ color: "#000005", float: "right" }}>
+                          {property.confort}
+                        </strong>
+                      </td>
+                      <td>
+                        Etaj:{" "}
+                        <strong style={{ color: "#000005", float: "right" }}>
+                          {property.floor}
+                        </strong>
+                      </td>
+                      <td>
+                        Nr. balcoane:{" "}
+                        <strong style={{ color: "#000005", float: "right" }}>
+                          {property.nr_balconies}
+                        </strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Nr. locuri parcare:
+                        <strong style={{ color: "#000005", float: "right" }}>
+                          {property.nr_parking_spots}
+                        </strong>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <div className="row col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <div className="row py-3" id={"map"}>
               <Map
                 center={location}
-                zoom={13}
+                zoom={16}
                 style={{ width: "100%", height: "400px" }}
               >
                 <TileLayer
@@ -71,6 +173,9 @@ export class Property extends Component {
                   </Popup>
                 </Marker>
               </Map>
+            </div>
+            <div className="row align-items-center margin-sm">
+              <Form sendEmail={sendEmail}></Form>
             </div>
           </div>
         )}

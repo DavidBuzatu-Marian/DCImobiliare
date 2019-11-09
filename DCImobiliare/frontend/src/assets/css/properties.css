@@ -34,6 +34,25 @@
   color: black;
   text-align: left;
 }
+.link {
+  cursor: pointer;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #000000;
+}
+.fontw-300 {
+  font-weight: 300 !important;
+  opacity: 0.5 !important;
+}
+
+.price-font-presentation {
+  letter-spacing: 0.05rem !important;
+  font-weight: bold;
+  font-size: 2rem !important;
+  color: black;
+  text-align: left;
+}
 
 .btn-info {
   background-color: #005720 !important;
