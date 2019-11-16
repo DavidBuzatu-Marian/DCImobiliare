@@ -6,4 +6,4 @@ class EmailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Email
-        fields = ('name', 'surname', 'email', 'message')
+        fields = ('name', 'pNumber', 'email', 'message')

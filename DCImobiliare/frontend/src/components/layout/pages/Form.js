@@ -7,13 +7,13 @@ import DjangoCSRFToken from "django-react-csrftoken";
 export class Form extends Component {
   state = {
     name: "",
-    surname: "",
+    pNumber: "",
     email: "",
     message: "",
-    formErrors: { email: "", name: "", surname: "", message: "" },
+    formErrors: { email: "", name: "", pNumber: "", message: "" },
     emailValid: false,
     nameValid: false,
-    surnameValid: false,
+    pNumberValid: false,
     messageValid: false,
     formValid: false
   };
@@ -29,18 +29,18 @@ export class Form extends Component {
   };
   onSubmit = e => {
     e.preventDefault();
-    const { name, surname, email, message } = this.state;
-    const emailContent = { name, surname, email, message };
+    const { name, pNumber, email, message } = this.state;
+    const emailContent = { name, pNumber, email, message };
     this.props.sendEmail(emailContent);
     this.setState({
       name: "",
-      surname: "",
+      pNumber: "",
       email: "",
       message: "",
-      formErrors: { email: "", name: "", surname: "", message: "" },
+      formErrors: { email: "", name: "", pNumber: "", message: "" },
       emailValid: false,
       nameValid: false,
-      surnameValid: false,
+      pNumberValid: false,
       messageValid: false,
       formValid: false
     });
@@ -50,7 +50,7 @@ export class Form extends Component {
     let fieldValidationErrors = this.state.formErrors;
     let emailValid = this.state.emailValid;
     let nameValid = this.state.nameValid;
-    let surnameValid = this.state.surnameValid;
+    let pNumberValid = this.state.pNumberValid;
     let messageValid = this.state.messageValid;
 
     switch (fieldName) {
@@ -62,9 +62,9 @@ export class Form extends Component {
         nameValid = value.length > 0 && !value.includes("\n");
         fieldValidationErrors.name = nameValid ? "" : " field is empty";
         break;
-      case "surname":
-        surnameValid = value.length > 0 && !value.includes("\n");
-        fieldValidationErrors.surname = surnameValid ? "" : " field is empty";
+      case "pNumber":
+        pNumberValid = value.length == 10 && !value.includes("\n");
+        fieldValidationErrors.pNumber = pNumberValid ? "" : " field is empty";
         break;
       case "message":
         messageValid = value.length > 0;
@@ -78,7 +78,7 @@ export class Form extends Component {
         formErrors: fieldValidationErrors,
         emailValid: emailValid,
         nameValid: nameValid,
-        surnameValid: surnameValid,
+        pNumberValid: pNumberValid,
         messageValid: messageValid
       },
       this.validateForm
@@ -88,9 +88,10 @@ export class Form extends Component {
   validateForm() {
     this.setState({
       formValid:
+        this.state.pNumberValid &&
         this.state.emailValid &&
         this.state.nameValid &&
-        this.state.surnameValid &&
+        this.state.pNumberValid &&
         this.state.messageValid
     });
   }
@@ -100,7 +101,7 @@ export class Form extends Component {
   }
 
   render() {
-    const { name, surname, email, message } = this.state;
+    const { name, pNumber, email, message } = this.state;
     return (
       <form
         className="text-center border border-light p-5 bodyForm"
@@ -109,28 +110,16 @@ export class Form extends Component {
         <DjangoCSRFToken />
         <p className="h4 mb-4">Interesat de ofertele mele?</p>
 
-        <p>Completează câmpurile dacă dorești să fii contactat</p>
+        <p>Completează toate câmpurile dacă dorești să fii contactat</p>
         <div className="form-group">
           <input
             type="text"
             id="infoFormName"
             className={`form-control mb-4
             ${this.errorClass(this.state.formErrors.name)}`}
-            placeholder="Nume"
+            placeholder="Nume*"
             name="name"
             value={name}
-            onChange={this.onChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            id="infoFormSurname"
-            className={`form-control mb-4
-            ${this.errorClass(this.state.formErrors.surname)}`}
-            placeholder="Prenume"
-            name="surname"
-            value={surname}
             onChange={this.onChange}
           />
         </div>
@@ -140,14 +129,26 @@ export class Form extends Component {
             id="infoFormEmail"
             className={`form-control mb-4
             ${this.errorClass(this.state.formErrors.email)}`}
-            placeholder="E-mail"
+            placeholder="E-mail*"
             name="email"
             value={email}
             onChange={this.onChange}
           />
         </div>
+        <div className="form-group">
+          <input
+            type="text"
+            id="infoFormPNumber"
+            className={`form-control mb-4
+            ${this.errorClass(this.state.formErrors.pNumber)}`}
+            placeholder="Număr de telefon*"
+            name="pNumber"
+            value={pNumber}
+            onChange={this.onChange}
+          />
+        </div>
         <small id="emailHelp" className="form-text text-muted mb-4">
-          Nu vom dezvălui nimănui e-mailul dumneavoastră!
+          Nu vom dezvălui nimănui detaliile dumneavoastră!
         </small>
 
         <div className="form-group">
@@ -171,12 +172,25 @@ export class Form extends Component {
             Trimite
           </button>
         </div>
+        <div
+          className="alert alert-success alert-dismissible fade show"
+          role="alert"
+          style={{ display: "none" }}
+        >
+          Informațiile au fost trimise cu success. Veți fi contactat cât mai
+          curând!
+          <button
+            type="button"
+            className="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
       </form>
     );
   }
 }
 
-export default connect(
-  null,
-  { sendEmail }
-)(Form);
+export default connect(null, { sendEmail })(Form);

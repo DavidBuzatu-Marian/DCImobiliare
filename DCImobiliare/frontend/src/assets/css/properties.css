@@ -58,7 +58,7 @@
   background-color: #005720 !important;
 }
 
-.btn-info:hover {
+.btn-info:hover:enabled {
   background-color: #003720 !important;
 }
 

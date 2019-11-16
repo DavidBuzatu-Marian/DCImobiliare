@@ -68,8 +68,21 @@ input[type="email"]:focus {
   text-decoration: none !important;
 }
 
+.background-full-width-section1::before {
+  content: "";
+  position: absolute;
+  background-image: url("/static/Building1.svg");
+  width: 70%;
+  height: 70%;
+  background-repeat: no-repeat;
+  left: 0;
+  top: 41%;
+  animation: bounce 2s infinite alternate;
+  -webkit-animation: bounce 2s infinite alternate;
+}
+
 .background-full-width-section1 {
-  background-image: url("/static/background.jpg");
+  background-image: url("/static/back1.svg");
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -101,8 +114,29 @@ input[type="email"]:focus {
   }
 }
 
+.active {
+  border-top: 0.25rem solid;
+}
+
 @media (max-width: 768px) {
   .text-center-md {
     text-align: center !important;
+  }
+
+  .nav-link {
+    padding-left: 0.5rem !important;
+  }
+  .active {
+    border-top: none;
+    border-left: 0.25rem solid;
+  }
+}
+
+@keyframes bounce {
+  from {
+    top: 41%;
+  }
+  to {
+    top: 34%;
   }
 }

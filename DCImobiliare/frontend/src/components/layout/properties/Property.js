@@ -158,6 +158,7 @@ export class Property extends Component {
               </div>
             </div>
             <div className="row py-3" id={"map"}>
+              <h3 className="border-bottom">Localizare hartă</h3>
               <Map
                 center={location}
                 zoom={16}

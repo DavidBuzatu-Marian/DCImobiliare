@@ -11,7 +11,8 @@ def sendEmail(request):
     data = json.loads(request.body)
     subject = 'Informatii client nou'
     from_email = data['email']
-    message = data['message'] + "\n\n Email: " + from_email
+    message = "Nume: " + data['name'] + "\n\n" + data['message'] + "\n\n Email: " + \
+        from_email + "\n\n Număr telefon: " + data['pNumber']
     try:
         email = EmailMessage(
             subject,

@@ -4,7 +4,7 @@ import { SEND_EMAIL } from "./types";
 
 export const sendEmail = emailContent => {
   const csrftoken = getCookie("csrftoken");
-  console.log(csrftoken);
+  // console.log(csrftoken);
   const config = {
     headers: { "Content-Type": "application/json" }
   };
@@ -19,7 +19,8 @@ export const sendEmail = emailContent => {
       //   type: SEND_EMAIL,
       //   payload: res.data
       // });
-      console.log("Test: success");
+      let div = document.getElementsByClassName("alert")[0];
+      console.log((div.style.display = "block"));
     })
     .catch(err => console.log(err));
 };
@@ -38,9 +39,3 @@ function getCookie(name) {
   }
   return decodeURIComponent(token[0].split("=")[1]);
 }
-
-const validateForm = errors => {
-  let valid = true;
-  Object.values(errors).forEach(val => val.length > 0 && (valid = false));
-  return valid;
-};

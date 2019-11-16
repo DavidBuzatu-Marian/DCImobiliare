@@ -12,6 +12,17 @@ export default class Header extends Component {
     propertiesLink: ""
   };
 
+  setActiveLink = () => {
+    let windowHrefSplitted = window.location.href.split("/");
+    if (windowHrefSplitted.includes("properties")) {
+      this.setState({ propertiesLink: "active" });
+    } else if (windowHrefSplitted.includes("#services")) {
+      this.setState({ servicesLink: "active" });
+    } else {
+      this.setState({ homeLink: "active" });
+    }
+  };
+
   hideBar = () => {
     const { isHidden } = this.state;
 
@@ -32,6 +43,7 @@ export default class Header extends Component {
   };
 
   componentDidMount() {
+    this.setActiveLink();
     window.addEventListener("scroll", this.hideBar);
   }
 
@@ -41,10 +53,11 @@ export default class Header extends Component {
   render() {
     const { homeLink, servicesLink, propertiesLink } = this.state;
     const classHidden = this.state.isHidden ? "hidden" : "";
+    console.log(this.state);
     return (
       <nav
         id="navbar"
-        className={` ${classHidden} navbar navbar-expand-sm navbar-light bg-light fixed-top`}
+        className={` ${classHidden} navbar navbar-expand-md navbar-light bg-light fixed-top`}
         style={{ zIndex: "1", width: "100%" }}
       >
         <a className="navbar-brand" href="#">
@@ -76,7 +89,7 @@ export default class Header extends Component {
                 to="/#home"
                 onClick={this.onClick}
               >
-                Acasă <span className="sr-only">(current)</span>
+                Acasă
               </Link>
             </li>
             <li className="nav-item">

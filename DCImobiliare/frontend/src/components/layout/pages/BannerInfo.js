@@ -11,7 +11,7 @@ export default class BannerInfo extends Component {
         <div className="bg-parallax bg-overlay-black-8 "></div>
 
         <div className="h-100 left-0 top-0 w-100 background-full-width-section1">
-          <div className="container h-100">
+          <div className="container h-100 container1">
             <div className="row align-items-center h-100">
               <Link
                 className="no-decoration"
