@@ -9,6 +9,13 @@ import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 
 import L from "leaflet";
 import { Form } from "../pages/Form";
+import { css } from "@emotion/core";
+import BarLoader from "react-spinners/ClipLoader";
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+`;
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -42,7 +49,6 @@ export class Property extends Component {
   }
 
   render() {
-    const loadingMessage = <span className="d-flex m-auto">Loading...</span>;
     const property = this.state.property;
     const location = [
       property.coordinatesLatitude,
@@ -51,7 +57,15 @@ export class Property extends Component {
     return (
       <Fragment>
         {this.state.isLoading ? (
-          loadingMessage
+          <div className="sweet-loading" style={{ marginTop: "120px" }}>
+            <BarLoader
+              sizeUnit={"px"}
+              css={override}
+              size={200}
+              color={"#123abc"}
+              loading={this.state.isLoading}
+            />
+          </div>
         ) : (
           <div className="container" style={{ marginTop: "140px" }}>
             <div className="row align-items-center margin-sm">

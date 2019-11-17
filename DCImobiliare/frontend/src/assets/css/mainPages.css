@@ -64,6 +64,10 @@ input[type="email"]:focus {
   font-weight: 700 !important;
 }
 
+.font-w-1000 {
+  font-weight: 1000 !important;
+}
+
 .no-decoration {
   text-decoration: none !important;
 }
@@ -89,7 +93,7 @@ input[type="email"]:focus {
 }
 
 .background-full-width-section2 {
-  background-image: url("/static/backgroundServices.jpg");
+  background-image: url("/static/about.svg");
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -97,6 +101,19 @@ input[type="email"]:focus {
 
 .display-inline {
   display: inline-block !important;
+}
+
+.card-presentation {
+  width: 250px !important;
+  height: 280px !important;
+}
+
+.active {
+  border-top: 0.25rem solid;
+}
+
+.no-border {
+  border: none;
 }
 
 @media (max-width: 1090px) {
@@ -112,10 +129,16 @@ input[type="email"]:focus {
     font-size: 3.55rem !important;
     line-height: 3.825rem !important;
   }
-}
+  .margin-auto-md {
+    margin: 0 auto;
+  }
+  .background-full-width-section2 {
+    background-image: none;
+  }
 
-.active {
-  border-top: 0.25rem solid;
+  .text-motivation {
+    color: #1a1a1a !important;
+  }
 }
 
 @media (max-width: 768px) {

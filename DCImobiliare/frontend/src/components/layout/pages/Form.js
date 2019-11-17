@@ -63,7 +63,8 @@ export class Form extends Component {
         fieldValidationErrors.name = nameValid ? "" : " field is empty";
         break;
       case "pNumber":
-        pNumberValid = value.length == 10 && !value.includes("\n");
+        pNumberValid =
+          !isNaN(value) && value.length == 10 && !value.includes("\n");
         fieldValidationErrors.pNumber = pNumberValid ? "" : " field is empty";
         break;
       case "message":

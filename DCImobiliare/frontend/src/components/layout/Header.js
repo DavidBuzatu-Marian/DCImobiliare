@@ -50,15 +50,15 @@ export default class Header extends Component {
   componentWillUnmount() {
     window.removeEventListener("scroll", this.hideBar);
   }
+
   render() {
     const { homeLink, servicesLink, propertiesLink } = this.state;
     const classHidden = this.state.isHidden ? "hidden" : "";
-    console.log(this.state);
     return (
       <nav
         id="navbar"
         className={` ${classHidden} navbar navbar-expand-md navbar-light bg-light fixed-top`}
-        style={{ zIndex: "1", width: "100%" }}
+        style={{ zIndex: "1", width: "100%", border: "none" }}
       >
         <a className="navbar-brand" href="#">
           <img
@@ -100,7 +100,7 @@ export default class Header extends Component {
                 to="/#services"
                 onClick={this.onClick}
               >
-                Vinde/ Închiriază
+                Servicii
               </Link>
             </li>
             <li className="nav-item">

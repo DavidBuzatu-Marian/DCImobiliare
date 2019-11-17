@@ -20,7 +20,7 @@ export const sendEmail = emailContent => {
       //   payload: res.data
       // });
       let div = document.getElementsByClassName("alert")[0];
-      console.log((div.style.display = "block"));
+      div.style.display = "block";
     })
     .catch(err => console.log(err));
 };
