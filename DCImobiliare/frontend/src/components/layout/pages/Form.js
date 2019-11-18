@@ -5,6 +5,13 @@ import { sendEmail, validateForm } from "../../../actions/emails";
 import DjangoCSRFToken from "django-react-csrftoken";
 
 export class Form extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state.propertyRequest = props.propertyRequest;
+    this.state.propertyTitle = props.propertyTitle;
+    this.state.propertyId = props.propertyId;
+  }
   state = {
     name: "",
     pNumber: "",
@@ -15,7 +22,10 @@ export class Form extends Component {
     nameValid: false,
     pNumberValid: false,
     messageValid: false,
-    formValid: false
+    formValid: false,
+    propertyRequest: false,
+    propertyId: 0,
+    propertyTitle: ""
   };
   static propTypes = {
     sendEmail: PropTypes.func.isRequired
@@ -29,7 +39,9 @@ export class Form extends Component {
   };
   onSubmit = e => {
     e.preventDefault();
-    const { name, pNumber, email, message } = this.state;
+    const { name, pNumber, email } = this.state;
+    const message =
+      "ID proprietate: " + this.state.propertyId + this.state.message;
     const emailContent = { name, pNumber, email, message };
     this.props.sendEmail(emailContent);
     this.setState({
@@ -102,94 +114,114 @@ export class Form extends Component {
   }
 
   render() {
-    const { name, pNumber, email, message } = this.state;
+    const {
+      name,
+      pNumber,
+      email,
+      message,
+      propertyRequest,
+      propertyTitle
+    } = this.state;
+    const divClass = propertyRequest
+      ? "col mt-5 shadow p-3 mb-5 bg-white rounded margin-auto-md"
+      : "";
+    const messageTextBox = propertyRequest
+      ? message +
+        "Doresc să aflu mai multe informații despre proprietatea " +
+        propertyTitle
+      : message;
+    const titleText = propertyRequest
+      ? "Solicită mai multe informații"
+      : "Interesat de ofertele mele?";
     return (
-      <form
-        className="text-center border border-light p-5 bodyForm"
-        onSubmit={this.onSubmit}
-      >
-        <DjangoCSRFToken />
-        <p className="h4 mb-4">Interesat de ofertele mele?</p>
-
-        <p>Completează toate câmpurile dacă dorești să fii contactat</p>
-        <div className="form-group">
-          <input
-            type="text"
-            id="infoFormName"
-            className={`form-control mb-4
-            ${this.errorClass(this.state.formErrors.name)}`}
-            placeholder="Nume*"
-            name="name"
-            value={name}
-            onChange={this.onChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="email"
-            id="infoFormEmail"
-            className={`form-control mb-4
-            ${this.errorClass(this.state.formErrors.email)}`}
-            placeholder="E-mail*"
-            name="email"
-            value={email}
-            onChange={this.onChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            id="infoFormPNumber"
-            className={`form-control mb-4
-            ${this.errorClass(this.state.formErrors.pNumber)}`}
-            placeholder="Număr de telefon*"
-            name="pNumber"
-            value={pNumber}
-            onChange={this.onChange}
-          />
-        </div>
-        <small id="emailHelp" className="form-text text-muted mb-4">
-          Nu vom dezvălui nimănui detaliile dumneavoastră!
-        </small>
-
-        <div className="form-group">
-          <label htmlFor="exampleTextarea">Mesaj</label>
-          <textarea
-            className={`form-control 
-            ${this.errorClass(this.state.formErrors.message)}`}
-            id="exampleTextarea"
-            rows="4"
-            name="message"
-            value={message}
-            onChange={this.onChange}
-          ></textarea>
-        </div>
-        <div className="form-group">
-          <button
-            disabled={!this.state.formValid}
-            className="btn btn-info btn-block"
-            type="submit"
-          >
-            Trimite
-          </button>
-        </div>
-        <div
-          className="alert alert-success alert-dismissible fade show"
-          role="alert"
-          style={{ display: "none" }}
+      <div className={divClass}>
+        <form
+          className="text-center border border-light p-5 bodyForm"
+          onSubmit={this.onSubmit}
         >
-          Informațiile au fost trimise cu success. Veți fi contactat cât mai
-          curând!
-          <button
-            type="button"
-            className="close"
-            data-dismiss="alert"
-            aria-label="Close"
+          <DjangoCSRFToken />
+          <p className="h4 mb-4">{titleText}</p>
+
+          <p>Completează toate câmpurile dacă dorești să fii contactat</p>
+          <div className="form-group">
+            <input
+              type="text"
+              id="infoFormName"
+              className={`form-control mb-4
+            ${this.errorClass(this.state.formErrors.name)}`}
+              placeholder="Nume*"
+              name="name"
+              value={name}
+              onChange={this.onChange}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="email"
+              id="infoFormEmail"
+              className={`form-control mb-4
+            ${this.errorClass(this.state.formErrors.email)}`}
+              placeholder="E-mail*"
+              name="email"
+              value={email}
+              onChange={this.onChange}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              id="infoFormPNumber"
+              className={`form-control mb-4
+            ${this.errorClass(this.state.formErrors.pNumber)}`}
+              placeholder="Număr de telefon*"
+              name="pNumber"
+              value={pNumber}
+              onChange={this.onChange}
+            />
+          </div>
+          <small id="emailHelp" className="form-text text-muted mb-4">
+            Nu vom dezvălui nimănui detaliile dumneavoastră!
+          </small>
+
+          <div className="form-group">
+            <label htmlFor="exampleTextarea">Mesaj</label>
+            <textarea
+              className={`form-control 
+            ${this.errorClass(this.state.formErrors.message)}`}
+              id="exampleTextarea"
+              rows="4"
+              name="message"
+              value={messageTextBox}
+              onChange={this.onChange}
+            ></textarea>
+          </div>
+          <div className="form-group">
+            <button
+              disabled={!this.state.formValid}
+              className="btn btn-info btn-block"
+              type="submit"
+            >
+              Trimite
+            </button>
+          </div>
+          <div
+            className="alert alert-success alert-dismissible fade show"
+            role="alert"
+            style={{ display: "none" }}
           >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      </form>
+            Informațiile au fost trimise cu success. Veți fi contactat cât mai
+            curând!
+            <button
+              type="button"
+              className="close"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

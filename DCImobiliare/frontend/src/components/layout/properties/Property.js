@@ -190,7 +190,12 @@ export class Property extends Component {
               </Map>
             </div>
             <div className="row align-items-center margin-sm">
-              <Form sendEmail={sendEmail}></Form>
+              <Form
+                sendEmail={sendEmail}
+                propertyRequest={true}
+                propertyTitle={property.title}
+                propertyId={property.id}
+              ></Form>
             </div>
           </div>
         )}

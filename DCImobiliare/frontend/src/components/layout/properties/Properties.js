@@ -58,9 +58,11 @@ export class Properties extends Component {
     axios
       .get("/api/properties")
       .then(res => {
+        let properties = res.data;
+        properties.sort(this.sortByPriceAsc);
         this.setState({
           isLoading: false,
-          properties: res.data
+          properties: properties
         });
       })
       .catch(err => console.log(err));

@@ -16,5 +16,7 @@ class ImagesInline(admin.TabularInline):
 class PropertyAdmin(admin.ModelAdmin):
     inlines = [ImagesInline]
 
+    readonly_fields = ('nrViews',)
+
 
 admin.site.register(Property, PropertyAdmin)

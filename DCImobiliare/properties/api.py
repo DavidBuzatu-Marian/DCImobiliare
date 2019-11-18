@@ -21,6 +21,8 @@ class PropertyViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, pk=None):
         queryset = Property.objects.all()
         property = get_object_or_404(queryset, pk=pk)
+        property.nrViews += 1
+        property.save()
         prop = PropertySerializer(property)
         json = JSONRenderer().render(prop.data)
         # print(JSONRenderer().render(prop.data))

@@ -22,8 +22,21 @@ class Property(models.Model):
         (HALFACCOMODATED, 'semidecomandat'),
     ]
 
+    SALE = 'Vanzare'
+    RENT = 'Inchiriere'
+    SALE_RENT = 'Vanzare/ Inchiriere'
+
+    SALE_CHOICES = [
+        (SALE, 'Vanzare'),
+        (RENT, 'Inchiriere'),
+        (SALE_RENT, 'Vanzare/ Inchiriere'),
+    ]
+
+    nrViews = models.IntegerField(default=0)
     title = models.CharField(max_length=150)
     details = models.CharField(max_length=500)
+    sale_type = models.CharField(
+        max_length=22, choices=SALE_CHOICES, default=SALE)
     zone = models.CharField(default="Zona", max_length=100)
     coordinatesLatitude = models.FloatField(default="0")
     coordinatesLongitude = models.FloatField(default="0")
