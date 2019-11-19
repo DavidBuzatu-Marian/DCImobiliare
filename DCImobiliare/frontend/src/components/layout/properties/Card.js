@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { getProperty } from "../../../actions/properties";
+
+const maxParagrapghLen = 200;
+
 export default class Card extends Component {
   state = {
     property: {},
@@ -21,10 +24,13 @@ export default class Card extends Component {
     });
   }
 
+  truncateDetails(details) {
+    return details.substring(0, maxParagrapghLen) + "...";
+  }
+
   render() {
     const property = this.state.property;
-    const details = this.state.details;
-    const price = this.state.price;
+    const { details, price } = this.state;
     return (
       <Link
         to={`/properties/${property.id}`}
@@ -53,7 +59,12 @@ export default class Card extends Component {
               <h4 className="card-title">
                 <strong>{property.title}</strong>
               </h4>
-              <p className="card-text">{details}</p>
+              <p className="card-text">{this.truncateDetails(details)}</p>
+              <ul className="list-group list-group-horizontal">
+                <li className="list-group-item">{property.surface_mp} mp</li>
+                <li className="list-group-item">{property.sale_type}</li>
+                <li className="list-group-item">{property.zone}</li>
+              </ul>
               <div className="row mt-5 px-3">
                 <div className="col-8">
                   <h5 className="blue-text pb-2 price-font">

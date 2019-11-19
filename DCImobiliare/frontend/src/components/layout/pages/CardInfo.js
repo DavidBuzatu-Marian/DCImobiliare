@@ -7,7 +7,7 @@ export default class CardInfo extends Component {
 
   render() {
     return (
-      <div className="col-lg-4 col-md-4 card card-cascade my-5 no-border p-3 ">
+      <div className="col-lg-4 col-md-4 card card-cascade my-5 no-border p-3 background-presentation ">
         <div className="card-body card-body-cascade text-center p-3 ">
           <h4 className="card-title">
             <strong>{this.props.title}</strong>

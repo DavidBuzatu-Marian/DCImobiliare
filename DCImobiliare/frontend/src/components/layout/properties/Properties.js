@@ -18,6 +18,10 @@ export class Properties extends Component {
     super(props);
     this.sortAsc = this.sortAsc.bind(this);
     this.sortDesc = this.sortDesc.bind(this);
+    this.sortNrRoomsAsc = this.sortNrRoomsAsc.bind(this);
+    this.sortNrRoomsDesc = this.sortNrRoomsDesc.bind(this);
+    this.sortSurfaceAsc = this.sortSurfaceAsc.bind(this);
+    this.sortSurfaceDesc = this.sortSurfaceDesc.bind(this);
   }
 
   state = {
@@ -37,6 +41,28 @@ export class Properties extends Component {
   sortByPriceDesc(a, b) {
     return a.price < b.price ? 1 : a.price > b.price ? -1 : 0;
   }
+  sortByNrRoomsAsc(a, b) {
+    return a.nr_rooms < b.nr_rooms ? -1 : a.nr_rooms > b.nr_rooms ? 1 : 0;
+  }
+
+  sortByNrRoomsDesc(a, b) {
+    return a.nr_rooms < b.nr_rooms ? 1 : a.nr_rooms > b.nr_rooms ? -1 : 0;
+  }
+  sortBySurfaceAsc(a, b) {
+    return a.surface_mp < b.surface_mp
+      ? -1
+      : a.surface_mp > b.surface_mp
+      ? 1
+      : 0;
+  }
+
+  sortBysurface_mpDesc(a, b) {
+    return a.surface_mp < b.surface_mp
+      ? 1
+      : a.surface_mp > b.surface_mp
+      ? -1
+      : 0;
+  }
 
   sortAsc() {
     let sortedProperties = this.state.properties;
@@ -48,10 +74,43 @@ export class Properties extends Component {
   }
 
   sortDesc() {
-    console.log("here");
     let sortedProperties = this.state.properties;
     sortedProperties.sort(this.sortByPriceDesc);
     this.setState({ properties: sortedProperties, filterType: "Preț (desc.)" });
+  }
+
+  sortNrRoomsAsc() {
+    let sortedProperties = this.state.properties;
+    sortedProperties.sort(this.sortByNrRoomsAsc);
+    this.setState({
+      properties: sortedProperties,
+      filterType: "Nr. camere (cresc.)"
+    });
+  }
+  sortNrRoomsDesc() {
+    let sortedProperties = this.state.properties;
+    sortedProperties.sort(this.sortByNrRoomsDesc);
+    this.setState({
+      properties: sortedProperties,
+      filterType: "Nr. camere (desc.)"
+    });
+  }
+
+  sortSurfaceAsc() {
+    let sortedProperties = this.state.properties;
+    sortedProperties.sort(this.sortBySurfaceAsc);
+    this.setState({
+      properties: sortedProperties,
+      filterType: "Suprafață (cresc.)"
+    });
+  }
+  sortSurfaceDesc() {
+    let sortedProperties = this.state.properties;
+    sortedProperties.sort(this.sortBySurfaceDesc);
+    this.setState({
+      properties: sortedProperties,
+      filterType: "Suprafață (desc.)"
+    });
   }
 
   componentDidMount() {
@@ -106,9 +165,34 @@ export class Properties extends Component {
                   <button className="dropdown-item" onClick={this.sortDesc}>
                     Preț (desc.)
                   </button>
-                  <button className="dropdown-item">Something else here</button>
+                  <button
+                    className="dropdown-item"
+                    onClick={this.sortNrRoomsAsc}
+                  >
+                    Nr. camere (cresc.)
+                  </button>
+                  <button
+                    className="dropdown-item"
+                    onClick={this.sortNrRoomsDesc}
+                  >
+                    Nr. camere (desc.)
+                  </button>
+                  <button
+                    className="dropdown-item"
+                    onClick={this.sortSurfaceAsc}
+                  >
+                    Suprafață (cresc.)
+                  </button>
+                  <button
+                    className="dropdown-item"
+                    onClick={this.sortSurfaceDesc}
+                  >
+                    Suprafață (desc.)
+                  </button>
                 </div>
               </div>
+            </div>
+            <div className="row align-items-center margin-sm">
               {this.state.properties.map(property => (
                 <Card key={property.id} property={property}></Card>
               ))}
