@@ -80,6 +80,69 @@
   cursor: default;
 }
 
+.table-div {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.table-h-no-space {
+  letter-spacing: 0 !important;
+}
+.table-euro {
+  color: #000000 !important;
+  font-size: 1.5rem !important;
+  text-align: center !important;
+}
+.bordered-detail {
+  border-bottom: 1px solid #c3c3c3 !important;
+  border-top: 1px solid #c3c3c3 !important;
+  font-size: 1.25rem !important;
+}
+
+.table-price {
+  color: #000000 !important;
+  font-size: 3.375rem;
+  font-weight: 900;
+}
+.table-elements {
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+}
+
+.table-price-fraction {
+  color: #000000 !important;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.no-caps {
+  text-transform: none !important;
+}
+
+.table-h-font-size {
+  font-size: 1.25rem;
+}
+
+.table-h-secondary-font-size {
+  font-size: 0.95rem !important;
+}
+
+.v-align-top {
+  vertical-align: top !important;
+}
+
+.table-p-extra {
+  font-size: 0.9rem !important;
+  text-transform: none !important;
+}
+
+.padding-table-head {
+  padding-top: 3.125rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 @media (max-width: 650px) {
   .view-cascade {
     margin-top: -1.5rem !important;
@@ -89,5 +152,17 @@
   .margin-sm {
     margin-left: 1rem !important;
     margin-right: 1rem !important;
+  }
+
+  .table-price {
+    font-size: 1.35rem !important;
+  }
+
+  .table-price-fraction {
+    font-size: 1rem !important;
+  }
+
+  .table-euro {
+    font-size: 1rem !important;
   }
 }

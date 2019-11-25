@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import BannerInfo from "./pages/BannerInfo";
-import BannerServices from "./pages/BannerServices";
+import BannerInfo from "./pages/home/BannerInfo";
+import BannerServices from "./components/BannerServices";
 
 export default function Home() {
   return (

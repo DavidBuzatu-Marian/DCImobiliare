@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getProperties } from "../../../actions/properties";
-import "../../../assets/css/properties.css";
+import { getProperties } from "../../../../actions/properties";
+import "../../../../assets/css/properties.css";
 import axios from "axios";
-import Card from "./Card";
+import Card from "../../components/Card";
 import { css } from "@emotion/core";
 import BarLoader from "react-spinners/ClipLoader";
 

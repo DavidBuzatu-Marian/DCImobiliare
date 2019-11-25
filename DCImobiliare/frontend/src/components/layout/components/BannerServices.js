@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Form } from "./Form";
 import { sendEmail } from "../../../actions/emails";
 import { Link as LinkRedirect, HashRouter as Router } from "react-router-dom";
-import BannerTableServices from "./BannerTableServices";
+import BannerTableServices from "../pages/home/BannerTableServices";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
-import CardInfo from "./CardInfo";
+import CardInfo from "../components/CardInfo";
 
 export default class BannerServices extends Component {
   render() {

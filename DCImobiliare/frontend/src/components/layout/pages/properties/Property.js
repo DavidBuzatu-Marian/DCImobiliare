@@ -2,13 +2,13 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
 import { Carousel } from "react-responsive-carousel";
-import { sendEmail } from "../../../actions/emails";
+import { sendEmail } from "../../../../actions/emails";
 import { Link, animateScroll as scroll } from "react-scroll";
 import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 
 import L from "leaflet";
-import { Form } from "../pages/Form";
+import { Form } from "../../components/Form";
 import { css } from "@emotion/core";
 import BarLoader from "react-spinners/ClipLoader";
 

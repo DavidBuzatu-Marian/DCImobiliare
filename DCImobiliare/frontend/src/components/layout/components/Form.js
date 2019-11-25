@@ -189,7 +189,7 @@ export class Form extends Component {
               className={`form-control 
             ${this.errorClass(this.state.formErrors.message)}`}
               id="exampleTextarea"
-              rows="4"
+              rows="10"
               name="message"
               value={messageTextBox}
               onChange={this.onChange}
