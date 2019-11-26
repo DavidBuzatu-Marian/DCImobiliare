@@ -99,6 +99,12 @@ input[type="email"]:focus {
   background-size: cover !important;
 }
 
+.background-card {
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
 .display-inline {
   display: inline-block !important;
 }

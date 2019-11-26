@@ -1,7 +1,32 @@
 import React, { Component } from "react";
+import TableCard from "../../components/TableCard";
 
 export default class BannerTableServices extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      service: 0,
+      activeIntermediary: true,
+      activeRepresentation: false
+    };
+    this.showTableRow = this.showTableRow.bind(this);
+  }
+
+  showTableRow(service) {
+    this.setState({
+      service: service,
+      activeIntermediary: service == 0,
+      activeRepresentation: service == 1
+    });
+  }
+
   render() {
+    const serviceHeaders = ["Intermediere", "Reprezentare"];
+    const serviceDetail = [
+      "Pachetul minim pentru a începe o vânzare",
+      "Uitați de toate grijile actelor și demersurile nenumărate pentru a încheia o tranzacție"
+    ];
+    const comissionPrices = ["599", "1199"];
     return (
       <section
         id={"servicesTable"}
@@ -12,13 +37,44 @@ export default class BannerTableServices extends Component {
 
         <div className="h-100 left-0 top-0">
           <div className="container">
+            <div className="d-sm-block d-md-none d-lg-none d-xl-none">
+              <div>
+                <ul className="nav justify-content-center ">
+                  <li className="nav-item">
+                    <button
+                      className={`nav-link btn btn-secondary btn-table-option ${
+                        this.state.activeIntermediary ? "active" : ""
+                      }`}
+                      onClick={() => this.showTableRow(0)}
+                    >
+                      Intermediere
+                    </button>
+                  </li>
+                  <li className="nav-item">
+                    <button
+                      className={`nav-link btn btn-secondary btn-table-option ${
+                        this.state.activeRepresentation ? "active" : ""
+                      }`}
+                      onClick={() => this.showTableRow(1)}
+                    >
+                      Reprezentare
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <TableCard
+                serviceName={serviceHeaders[this.state.service]}
+                serviceDetail={serviceDetail[this.state.service]}
+                comissionPrice={comissionPrices[this.state.service]}
+              ></TableCard>
+            </div>
             <div className="row table-responsive">
               <table className="table table-borderless ">
                 <thead>
-                  <tr>
+                  <tr className="display-none">
                     <th
                       scope="col"
-                      className="v-align-top table-h-font-size"
+                      className="v-align-top table-h-font-size "
                       style={{ width: "25%" }}
                     >
                       Pachet de servicii
@@ -29,7 +85,7 @@ export default class BannerTableServices extends Component {
                       style={{ width: "37.5%" }}
                     >
                       <div>
-                        <h4 className="no-caps">Intermediere</h4>
+                        <h2 className="no-caps">Intermediere</h2>
                       </div>
                       <p className="mt-4">
                         Pachetul minim pentru a începe o vânzare
@@ -41,7 +97,7 @@ export default class BannerTableServices extends Component {
                       style={{ width: "37.5%" }}
                     >
                       <div>
-                        <h4 className="no-caps">Reprezentare</h4>
+                        <h2 className="no-caps">Reprezentare</h2>
                       </div>
                       <p className="mt-4">
                         Uitați de toate grijile actelor și demersurile
@@ -51,7 +107,7 @@ export default class BannerTableServices extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr className="display-none">
                     <th scope="row" className="v-align-top table-h-font-size">
                       Comision
                     </th>
@@ -107,7 +163,11 @@ export default class BannerTableServices extends Component {
                     >
                       Consiliere juridică
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -121,7 +181,11 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -143,7 +207,11 @@ export default class BannerTableServices extends Component {
                     >
                       Contracte gestionate personal
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -157,7 +225,11 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -187,7 +259,11 @@ export default class BannerTableServices extends Component {
                         Organică pe paginile de Facebook & Instagram
                       </p>
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -201,7 +277,11 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -224,7 +304,11 @@ export default class BannerTableServices extends Component {
                     >
                       Recomandare notar și bănci partenere
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -238,7 +322,11 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -260,7 +348,11 @@ export default class BannerTableServices extends Component {
                     >
                       Evaluarea gratuită a proprietății
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -274,7 +366,11 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -307,7 +403,11 @@ export default class BannerTableServices extends Component {
                         Prin băncile partenere
                       </p>
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -321,7 +421,11 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -352,7 +456,11 @@ export default class BannerTableServices extends Component {
                         Oferte și nelămuriri ale clienților
                       </p>
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -366,7 +474,11 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -388,7 +500,11 @@ export default class BannerTableServices extends Component {
                     >
                       Negociere transparentă a prețului
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -402,7 +518,11 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -424,7 +544,11 @@ export default class BannerTableServices extends Component {
                     >
                       Fotografii profesionale
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -438,7 +562,11 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -461,7 +589,11 @@ export default class BannerTableServices extends Component {
                     >
                       Anunț reactualizat periodic
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--no"
@@ -475,7 +607,11 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -497,7 +633,11 @@ export default class BannerTableServices extends Component {
                     >
                       Comision 0% la cumpărător
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--no"
@@ -511,7 +651,11 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--yes"
@@ -535,7 +679,11 @@ export default class BannerTableServices extends Component {
                         Cel de autentificare și informare
                       </p>
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--no"
@@ -549,7 +697,13 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>Gratuite</td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
+                      Gratuite
+                    </td>
                   </tr>
                   <tr>
                     <th
@@ -558,7 +712,11 @@ export default class BannerTableServices extends Component {
                     >
                       Promovare plătită
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--no"
@@ -572,7 +730,13 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>Gratuit</td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
+                      Gratuit
+                    </td>
                   </tr>
                   <tr>
                     <th
@@ -581,7 +745,11 @@ export default class BannerTableServices extends Component {
                     >
                       Certificat energetic
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--no"
@@ -595,7 +763,13 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>Gratuit</td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
+                      Gratuit
+                    </td>
                   </tr>
                   <tr>
                     <th
@@ -604,7 +778,11 @@ export default class BannerTableServices extends Component {
                     >
                       Certificat fiscal
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--no"
@@ -618,7 +796,13 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>Gratuit</td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
+                      Gratuit
+                    </td>
                   </tr>
                   <tr>
                     <th
@@ -627,7 +811,11 @@ export default class BannerTableServices extends Component {
                     >
                       Adeverința de la asociația de locatari
                     </th>
-                    <td>
+                    <td
+                      className={`${
+                        this.state.activeIntermediary ? "" : "display-none"
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="icon icon--no"
@@ -641,7 +829,13 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
-                    <td>Gratuit</td>
+                    <td
+                      className={`${
+                        this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
+                      Gratuit
+                    </td>
                   </tr>
                 </tbody>
               </table>

@@ -9,7 +9,13 @@ export default class CardInfo extends Component {
     return (
       <div className="col-lg-4 col-md-4 card card-cascade my-5 no-border p-3 background-presentation ">
         <div className="card-body card-body-cascade text-center p-3 ">
-          <h4 className="card-title">
+          <img
+            src={`${this.props.img}`}
+            className="background-card"
+            width="128px"
+            height="128px"
+          ></img>
+          <h4 className="card-title mt-3">
             <strong>{this.props.title}</strong>
           </h4>
           <p className="">{this.props.body}</p>

@@ -62,14 +62,58 @@ export default class Footer extends Component {
               </div>
             </div>
             <div className="col-md-6 footer-copyright text-center py-5">
-              © 2019 Copyright:
-              <a
-                href="https://mdbootstrap.com/education/bootstrap/"
-                target="_blank"
-              >
-                {" "}
-                David
-              </a>
+              <div>
+                Icons made by{" "}
+                <a
+                  href="https://www.flaticon.com/authors/dinosoftlabs"
+                  title="DinosoftLabs"
+                >
+                  DinosoftLabs
+                </a>{" "}
+                from{" "}
+                <a href="https://www.flaticon.com/" title="Flaticon">
+                  www.flaticon.com
+                </a>
+              </div>
+              <div>
+                Icons made by{" "}
+                <a
+                  href="https://www.flaticon.com/authors/freepik"
+                  title="Freepik"
+                >
+                  Freepik
+                </a>{" "}
+                from{" "}
+                <a href="https://www.flaticon.com/" title="Flaticon">
+                  www.flaticon.com
+                </a>
+              </div>
+              <div>
+                Icons made by{" "}
+                <a
+                  href="https://www.flaticon.com/authors/those-icons"
+                  title="Those Icons"
+                >
+                  Those Icons
+                </a>{" "}
+                from{" "}
+                <a href="https://www.flaticon.com/" title="Flaticon">
+                  www.flaticon.com
+                </a>
+              </div>
+              <div>
+                Icons made by{" "}
+                <a
+                  href="https://www.flaticon.com/authors/freepik"
+                  title="Freepik"
+                >
+                  Freepik
+                </a>{" "}
+                from{" "}
+                <a href="https://www.flaticon.com/" title="Flaticon">
+                  www.flaticon.com
+                </a>
+              </div>
             </div>
           </div>
         </div>

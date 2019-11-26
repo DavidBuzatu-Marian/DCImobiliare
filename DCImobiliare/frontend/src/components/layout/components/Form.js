@@ -5,18 +5,12 @@ import { sendEmail, validateForm } from "../../../actions/emails";
 import DjangoCSRFToken from "django-react-csrftoken";
 
 export class Form extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state.propertyRequest = props.propertyRequest;
-    this.state.propertyTitle = props.propertyTitle;
-    this.state.propertyId = props.propertyId;
-  }
   state = {
     name: "",
     pNumber: "",
     email: "",
     message: "",
+    messageDefault: "",
     formErrors: { email: "", name: "", pNumber: "", message: "" },
     emailValid: false,
     nameValid: false,
@@ -27,6 +21,18 @@ export class Form extends Component {
     propertyId: 0,
     propertyTitle: ""
   };
+  constructor(props) {
+    super(props);
+
+    this.state.propertyRequest = props.propertyRequest;
+    this.state.propertyTitle = props.propertyTitle;
+    this.state.propertyId = props.propertyId;
+    this.state.messageDefault = props.propertyRequest
+      ? "Doresc să aflu mai multe informații despre proprietatea " +
+        props.propertyTitle
+      : "";
+  }
+
   static propTypes = {
     sendEmail: PropTypes.func.isRequired
   };
@@ -39,9 +45,13 @@ export class Form extends Component {
   };
   onSubmit = e => {
     e.preventDefault();
-    const { name, pNumber, email } = this.state;
-    const message =
-      "ID proprietate: " + this.state.propertyId + this.state.message;
+    const { name, pNumber, email, propertyRequest } = this.state;
+    const message = propertyRequest
+      ? "ID proprietate: " +
+        this.state.propertyId +
+        "\n Mesaj: " +
+        this.state.message
+      : "Mesaj:" + this.state.message;
     const emailContent = { name, pNumber, email, message };
     this.props.sendEmail(emailContent);
     this.setState({
@@ -49,6 +59,7 @@ export class Form extends Component {
       pNumber: "",
       email: "",
       message: "",
+      messageDefault: "",
       formErrors: { email: "", name: "", pNumber: "", message: "" },
       emailValid: false,
       nameValid: false,
@@ -120,16 +131,14 @@ export class Form extends Component {
       email,
       message,
       propertyRequest,
-      propertyTitle
+      messageDefault
     } = this.state;
+    const dividedFormRow = propertyRequest ? "row" : "";
+    const dividedFormFields = propertyRequest ? "col-4" : "";
+    const dividedFormMessage = propertyRequest ? "col-8" : "";
     const divClass = propertyRequest
       ? "col mt-5 shadow p-3 mb-5 bg-white rounded margin-auto-md"
       : "";
-    const messageTextBox = propertyRequest
-      ? message +
-        "Doresc să aflu mai multe informații despre proprietatea " +
-        propertyTitle
-      : message;
     const titleText = propertyRequest
       ? "Solicită mai multe informații"
       : "Interesat de ofertele mele?";
@@ -143,82 +152,86 @@ export class Form extends Component {
           <p className="h4 mb-4">{titleText}</p>
 
           <p>Completează toate câmpurile dacă dorești să fii contactat</p>
-          <div className="form-group">
-            <input
-              type="text"
-              id="infoFormName"
-              className={`form-control mb-4
+          <div className={`${dividedFormRow}`}>
+            <div className={`${dividedFormFields}`}>
+              <div className="form-group">
+                <input
+                  type="text"
+                  id="infoFormName"
+                  className={`form-control mb-4
             ${this.errorClass(this.state.formErrors.name)}`}
-              placeholder="Nume*"
-              name="name"
-              value={name}
-              onChange={this.onChange}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="email"
-              id="infoFormEmail"
-              className={`form-control mb-4
+                  placeholder="Nume*"
+                  name="name"
+                  value={name}
+                  onChange={this.onChange}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="email"
+                  id="infoFormEmail"
+                  className={`form-control mb-4
             ${this.errorClass(this.state.formErrors.email)}`}
-              placeholder="E-mail*"
-              name="email"
-              value={email}
-              onChange={this.onChange}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              id="infoFormPNumber"
-              className={`form-control mb-4
+                  placeholder="E-mail*"
+                  name="email"
+                  value={email}
+                  onChange={this.onChange}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  id="infoFormPNumber"
+                  className={`form-control mb-4
             ${this.errorClass(this.state.formErrors.pNumber)}`}
-              placeholder="Număr de telefon*"
-              name="pNumber"
-              value={pNumber}
-              onChange={this.onChange}
-            />
-          </div>
-          <small id="emailHelp" className="form-text text-muted mb-4">
-            Nu vom dezvălui nimănui detaliile dumneavoastră!
-          </small>
-
-          <div className="form-group">
-            <label htmlFor="exampleTextarea">Mesaj</label>
-            <textarea
-              className={`form-control 
+                  placeholder="Număr de telefon*"
+                  name="pNumber"
+                  value={pNumber}
+                  onChange={this.onChange}
+                />
+              </div>
+              <small id="emailHelp" className="form-text text-muted mb-4">
+                Nu vom dezvălui nimănui detaliile dumneavoastră!
+              </small>
+            </div>
+            <div className={`${dividedFormMessage}`}>
+              <div className="form-group">
+                <textarea
+                  className={`form-control 
             ${this.errorClass(this.state.formErrors.message)}`}
-              id="exampleTextarea"
-              rows="10"
-              name="message"
-              value={messageTextBox}
-              onChange={this.onChange}
-            ></textarea>
-          </div>
-          <div className="form-group">
-            <button
-              disabled={!this.state.formValid}
-              className="btn btn-info btn-block"
-              type="submit"
-            >
-              Trimite
-            </button>
-          </div>
-          <div
-            className="alert alert-success alert-dismissible fade show"
-            role="alert"
-            style={{ display: "none" }}
-          >
-            Informațiile au fost trimise cu success. Veți fi contactat cât mai
-            curând!
-            <button
-              type="button"
-              className="close"
-              data-dismiss="alert"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
+                  id="exampleTextarea"
+                  rows="10"
+                  name="message"
+                  defaultValue={messageDefault}
+                  onChange={this.onChange}
+                ></textarea>
+              </div>
+              <div className="form-group">
+                <button
+                  disabled={!this.state.formValid}
+                  className="btn btn-info btn-block"
+                  type="submit"
+                >
+                  Trimite
+                </button>
+              </div>
+              <div
+                className="alert alert-success alert-dismissible fade show"
+                role="alert"
+                style={{ display: "none" }}
+              >
+                Informațiile au fost trimise cu success. Veți fi contactat cât
+                mai curând!
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="alert"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            </div>
           </div>
         </form>
       </div>

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Form } from "./Form";
-import { sendEmail } from "../../../actions/emails";
+import { Form } from "../../components/Form";
+import { sendEmail } from "../../../../actions/emails";
 import { Link as LinkRedirect, HashRouter as Router } from "react-router-dom";
-import BannerTableServices from "../pages/home/BannerTableServices";
+import BannerTableServices from "./BannerTableServices";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
-import CardInfo from "../components/CardInfo";
+import CardInfo from "../../components/CardInfo";
 
 export default class BannerServices extends Component {
   render() {
@@ -23,31 +23,37 @@ export default class BannerServices extends Component {
         </Zoom>
         <Fade>
           <h2 className="font-w-1000 text-uppercase title-very-large text-center p-3 my-3">
-            Despre mine
+            Despre
           </h2>
           <div className="container">
             <div className="row">
               <CardInfo
-                title={"Some Title"}
+                title={"Despre mine"}
                 body={
-                  "OEtiam bibendum congue aliquet. Nam auctor sodales massa, in maximus sapien interdum vel. Phasellus consectetur elementum cursus. Vivamus et vulputate eros. Donec at finibus nisl."
+                  "Sunt un tânăr ambițios, disciplinat, orientat către rezultate și pasionat de lumea antreprenoriatului."
                 }
+                img={"/static/manager.svg"}
               ></CardInfo>
               <CardInfo
-                title={"Ce spun clientii despre mine"}
-                body={"Text pompos despre serviciile mele"}
+                title={"Experiență"}
+                body={
+                  "Am facut parte din singura agenție arădeană care a fost nominalizată la Gala Profesioniștilor în Imobiliare pentru premiul de investiție continuă în profesionalism."
+                }
+                img={"/static/award.svg"}
               ></CardInfo>
               <CardInfo
-                title={"Another Title"}
+                title={"De ce Daniel Chițu Imobiliare?"}
                 body={
-                  "Vivamus et facilisis velit, in elementum urna. Sed feugiat interdum nibh sit amet vestibulum. Nam malesuada pellentesque orci, eu imperdiet velit ultrices a. Quisque posuere elementum massa, at elementum nibh porttitor sit amet. "
+                  "Eu vă pot oferi aceleași servicii profesioniste ale agențiilor mari, dar la comisioane mult mai accesibile"
                 }
+                img={"/static/deal.svg"}
               ></CardInfo>
               <CardInfo
-                title={"Some Title"}
+                title={"Voluntariate"}
                 body={
-                  "OEtiam bibendum congue aliquet. Nam auctor sodales massa, in maximus sapien interdum vel. Phasellus consectetur elementum cursus. Vivamus et vulputate eros. Donec at finibus nisl."
+                  "În timpul liber sunt implicat în voluntariate și dețin titlul de președinte al unei organizații de tineri. Dorința de a ajuta m-a atras și în domeniul imobiliarelor, pentru a ajuta oamenii să-și vândă proprietățile fără stres, mai rapid și cu benefici mai multe"
                 }
+                img={"static/volunteer.svg"}
               ></CardInfo>
               <CardInfo
                 title={"Ce spun clientii despre mine"}
