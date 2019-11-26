@@ -134,8 +134,12 @@ export class Form extends Component {
       messageDefault
     } = this.state;
     const dividedFormRow = propertyRequest ? "row" : "";
-    const dividedFormFields = propertyRequest ? "col-4" : "";
-    const dividedFormMessage = propertyRequest ? "col-8" : "";
+    const dividedFormFields = propertyRequest
+      ? "col-lg-4 col-sm-12 col-md-12"
+      : "";
+    const dividedFormMessage = propertyRequest
+      ? "col-lg-8 col-sm-12 col-md-12"
+      : "";
     const divClass = propertyRequest
       ? "col mt-5 shadow p-3 mb-5 bg-white rounded margin-auto-md"
       : "";
