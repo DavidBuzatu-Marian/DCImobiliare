@@ -37,33 +37,37 @@ export default class BannerServices extends Component {
               <CardInfo
                 title={"Experiență"}
                 body={
-                  "Am facut parte din singura agenție arădeană care a fost nominalizată la Gala Profesioniștilor în Imobiliare pentru premiul de investiție continuă în profesionalism."
+                  "Am facut parte din singura agenție arădeană care a fost nominalizată la Gala Profesionistilor in Imobiliare, de două ori consecutiv, pentru premiul de investiție continuă în profesionalism"
                 }
                 img={"/static/award.svg"}
               ></CardInfo>
               <CardInfo
                 title={"De ce Daniel Chițu Imobiliare?"}
                 body={
-                  "Eu vă pot oferi aceleași servicii profesioniste ale agențiilor mari, dar la comisioane mult mai accesibile"
+                  "Am ales să continui mai departe ca şi agent independent tocmai pentru clienții mei. Pentru a vă putea oferi aceleaşi servicii profesioniste dar la comisioane mult mai accesibile"
                 }
                 img={"/static/deal.svg"}
               ></CardInfo>
               <CardInfo
                 title={"Voluntariate"}
                 body={
-                  "În timpul liber sunt implicat în voluntariate și dețin titlul de președinte al unei organizații de tineri. Dorința de a ajuta m-a atras și în domeniul imobiliarelor, pentru a ajuta oamenii să-și vândă proprietățile fără stres, mai rapid și cu benefici mai multe"
+                  "Sunt implicat în voluntariate şi sunt preşedintele unei organizații ce sprijină oamenii. Acest aspect m-a atras şi în acest domeniu, să ajut oamenii să-şi vândă proprietățile fără stres şi să câştige timp pentru ei şi familia lor."
                 }
                 img={"static/volunteer.svg"}
               ></CardInfo>
               <CardInfo
-                title={"Ce spun clientii despre mine"}
-                body={"Text pompos despre serviciile mele"}
+                title={"Clienții tăi"}
+                body={
+                  "Imi place ca totul să fie perfect, astfel că indiferent dacă te intereseaza să vinzi sau să dai în chirie, voi preselecta cu mare atenție clienții potențiali şi ii voi alege pe cei mai potriviți pentru tine."
+                }
+                img={"static/loupe.svg"}
               ></CardInfo>
               <CardInfo
-                title={"Another Title"}
+                title={"Afilieri"}
                 body={
-                  "Vivamus et facilisis velit, in elementum urna. Sed feugiat interdum nibh sit amet vestibulum. Nam malesuada pellentesque orci, eu imperdiet velit ultrices a. Quisque posuere elementum massa, at elementum nibh porttitor sit amet. "
+                  "Am experiența şi timpul necesar pentru a te ajuta să ai parte de o tranzacție cât mai placută. Având colaborare cu notari, bănci, firme şi persoane de care ai nevoie într-o tranzacție imobiliară, te asigur că totul va decurge bine."
                 }
+                img={"static/relationship.svg"}
               ></CardInfo>
             </div>
           </div>

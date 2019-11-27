@@ -44,7 +44,7 @@ export default class Footer extends Component {
                   </a>
                 </div>
                 <div className="mt-3">
-                  © Daviner Solutions 2019-2019. All rights reserved.
+                  © David Buzatu 2019. All rights reserved.
                 </div>
                 <div className="mt-1 text-center-md">
                   <a
@@ -108,6 +108,32 @@ export default class Footer extends Component {
                   title="Freepik"
                 >
                   Freepik
+                </a>{" "}
+                from{" "}
+                <a href="https://www.flaticon.com/" title="Flaticon">
+                  www.flaticon.com
+                </a>
+              </div>
+              <div>
+                Icons made by{" "}
+                <a
+                  href="https://www.flaticon.com/authors/freepik"
+                  title="Freepik"
+                >
+                  Freepik
+                </a>{" "}
+                from{" "}
+                <a href="https://www.flaticon.com/" title="Flaticon">
+                  www.flaticon.com
+                </a>
+              </div>
+              <div>
+                Icons made by{" "}
+                <a
+                  href="https://www.flaticon.com/authors/eucalyp"
+                  title="Eucalyp"
+                >
+                  Eucalyp
                 </a>{" "}
                 from{" "}
                 <a href="https://www.flaticon.com/" title="Flaticon">
