@@ -60,6 +60,19 @@ input[type="email"]:focus {
   font-size: 3vw !important;
   line-height: 4.225rem !important;
 }
+
+.title-table {
+  font-size: 3vw !important;
+  line-height: 4.225rem !important;
+  letter-spacing: 0px !important;
+}
+
+.bar-limitator {
+  background-color: #614844 !important;
+  height: 2px;
+  width: 180px;
+  margin: 0 auto;
+}
 .font-w-700 {
   font-weight: 700 !important;
 }
@@ -133,6 +146,10 @@ input[type="email"]:focus {
   }
   .title-very-large {
     font-size: 3.55rem !important;
+    line-height: 3.825rem !important;
+  }
+  .title-table {
+    font-size: 2.55rem !important;
     line-height: 3.825rem !important;
   }
   .margin-auto-md {

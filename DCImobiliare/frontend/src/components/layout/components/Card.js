@@ -34,7 +34,7 @@ export default class Card extends Component {
     return (
       <Link
         to={`/properties/${property.id}`}
-        className="col-12 card card-cascade narrower mt-3 p-3 mb-1 bg-white rounded"
+        className="col-12 card card-cascade narrower mt-3 p-3 mb-5 bg-white rounded"
         style={{
           maxWidth: "768px",
           cursor: "pointer",

@@ -16,13 +16,14 @@ export default class BannerServices extends Component {
         style={{ marginTop: "-6px !important" }}
       >
         <Zoom>
-          <h2 className=" m-0 mt-3 font-w-700 text-uppercase title-very-large text-center p-3 my-5">
-            Ce beneficii vă aduc serviciile mele?
+          <h2 className="font-w-700 text-uppercase title-table text-center p-3 my-5">
+            Serviciile mele
           </h2>
+          <div className="bar-limitator mb-5"></div>
           <BannerTableServices></BannerTableServices>
         </Zoom>
         <Fade>
-          <h2 className="font-w-1000 text-uppercase title-very-large text-center p-3 my-3">
+          <h2 className="font-w-1000 text-uppercase title-table text-center p-3 my-3">
             Despre
           </h2>
           <div className="container">

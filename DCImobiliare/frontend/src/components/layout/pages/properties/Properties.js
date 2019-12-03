@@ -7,6 +7,7 @@ import axios from "axios";
 import Card from "../../components/Card";
 import { css } from "@emotion/core";
 import BarLoader from "react-spinners/ClipLoader";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const override = css`
   display: block;
@@ -22,12 +23,16 @@ export class Properties extends Component {
     this.sortNrRoomsDesc = this.sortNrRoomsDesc.bind(this);
     this.sortSurfaceAsc = this.sortSurfaceAsc.bind(this);
     this.sortSurfaceDesc = this.sortSurfaceDesc.bind(this);
+    this.nextData = this.nextData.bind(this);
   }
 
   state = {
     isLoading: true,
     filterType: "Preț (cresc.)",
-    properties: []
+    properties: [],
+    allProperties: [],
+    hasMore: true,
+    loadingLimit: 10
   };
 
   static propTypes = {
@@ -65,50 +70,59 @@ export class Properties extends Component {
   }
 
   sortAsc() {
-    let sortedProperties = this.state.properties;
+    let sortedProperties = this.state.allProperties;
     sortedProperties.sort(this.sortByPriceAsc);
     this.setState({
-      properties: sortedProperties,
+      allProperties: sortedProperties,
+      properties: [...sortedProperties.slice(0, this.state.loadingLimit)],
       filterType: "Preț (cresc.)"
     });
   }
 
   sortDesc() {
-    let sortedProperties = this.state.properties;
+    let sortedProperties = this.state.allProperties;
     sortedProperties.sort(this.sortByPriceDesc);
-    this.setState({ properties: sortedProperties, filterType: "Preț (desc.)" });
+    this.setState({
+      allProperties: sortedProperties,
+      properties: [...sortedProperties.slice(0, this.state.loadingLimit)],
+      filterType: "Preț (desc.)"
+    });
   }
 
   sortNrRoomsAsc() {
-    let sortedProperties = this.state.properties;
+    let sortedProperties = this.state.allProperties;
     sortedProperties.sort(this.sortByNrRoomsAsc);
     this.setState({
-      properties: sortedProperties,
+      allProperties: sortedProperties,
+      properties: [...sortedProperties.slice(0, this.state.loadingLimit)],
       filterType: "Nr. camere (cresc.)"
     });
   }
   sortNrRoomsDesc() {
-    let sortedProperties = this.state.properties;
+    let sortedProperties = this.state.allProperties;
     sortedProperties.sort(this.sortByNrRoomsDesc);
     this.setState({
-      properties: sortedProperties,
+      allProperties: sortedProperties,
+      properties: [...sortedProperties.slice(0, this.state.loadingLimit)],
       filterType: "Nr. camere (desc.)"
     });
   }
 
   sortSurfaceAsc() {
-    let sortedProperties = this.state.properties;
+    let sortedProperties = this.state.allProperties;
     sortedProperties.sort(this.sortBySurfaceAsc);
     this.setState({
-      properties: sortedProperties,
+      allProperties: sortedProperties,
+      properties: [...sortedProperties.slice(0, this.state.loadingLimit)],
       filterType: "Suprafață (cresc.)"
     });
   }
   sortSurfaceDesc() {
-    let sortedProperties = this.state.properties;
+    let sortedProperties = this.state.allProperties;
     sortedProperties.sort(this.sortBySurfaceDesc);
     this.setState({
-      properties: sortedProperties,
+      allProperties: sortedProperties,
+      properties: [...sortedProperties.slice(0, this.state.loadingLimit)],
       filterType: "Suprafață (desc.)"
     });
   }
@@ -121,10 +135,30 @@ export class Properties extends Component {
         properties.sort(this.sortByPriceAsc);
         this.setState({
           isLoading: false,
-          properties: properties
+          allProperties: properties,
+          properties: [...properties.slice(0, this.state.loadingLimit)]
         });
       })
       .catch(err => console.log(err));
+  }
+
+  nextData() {
+    let properties = this.state.properties;
+    if (properties.length === this.state.allProperties.length) {
+      this.setState({
+        hasMore: false
+      });
+    } else {
+      this.setState({
+        properties: [
+          ...properties,
+          ...this.state.allProperties.slice(
+            properties.length,
+            properties.length + this.state.loadingLimit
+          )
+        ]
+      });
+    }
   }
 
   render() {
@@ -193,9 +227,33 @@ export class Properties extends Component {
               </div>
             </div>
             <div className="row align-items-center margin-sm">
-              {this.state.properties.map(property => (
-                <Card key={property.id} property={property}></Card>
-              ))}
+              <InfiniteScroll
+                dataLength={this.state.properties.length}
+                next={this.nextData}
+                hasMore={this.state.hasMore}
+                loader={
+                  <BarLoader
+                    sizeUnit={"px"}
+                    css={override}
+                    size={100}
+                    color={"#123abc"}
+                    loading={this.state.hasMore}
+                    overflow={"none"}
+                  />
+                }
+                endMessage={
+                  <p style={{ textAlign: "center" }}>
+                    <b>
+                      Total anunțuri afișate: {this.state.properties.length}
+                    </b>
+                  </p>
+                }
+                style={{ overflow: "none" }}
+              >
+                {this.state.properties.map(property => (
+                  <Card key={property.id} property={property}></Card>
+                ))}
+              </InfiniteScroll>
             </div>
           </div>
         )}
