@@ -8,8 +8,22 @@ import "../assets/css/default.css";
 import { Properties } from "./layout/pages/properties/Properties";
 import { Property } from "./layout/pages/properties/Property";
 import { getProperties, getProperty } from "../actions/properties";
-
+import lax from "lax.js";
 class App extends Component {
+  constructor(props) {
+    super(props);
+    lax.setup();
+
+    document.addEventListener(
+      "scroll",
+      function(x) {
+        lax.update(window.scrollY);
+      },
+      false
+    );
+
+    lax.update(window.scrollY);
+  }
   render() {
     return (
       <Router>
