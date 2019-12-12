@@ -30,7 +30,7 @@ export default class BannerTableServices extends Component {
     return (
       <section
         id={"servicesTable"}
-        className="overflow-hidden p-0 w-100 inline-block"
+        className="overflow-hidden p-0 w-100 inline-block mt-10 mb-5"
         style={{ marginTop: "-6px !important" }}
       >
         <div className="bg-parallax bg-overlay-black-8 "></div>
@@ -830,6 +830,7 @@ export default class BannerTableServices extends Component {
                       </svg>
                     </td>
                     <td
+                      id="last-td"
                       className={`${
                         this.state.activeRepresentation ? "" : "display-none"
                       }`}

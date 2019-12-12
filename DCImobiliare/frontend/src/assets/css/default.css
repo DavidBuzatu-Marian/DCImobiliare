@@ -134,6 +134,17 @@ input[type="email"]:focus {
 .no-border {
   border: none;
 }
+.mt-10 {
+  margin-top: 10rem !important;
+}
+
+.mt-5rem {
+  margin-top: 5rem !important;
+}
+
+.text-white {
+  color: #ffffff !important;
+}
 
 @media (max-width: 1090px) {
   .text-large {
@@ -175,6 +186,10 @@ input[type="email"]:focus {
   .active {
     border-top: none;
     border-left: 0.25rem solid;
+  }
+
+  .text-white {
+    color: #000000 !important;
   }
 }
 
