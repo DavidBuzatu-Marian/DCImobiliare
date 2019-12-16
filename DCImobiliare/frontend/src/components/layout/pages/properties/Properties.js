@@ -31,8 +31,11 @@ export class Properties extends Component {
     filterType: "Preț (cresc.)",
     properties: [],
     allProperties: [],
+    filteredProperties: [],
     hasMore: true,
-    loadingLimit: 10
+    loadingLimit: 10,
+    sellChecked: false,
+    rentChecked: false
   };
 
   static propTypes = {
@@ -70,58 +73,58 @@ export class Properties extends Component {
   }
 
   sortAsc() {
-    let sortedProperties = this.state.allProperties;
+    let sortedProperties = this.state.filteredProperties;
     sortedProperties.sort(this.sortByPriceAsc);
     this.setState({
-      allProperties: sortedProperties,
+      filteredProperties: filteredProperties,
       properties: [...sortedProperties.slice(0, this.state.loadingLimit)],
       filterType: "Preț (cresc.)"
     });
   }
 
   sortDesc() {
-    let sortedProperties = this.state.allProperties;
+    let sortedProperties = this.state.filteredProperties;
     sortedProperties.sort(this.sortByPriceDesc);
     this.setState({
-      allProperties: sortedProperties,
+      filteredProperties: sortedProperties,
       properties: [...sortedProperties.slice(0, this.state.loadingLimit)],
       filterType: "Preț (desc.)"
     });
   }
 
   sortNrRoomsAsc() {
-    let sortedProperties = this.state.allProperties;
+    let sortedProperties = this.state.filteredProperties;
     sortedProperties.sort(this.sortByNrRoomsAsc);
     this.setState({
-      allProperties: sortedProperties,
+      filteredProperties: sortedProperties,
       properties: [...sortedProperties.slice(0, this.state.loadingLimit)],
       filterType: "Nr. camere (cresc.)"
     });
   }
   sortNrRoomsDesc() {
-    let sortedProperties = this.state.allProperties;
+    let sortedProperties = this.state.filteredProperties;
     sortedProperties.sort(this.sortByNrRoomsDesc);
     this.setState({
-      allProperties: sortedProperties,
+      filteredProperties: sortedProperties,
       properties: [...sortedProperties.slice(0, this.state.loadingLimit)],
       filterType: "Nr. camere (desc.)"
     });
   }
 
   sortSurfaceAsc() {
-    let sortedProperties = this.state.allProperties;
+    let sortedProperties = this.state.filteredProperties;
     sortedProperties.sort(this.sortBySurfaceAsc);
     this.setState({
-      allProperties: sortedProperties,
+      filteredProperties: sortedProperties,
       properties: [...sortedProperties.slice(0, this.state.loadingLimit)],
       filterType: "Suprafață (cresc.)"
     });
   }
   sortSurfaceDesc() {
-    let sortedProperties = this.state.allProperties;
+    let sortedProperties = this.state.filteredProperties;
     sortedProperties.sort(this.sortBySurfaceDesc);
     this.setState({
-      allProperties: sortedProperties,
+      filteredProperties: sortedProperties,
       properties: [...sortedProperties.slice(0, this.state.loadingLimit)],
       filterType: "Suprafață (desc.)"
     });
@@ -136,6 +139,7 @@ export class Properties extends Component {
         this.setState({
           isLoading: false,
           allProperties: properties,
+          filteredProperties: properties,
           properties: [...properties.slice(0, this.state.loadingLimit)]
         });
       })
@@ -144,7 +148,12 @@ export class Properties extends Component {
 
   nextData() {
     let properties = this.state.properties;
-    if (properties.length === this.state.allProperties.length) {
+    if (properties.length === 0) {
+      this.setState({
+        hasMore: false
+      });
+    }
+    if (properties.length === this.state.filteredProperties.length) {
       this.setState({
         hasMore: false
       });
@@ -152,7 +161,7 @@ export class Properties extends Component {
       this.setState({
         properties: [
           ...properties,
-          ...this.state.allProperties.slice(
+          ...this.state.filteredProperties.slice(
             properties.length,
             properties.length + this.state.loadingLimit
           )
@@ -160,6 +169,44 @@ export class Properties extends Component {
       });
     }
   }
+
+  onChange = e => {
+    e.persist();
+
+    let sellChecked = this.state.sellChecked;
+    let rentChecked = this.state.rentChecked;
+    e.target.name === "Vanzare"
+      ? (sellChecked = e.target.checked)
+      : (rentChecked = e.target.checked);
+
+    let filtered_properties = this.state.allProperties.filter(property => {
+      let sale_type = property.sale_type;
+      if (sellChecked && rentChecked) {
+        return sale_type.includes("Vanzare/ Inchiriere");
+      } else if (sellChecked && !rentChecked) {
+        return sale_type.includes("Vanzare");
+      } else if (!sellChecked && rentChecked) {
+        return sale_type.includes("Inchiriere");
+      } else {
+        return false;
+      }
+    });
+
+    if (!sellChecked && !rentChecked) {
+      filtered_properties = this.state.allProperties;
+    }
+    this.setState({
+      sellChecked:
+        e.target.name === "Vanzare" ? e.target.checked : this.state.sellChecked,
+      rentChecked:
+        e.target.name === "Inchiriere"
+          ? e.target.checked
+          : this.state.rentChecked,
+      filteredProperties: filtered_properties,
+      hasMore: filtered_properties.length === 0 ? false : true,
+      properties: [...filtered_properties.slice(0, this.state.loadingLimit)]
+    });
+  };
 
   render() {
     return (
@@ -223,6 +270,36 @@ export class Properties extends Component {
                   >
                     Suprafață (desc.)
                   </button>
+                </div>
+              </div>
+              <div className="form-group my-auto ml-3">
+                <div className="custom-control custom-checkbox">
+                  <input
+                    type="checkbox"
+                    className="custom-control-input"
+                    id="sell"
+                    name="Vanzare"
+                    defaultChecked={false}
+                    onChange={this.onChange}
+                  />
+                  <label className="custom-control-label" htmlFor="sell">
+                    Vânzare
+                  </label>
+                </div>
+              </div>
+              <div className="form-group my-auto ml-3">
+                <div className="custom-control custom-checkbox">
+                  <input
+                    type="checkbox"
+                    className="custom-control-input"
+                    id="rent"
+                    name="Inchiriere"
+                    defaultChecked={false}
+                    onChange={this.onChange}
+                  />
+                  <label className="custom-control-label" htmlFor="rent">
+                    Închiriere
+                  </label>
                 </div>
               </div>
             </div>

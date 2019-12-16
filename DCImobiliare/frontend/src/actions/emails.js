@@ -21,6 +21,8 @@ export const sendEmail = emailContent => {
       // });
       let div = document.getElementsByClassName("alert")[0];
       div.style.display = "block";
+      let loader = document.getElementById("formLoader");
+      loader.style.display = "none";
     })
     .catch(err => console.log(err));
 };

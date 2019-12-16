@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TableCard from "../../components/TableCard";
-
+import lax from "lax.js";
+import ReactDOM from "react-dom";
 export default class BannerTableServices extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +21,15 @@ export default class BannerTableServices extends Component {
     });
   }
 
+  componentDidMount() {
+    this.el = ReactDOM.findDOMNode(this);
+    lax.addElement(this.el);
+  }
+
+  componentWillUnmount() {
+    lax.removeElement(this.el);
+  }
+
   render() {
     const serviceHeaders = ["Intermediere", "Reprezentare"];
     const serviceDetail = [
@@ -30,8 +40,10 @@ export default class BannerTableServices extends Component {
     return (
       <section
         id={"servicesTable"}
-        className="overflow-hidden p-0 w-100 inline-block mt-10 mb-5"
+        className="overflow-hidden p-0 w-100 inline-block mt-10 mb-5 lax line"
         style={{ marginTop: "-6px !important" }}
+        data-lax-translate-y={`0 0, 400 ${this.props.yValue}`}
+        data-lax-anchor={this.props.anchor}
       >
         <div className="bg-parallax bg-overlay-black-8 "></div>
 

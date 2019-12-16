@@ -12,9 +12,9 @@ def get_image_name(instance, filename):
 
 
 class Property(models.Model):
-    DECOMODATED = 'DT'
-    HALFACCOMODATED = 'HAC'
-    UNACCOMODATED = 'NAC'
+    DECOMODATED = 'Decomandat'
+    HALFACCOMODATED = 'Semidecomandat'
+    UNACCOMODATED = 'Nedecomandat'
 
     ACCOMODATION_CHOICES = [
         (DECOMODATED, 'decomandat'),

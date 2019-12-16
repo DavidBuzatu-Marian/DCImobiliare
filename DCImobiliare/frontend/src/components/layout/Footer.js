@@ -43,6 +43,9 @@ export default class Footer extends Component {
                     />
                   </a>
                 </div>
+                <h5 className="mt-2">Date de contact:</h5>
+                <p className="my-1">Număr de telefon: 07xxxxxxxx</p>
+                <p className="my-1">Email: daniel.chitu@gmail.com</p>
                 <div className="mt-3">
                   © David Buzatu 2019. All rights reserved.
                 </div>

@@ -3,6 +3,13 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { sendEmail, validateForm } from "../../../actions/emails";
 import DjangoCSRFToken from "django-react-csrftoken";
+import { css } from "@emotion/core";
+import BarLoader from "react-spinners/ClipLoader";
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+`;
 
 export class Form extends Component {
   state = {
@@ -19,7 +26,8 @@ export class Form extends Component {
     formValid: false,
     propertyRequest: false,
     propertyId: 0,
-    propertyTitle: ""
+    propertyTitle: "",
+    isLoading: true
   };
   constructor(props) {
     super(props);
@@ -53,6 +61,8 @@ export class Form extends Component {
         this.state.message
       : "Mesaj:" + this.state.message;
     const emailContent = { name, pNumber, email, message };
+    let loader = document.getElementById("formLoader");
+    loader.style.display = "block";
     this.props.sendEmail(emailContent);
     this.setState({
       name: "",
@@ -234,6 +244,20 @@ export class Form extends Component {
                 >
                   <span aria-hidden="true">&times;</span>
                 </button>
+              </div>
+              <div
+                id="formLoader"
+                className="sweet-loading"
+                style={{ marginTop: "20px", display: "none" }}
+              >
+                <BarLoader
+                  sizeUnit={"px"}
+                  css={override}
+                  size={50}
+                  color={"#123abc"}
+                  loading={this.state.isLoading}
+                  display="none"
+                />
               </div>
             </div>
           </div>

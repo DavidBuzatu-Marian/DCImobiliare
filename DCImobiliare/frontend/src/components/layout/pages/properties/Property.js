@@ -83,7 +83,8 @@ export class Property extends Component {
                   Vezi Harta
                 </Link>
                 <h1 className="mt-5 price-font-presentation">
-                  <strong>{property.price} EUR</strong>
+                  {property.sale_type} -{" "}
+                  <strong>{property.price.toLocaleString()} EUR</strong>
                 </h1>
               </div>
               <Carousel>

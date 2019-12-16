@@ -67,9 +67,9 @@ export default class Card extends Component {
               </ul>
               <div className="row mt-5 px-3">
                 <div className="col-8">
-                  <h5 className="blue-text pb-2 price-font">
+                  <h2 className="blue-text pb-2 price-font">
                     <strong> {price} EUR</strong>
-                  </h5>
+                  </h2>
                 </div>
                 <div className="col-4">
                   <button type="button" className="btn btn-info btn-md">

@@ -14,6 +14,7 @@ export default class Title extends Component {
   render() {
     return (
       <div
+        id={this.props.customID}
         className=" text-center lax line "
         data-lax-translate-y={`0 0, 400 ${this.props.yValue}`}
         data-lax-anchor={this.props.anchor}
