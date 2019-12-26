@@ -9,7 +9,8 @@ export default class Header extends Component {
     isHidden: false,
     homeLink: "",
     servicesLink: "",
-    propertiesLink: ""
+    propertiesLink: "",
+    isTransparent: true
   };
 
   setActiveLink = () => {
@@ -25,10 +26,23 @@ export default class Header extends Component {
 
   hideBar = () => {
     const { isHidden } = this.state;
+    window.scrollY == 0
+      ? this.setState({
+          isTransparent: true
+        })
+      : this.setState({
+          isTransparent: false
+        });
 
     window.scrollY > this.prev
-      ? !isHidden && this.setState({ isHidden: true })
-      : isHidden && this.setState({ isHidden: false });
+      ? !isHidden &&
+        this.setState({
+          isHidden: true
+        })
+      : isHidden &&
+        this.setState({
+          isHidden: false
+        });
 
     this.prev = window.scrollY;
   };
@@ -54,20 +68,24 @@ export default class Header extends Component {
   render() {
     const { homeLink, servicesLink, propertiesLink } = this.state;
     const classHidden = this.state.isHidden ? "hidden" : "";
+
+    const classImgVisible = this.state.isTransparent
+      ? "display-gone"
+      : "display-visible";
     return (
       <nav
         id="navbar"
-        className={` ${classHidden} navbar navbar-expand-md navbar-light bg-light fixed-top`}
+        className={` ${classHidden} navbar navbar-expand-md navbar-light bg-light fixed-top `}
         style={{ zIndex: "1", width: "100%", border: "none" }}
       >
-        <a className="navbar-brand" href="#">
-          <img
-            src={"/static/logo.png"}
-            alt="DCImobiliare"
-            height="80px"
-            width="80px"
-          />
-        </a>
+        <img
+          className={`navbar-grand ${classImgVisible}`}
+          src={"/static/logo.png"}
+          alt="DCImobiliare"
+          height="80px"
+          width="80px"
+        />
+
         <button
           className="navbar-toggler"
           type="button"
