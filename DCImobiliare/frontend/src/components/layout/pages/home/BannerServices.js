@@ -18,8 +18,17 @@ export default class BannerServices extends Component {
           yValue="100"
           anchor="#servicesTitle"
         ></BannerTableServices>
-        <Title title="Despre" anchor="#last-td" yValue="40"></Title>
-        <CardsContainer anchor="#last-td" yValue="180"></CardsContainer>
+        <Title
+          title="Despre"
+          anchor="#last-td"
+          yValue="40"
+          customID="aboutTitle"
+        ></Title>
+        <CardsContainer
+          anchor="#last-td"
+          yValue="180"
+          customID="about"
+        ></CardsContainer>
         <div className="bg-parallax bg-overlay-black-8 " id="form-toggle"></div>
 
         <div className="h-100 left-0 top-0 w-100 background-full-width-section2">

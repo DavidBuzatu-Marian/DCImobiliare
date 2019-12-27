@@ -281,7 +281,7 @@ input[type="email"]:focus {
     background-image: none;
   }
   .buildings-bkg {
-    bottom: 15%;
+    bottom: 20%;
   }
 }
 
@@ -307,6 +307,12 @@ input[type="email"]:focus {
   .buildings-bkg {
     bottom: 35% !important;
     right: 15% !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .display-none {
+    display: none;
   }
 }
 

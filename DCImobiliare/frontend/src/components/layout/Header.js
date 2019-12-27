@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link as LinkRedirect, HashRouter as Router } from "react-router-dom";
 // import { Link, animateScroll as scroll } from "react-scroll";
 import { HashLink as Link } from "react-router-hash-link";
-import { getProperties } from "../../actions/properties";
 
 export default class Header extends Component {
   state = {
@@ -10,6 +9,7 @@ export default class Header extends Component {
     homeLink: "",
     servicesLink: "",
     propertiesLink: "",
+    aboutLink: "",
     isTransparent: true
   };
 
@@ -25,6 +25,7 @@ export default class Header extends Component {
   };
 
   hideBar = () => {
+    this.setActiveNavBar(window);
     const { isHidden } = this.state;
     window.scrollY == 0
       ? this.setState({
@@ -47,11 +48,41 @@ export default class Header extends Component {
     this.prev = window.scrollY;
   };
 
+  setActiveNavBar(window) {
+    const servicesSection = document.getElementById("servicesTitle");
+    const aboutSection = document.getElementById("aboutTitle");
+    if (servicesSection.getBoundingClientRect().bottom <= window.innerHeight) {
+      if (aboutSection.getBoundingClientRect().bottom <= window.innerHeight) {
+        this.setState({
+          homeLink: "",
+          servicesLink: "",
+          propertiesLink: "",
+          aboutLink: "active"
+        });
+      } else {
+        this.setState({
+          homeLink: "",
+          servicesLink: "active",
+          propertiesLink: "",
+          aboutLink: ""
+        });
+      }
+    } else {
+      this.setState({
+        homeLink: "active",
+        servicesLink: "",
+        propertiesLink: "",
+        aboutLink: ""
+      });
+    }
+  }
+
   onClick = e => {
     this.setState({
       homeLink: "",
       servicesLink: "",
-      propertiesLink: ""
+      propertiesLink: "",
+      aboutLink: ""
     });
     this.setState({ [e.target.id]: "active" });
   };
@@ -66,7 +97,7 @@ export default class Header extends Component {
   }
 
   render() {
-    const { homeLink, servicesLink, propertiesLink } = this.state;
+    const { homeLink, servicesLink, propertiesLink, aboutLink } = this.state;
     const classHidden = this.state.isHidden ? "hidden" : "";
 
     const classImgVisible = this.state.isTransparent
@@ -119,6 +150,17 @@ export default class Header extends Component {
                 onClick={this.onClick}
               >
                 Servicii
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                id="aboutLink"
+                smooth
+                className={`nav-link ${aboutLink}`}
+                to="/#aboutTitle"
+                onClick={this.onClick}
+              >
+                Despre
               </Link>
             </li>
             <li className="nav-item">

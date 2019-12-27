@@ -1,13 +1,29 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
   faInstagram,
   faGoogle
 } from "@fortawesome/free-brands-svg-icons";
 export default class Footer extends Component {
+  state = {
+    showLinks: ""
+  };
+
+  componentDidMount() {
+    this.showLinks();
+  }
+
+  showLinks = () => {
+    let windowHrefSplitted = window.location.href.split("/");
+    if (windowHrefSplitted.includes("properties")) {
+      this.setState({ showLinks: "display-gone" });
+    } else {
+      this.setState({ showLinks: "display-visible" });
+    }
+  };
   render() {
+    const { showLinks } = this.state;
     return (
       <footer className="page-footer font-small cyan darken-3">
         <div className="container">
@@ -47,7 +63,7 @@ export default class Footer extends Component {
                 <p className="my-1">Număr de telefon: 07xxxxxxxx</p>
                 <p className="my-1">Email: daniel.chitu@gmail.com</p>
                 <div className="mt-3">
-                  © David Buzatu 2019. All rights reserved.
+                  © David Buzatu 2019-2020. All rights reserved.
                 </div>
                 <div className="mt-1 text-center-md">
                   <a
@@ -64,7 +80,9 @@ export default class Footer extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-md-6 footer-copyright text-center py-5">
+            <div
+              className={`col-md-6 footer-copyright text-center py-5 ${showLinks} mt-2`}
+            >
               <div>
                 Icons made by{" "}
                 <a

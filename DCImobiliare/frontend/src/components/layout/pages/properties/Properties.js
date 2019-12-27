@@ -64,7 +64,7 @@ export class Properties extends Component {
       : 0;
   }
 
-  sortBysurface_mpDesc(a, b) {
+  sortBySurfaceDesc(a, b) {
     return a.surface_mp < b.surface_mp
       ? 1
       : a.surface_mp > b.surface_mp

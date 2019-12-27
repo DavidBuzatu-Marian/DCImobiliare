@@ -49,7 +49,7 @@ export default class BannerTableServices extends Component {
 
         <div className="h-100 left-0 top-0">
           <div className="container">
-            <div className="d-sm-block d-md-none d-lg-none d-xl-none">
+            <div className="d-sm-block d-md-block d-lg-none d-xl-none">
               <div>
                 <ul className="nav justify-content-center ">
                   <li className="nav-item">
