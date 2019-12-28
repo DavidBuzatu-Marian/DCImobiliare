@@ -18,7 +18,7 @@ def sendEmail(request):
             subject,
             message,
             'david.efno@gmail.com',
-            ['bboy_efno@yahoo.com']
+            ['daniel.chitu886@yahoo.com']
         ).send()
     except BadHeaderError:
         return HttpResponse('Invalid header found.')
