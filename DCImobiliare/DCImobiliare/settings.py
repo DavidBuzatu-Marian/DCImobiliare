@@ -19,11 +19,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
+# Read secret key from a file
+with open(os.path.join(BASE_DIR, 'secret', 'secret_key.txt')) as f:
+    SECRET_KEY = f.read().strip()
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'nlt2hu1sdy)f5xojg%0ipuowqt%cixo&x&l(^!=h1_kc16#mfc'
+# SECRET_KEY = 'nlt2hu1sdy)f5xojg%0ipuowqt%cixo&x&l(^!=h1_kc16#mfc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -149,3 +152,11 @@ ENV_PATH = os.path.abspath(os.path.dirname(__file__))
 MEDIA_ROOT = os.path.join(ENV_PATH, 'static', 'media')
 MEDIA_URL = '/media/'
 # STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
+X_FRAME_OPTIONS = 'DENY'
+SESSION_COOKIE_SECURE = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_HSTS_PRELOAD = True

@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faInstagram,
-  faGoogle
-} from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 export default class Footer extends Component {
   render() {
     return (
@@ -32,12 +28,6 @@ export default class Footer extends Component {
                   >
                     <FontAwesomeIcon
                       icon={faInstagram}
-                      className="fa-lg white-text mr-md-5 mr-3 fa-2x"
-                    />
-                  </a>
-                  <a className="google-ic" href="#">
-                    <FontAwesomeIcon
-                      icon={faGoogle}
                       className="fa-lg white-text mr-md-5 mr-3 fa-2x"
                     />
                   </a>
