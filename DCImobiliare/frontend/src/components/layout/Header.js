@@ -25,7 +25,12 @@ export default class Header extends Component {
   };
 
   hideBar = () => {
-    this.setActiveNavBar(window);
+    let windowHrefSplitted = window.location.href.split("/");
+    windowHrefSplitted.includes("terms-and-conditions") ||
+    windowHrefSplitted.includes("properties")
+      ? ""
+      : this.setActiveNavBar(window);
+
     const { isHidden } = this.state;
     window.scrollY == 0
       ? this.setState({

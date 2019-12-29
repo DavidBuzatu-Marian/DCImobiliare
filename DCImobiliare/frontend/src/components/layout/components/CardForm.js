@@ -15,7 +15,7 @@ export default class CardForm extends Component {
   render() {
     return (
       <div
-        className="col-lg-5 col-xl-4 col-md-8 col-sm-8 col-xs-8 mt-5 shadow p-3 mb-5 bg-white rounded margin-auto-md"
+        className="col-lg-5 col-xl-4 col-md-8 col-sm-8 col-xs-8 mt-5 shadow p-3 mb-5 bg-white rounded margin-auto-md margin-top-md"
         data-lax-translate-y="0 0, 400 -50"
         data-lax-anchor={this.props.anchor}
       >

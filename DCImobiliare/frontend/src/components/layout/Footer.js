@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 export default class Footer extends Component {
   render() {
     return (
@@ -54,6 +55,11 @@ export default class Footer extends Component {
               </div>
             </div>
             <div className="col-md-6 footer-copyright text-center py-5 mt-2">
+              <div>
+                <Link to={`/terms-and-conditions/`}>
+                  <h3>Termeni și condiții</h3>
+                </Link>
+              </div>
               <div>
                 Icons made by{" "}
                 <a

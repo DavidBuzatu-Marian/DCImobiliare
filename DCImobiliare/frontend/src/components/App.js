@@ -9,6 +9,7 @@ import { Properties } from "./layout/pages/properties/Properties";
 import { Property } from "./layout/pages/properties/Property";
 import { getProperties, getProperty } from "../actions/properties";
 import lax from "lax.js";
+import TermsConditions from "./layout/pages/legal/TermsConditions";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -47,6 +48,11 @@ class App extends Component {
                 exact
                 path="/properties/:id"
                 render={props => <Property {...props} />}
+              />
+              <Route
+                exact
+                path="/terms-and-conditions/"
+                component={TermsConditions}
               />
             </Switch>
             <Footer />

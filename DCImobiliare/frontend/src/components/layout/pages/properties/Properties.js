@@ -211,7 +211,6 @@ export class Properties extends Component {
   render() {
     return (
       <Fragment>
-        <h2>Offers</h2>
         {this.state.isLoading ? (
           <div className="sweet-loading" style={{ marginTop: "120px" }}>
             <BarLoader
