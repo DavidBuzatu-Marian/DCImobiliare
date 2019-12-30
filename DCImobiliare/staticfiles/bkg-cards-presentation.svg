@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-custom_1);
+      }
+
+      .cls-2 {
+        fill: #5fb881;
+        opacity: 0.46;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #707070;
+      }
+
+      .cls-3 {
+        fill: #5b9270;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+
+      .cls-5 {
+        fill: none;
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-custom_1">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="custom_1" data-name="custom – 1" class="cls-1">
+    <rect class="cls-6" width="512" height="512"/>
+    <g id="Ellipse_1" data-name="Ellipse 1" class="cls-2" transform="translate(114 114)">
+      <circle class="cls-4" cx="142" cy="142" r="142"/>
+      <circle class="cls-5" cx="142" cy="142" r="141.5"/>
+    </g>
+    <path id="Path_1" data-name="Path 1" class="cls-3" d="M-107,314s79.048-24.4,170,32c25.1,15.567,84.783,58.567,112,86,126,127,724-37,128,147S-107,314-107,314Z" transform="translate(0 7)"/>
+  </g>
+</svg>

@@ -1,0 +1,420 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1, .cls-11 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-Web_1920_1);
+      }
+
+      .cls-3 {
+        fill: #e0d2d1;
+      }
+
+      .cls-3, .cls-7 {
+        stroke: #e0d2d1;
+      }
+
+      .cls-4, .cls-5, .cls-7 {
+        fill: #816b6b;
+      }
+
+      .cls-4, .cls-9 {
+        stroke: #707070;
+      }
+
+      .cls-5 {
+        stroke: #816b6b;
+      }
+
+      .cls-6 {
+        fill: #ece0df;
+      }
+
+      .cls-6, .cls-8 {
+        stroke: rgba(159,159,159,0.68);
+      }
+
+      .cls-8 {
+        fill: #b9acab;
+      }
+
+      .cls-9 {
+        fill: #685755;
+      }
+
+      .cls-10 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-11 {
+        stroke: #fff;
+      }
+
+      .cls-12 {
+        stroke: none;
+      }
+
+      .cls-13 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="1920" height="2"/>
+    </clipPath>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" class="cls-2">
+    <rect class="cls-13" width="1920" height="1080"/>
+    <g id="Building1" transform="translate(42 303.632)">
+      <g id="Rectangle_1" data-name="Rectangle 1" class="cls-3" transform="translate(217 273.368)">
+        <rect class="cls-12" width="182" height="346"/>
+        <rect class="cls-1" x="0.5" y="0.5" width="181" height="345"/>
+      </g>
+      <g id="Group_1" data-name="Group 1" transform="translate(241.074 295.958)">
+        <g id="Rectangle_2" data-name="Rectangle 2" class="cls-4" transform="translate(-0.074 0.41)">
+          <rect class="cls-12" width="26" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="25" height="32"/>
+        </g>
+        <g id="Rectangle_3" data-name="Rectangle 3" class="cls-4" transform="translate(36.926 0.41)">
+          <rect class="cls-12" width="25" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="24" height="32"/>
+        </g>
+        <g id="Rectangle_4" data-name="Rectangle 4" class="cls-4" transform="translate(73.926 0.41)">
+          <rect class="cls-12" width="25" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="24" height="32"/>
+        </g>
+        <g id="Rectangle_5" data-name="Rectangle 5" class="cls-4" transform="translate(109.926 0.41)">
+          <rect class="cls-12" width="26" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="25" height="32"/>
+        </g>
+      </g>
+      <g id="Group_2" data-name="Group 2" transform="translate(241.074 340.472)">
+        <g id="Rectangle_2-2" data-name="Rectangle 2" class="cls-4" transform="translate(-0.074 -0.104)">
+          <rect class="cls-12" width="26" height="34"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="25" height="33"/>
+        </g>
+        <g id="Rectangle_3-2" data-name="Rectangle 3" class="cls-4" transform="translate(36.926 -0.104)">
+          <rect class="cls-12" width="25" height="34"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="24" height="33"/>
+        </g>
+        <g id="Rectangle_4-2" data-name="Rectangle 4" class="cls-4" transform="translate(73.926 -0.104)">
+          <rect class="cls-12" width="25" height="34"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="24" height="33"/>
+        </g>
+        <g id="Rectangle_5-2" data-name="Rectangle 5" class="cls-4" transform="translate(109.926 -0.104)">
+          <rect class="cls-12" width="26" height="34"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="25" height="33"/>
+        </g>
+      </g>
+      <g id="Group_3" data-name="Group 3" transform="translate(241.074 384.987)">
+        <g id="Rectangle_2-3" data-name="Rectangle 2" class="cls-4" transform="translate(-0.074 0.381)">
+          <rect class="cls-12" width="26" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="25" height="32"/>
+        </g>
+        <g id="Rectangle_3-3" data-name="Rectangle 3" class="cls-4" transform="translate(36.926 0.381)">
+          <rect class="cls-12" width="25" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="24" height="32"/>
+        </g>
+        <g id="Rectangle_4-3" data-name="Rectangle 4" class="cls-4" transform="translate(73.926 0.381)">
+          <rect class="cls-12" width="25" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="24" height="32"/>
+        </g>
+        <g id="Rectangle_5-3" data-name="Rectangle 5" class="cls-4" transform="translate(109.926 0.381)">
+          <rect class="cls-12" width="26" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="25" height="32"/>
+        </g>
+      </g>
+      <g id="Group_4" data-name="Group 4" transform="translate(241.074 429.501)">
+        <g id="Rectangle_2-4" data-name="Rectangle 2" class="cls-4" transform="translate(-0.074 -0.133)">
+          <rect class="cls-12" width="26" height="34"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="25" height="33"/>
+        </g>
+        <g id="Rectangle_3-4" data-name="Rectangle 3" class="cls-4" transform="translate(36.926 -0.133)">
+          <rect class="cls-12" width="25" height="34"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="24" height="33"/>
+        </g>
+        <g id="Rectangle_4-4" data-name="Rectangle 4" class="cls-4" transform="translate(73.926 -0.133)">
+          <rect class="cls-12" width="25" height="34"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="24" height="33"/>
+        </g>
+        <g id="Rectangle_5-4" data-name="Rectangle 5" class="cls-4" transform="translate(109.926 -0.133)">
+          <rect class="cls-12" width="26" height="34"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="25" height="33"/>
+        </g>
+      </g>
+      <g id="Group_5" data-name="Group 5" transform="translate(241.074 474.015)">
+        <g id="Rectangle_2-5" data-name="Rectangle 2" class="cls-4" transform="translate(-0.074 0.353)">
+          <rect class="cls-12" width="26" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="25" height="32"/>
+        </g>
+        <g id="Rectangle_3-5" data-name="Rectangle 3" class="cls-4" transform="translate(36.926 0.353)">
+          <rect class="cls-12" width="25" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="24" height="32"/>
+        </g>
+        <g id="Rectangle_4-5" data-name="Rectangle 4" class="cls-4" transform="translate(73.926 0.353)">
+          <rect class="cls-12" width="25" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="24" height="32"/>
+        </g>
+        <g id="Rectangle_5-5" data-name="Rectangle 5" class="cls-4" transform="translate(109.926 0.353)">
+          <rect class="cls-12" width="26" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="25" height="32"/>
+        </g>
+      </g>
+      <g id="Group_6" data-name="Group 6" transform="translate(241.074 518.529)">
+        <g id="Rectangle_2-6" data-name="Rectangle 2" class="cls-4" transform="translate(-0.074 -0.162)">
+          <rect class="cls-12" width="26" height="34"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="25" height="33"/>
+        </g>
+        <g id="Rectangle_3-6" data-name="Rectangle 3" class="cls-4" transform="translate(36.926 -0.162)">
+          <rect class="cls-12" width="25" height="34"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="24" height="33"/>
+        </g>
+        <g id="Rectangle_4-6" data-name="Rectangle 4" class="cls-4" transform="translate(73.926 -0.162)">
+          <rect class="cls-12" width="25" height="34"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="24" height="33"/>
+        </g>
+        <g id="Rectangle_5-6" data-name="Rectangle 5" class="cls-4" transform="translate(109.926 -0.162)">
+          <rect class="cls-12" width="26" height="34"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="25" height="33"/>
+        </g>
+      </g>
+      <g id="Group_7" data-name="Group 7" transform="translate(241.074 563.044)">
+        <g id="Rectangle_2-7" data-name="Rectangle 2" class="cls-4" transform="translate(-0.074 0.324)">
+          <rect class="cls-12" width="26" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="25" height="32"/>
+        </g>
+        <g id="Rectangle_3-7" data-name="Rectangle 3" class="cls-4" transform="translate(36.926 0.324)">
+          <rect class="cls-12" width="25" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="24" height="32"/>
+        </g>
+        <g id="Rectangle_4-7" data-name="Rectangle 4" class="cls-4" transform="translate(73.926 0.324)">
+          <rect class="cls-12" width="25" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="24" height="32"/>
+        </g>
+        <g id="Rectangle_5-7" data-name="Rectangle 5" class="cls-4" transform="translate(109.926 0.324)">
+          <rect class="cls-12" width="26" height="33"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="25" height="32"/>
+        </g>
+      </g>
+      <g id="Rectangle_6" data-name="Rectangle 6" class="cls-3" transform="translate(240 244.368)">
+        <rect class="cls-12" width="136" height="36"/>
+        <rect class="cls-1" x="0.5" y="0.5" width="135" height="35"/>
+      </g>
+      <g id="Group_8" data-name="Group 8" transform="translate(246.525 254.169)">
+        <g id="Rectangle_7" data-name="Rectangle 7" class="cls-4" transform="translate(0.475 0.199)">
+          <rect class="cls-12" width="3" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="2" height="18"/>
+        </g>
+        <g id="Rectangle_8" data-name="Rectangle 8" class="cls-4" transform="translate(5.475 0.199)">
+          <rect class="cls-12" width="3" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="2" height="18"/>
+        </g>
+        <g id="Rectangle_9" data-name="Rectangle 9" class="cls-4" transform="translate(10.475 0.199)">
+          <rect class="cls-12" width="3" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="2" height="18"/>
+        </g>
+        <g id="Rectangle_10" data-name="Rectangle 10" class="cls-4" transform="translate(15.475 0.199)">
+          <rect class="cls-12" width="3" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="2" height="18"/>
+        </g>
+      </g>
+      <g id="Group_9" data-name="Group 9" transform="translate(266.511 254.169)">
+        <g id="Rectangle_7-2" data-name="Rectangle 7" class="cls-4" transform="translate(0.489 0.199)">
+          <rect class="cls-12" width="3" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="2" height="18"/>
+        </g>
+        <g id="Rectangle_8-2" data-name="Rectangle 8" class="cls-4" transform="translate(5.489 0.199)">
+          <rect class="cls-12" width="3" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="2" height="18"/>
+        </g>
+        <g id="Rectangle_9-2" data-name="Rectangle 9" class="cls-4" transform="translate(10.489 0.199)">
+          <rect class="cls-12" width="3" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="2" height="18"/>
+        </g>
+        <g id="Rectangle_10-2" data-name="Rectangle 10" class="cls-4" transform="translate(15.489 0.199)">
+          <rect class="cls-12" width="3" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="2" height="18"/>
+        </g>
+      </g>
+      <g id="Group_10" data-name="Group 10" transform="translate(286.497 254.169)">
+        <g id="Rectangle_7-3" data-name="Rectangle 7" class="cls-4" transform="translate(-0.497 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+        <g id="Rectangle_8-3" data-name="Rectangle 8" class="cls-4" transform="translate(4.503 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+        <g id="Rectangle_9-3" data-name="Rectangle 9" class="cls-4" transform="translate(9.503 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+        <g id="Rectangle_10-3" data-name="Rectangle 10" class="cls-4" transform="translate(14.503 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+      </g>
+      <g id="Group_11" data-name="Group 11" transform="translate(306.483 254.169)">
+        <g id="Rectangle_7-4" data-name="Rectangle 7" class="cls-4" transform="translate(-0.483 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+        <g id="Rectangle_8-4" data-name="Rectangle 8" class="cls-4" transform="translate(4.517 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+        <g id="Rectangle_9-4" data-name="Rectangle 9" class="cls-4" transform="translate(9.517 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+        <g id="Rectangle_10-4" data-name="Rectangle 10" class="cls-4" transform="translate(14.517 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+      </g>
+      <g id="Group_12" data-name="Group 12" transform="translate(326.469 254.169)">
+        <g id="Rectangle_7-5" data-name="Rectangle 7" class="cls-4" transform="translate(-0.469 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+        <g id="Rectangle_8-5" data-name="Rectangle 8" class="cls-4" transform="translate(4.531 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+        <g id="Rectangle_9-5" data-name="Rectangle 9" class="cls-4" transform="translate(9.531 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+        <g id="Rectangle_10-5" data-name="Rectangle 10" class="cls-4" transform="translate(14.531 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+      </g>
+      <g id="Group_13" data-name="Group 13" transform="translate(346.455 254.169)">
+        <g id="Rectangle_7-6" data-name="Rectangle 7" class="cls-4" transform="translate(-0.455 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+        <g id="Rectangle_8-6" data-name="Rectangle 8" class="cls-4" transform="translate(4.545 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+        <g id="Rectangle_9-6" data-name="Rectangle 9" class="cls-4" transform="translate(9.545 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+        <g id="Rectangle_10-6" data-name="Rectangle 10" class="cls-4" transform="translate(14.545 0.199)">
+          <rect class="cls-12" width="4" height="19"/>
+          <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+        </g>
+      </g>
+      <g id="Rectangle_7-7" data-name="Rectangle 7" class="cls-4" transform="translate(366 254.368)">
+        <rect class="cls-12" width="4" height="19"/>
+        <rect class="cls-1" x="0.5" y="0.5" width="3" height="18"/>
+      </g>
+      <g id="Rectangle_11" data-name="Rectangle 11" class="cls-5" transform="translate(232 242.368)">
+        <rect class="cls-12" width="153" height="5"/>
+        <rect class="cls-1" x="0.5" y="0.5" width="152" height="4"/>
+      </g>
+      <g id="Rectangle_12" data-name="Rectangle 12" class="cls-4" transform="translate(244 236.368)">
+        <rect class="cls-12" width="128" height="6"/>
+        <rect class="cls-1" x="0.5" y="0.5" width="127" height="5"/>
+      </g>
+    </g>
+    <g id="Building2" transform="translate(995 -207)">
+      <path id="Path_1" data-name="Path 1" class="cls-6" d="M607.6,1116.634V523.574L687.7,443.481v686.08Z"/>
+      <g id="Group_14" data-name="Group 14">
+        <path id="Path_3" data-name="Path 3" class="cls-7" d="M607.6,757.168V480.8l24.914-37.323V763.192Z" transform="translate(11 329.256)"/>
+        <path id="Path_4" data-name="Path 4" class="cls-7" d="M607.6,814.527v-326.9l24.914-44.147V821.653Z" transform="translate(41 270.795)"/>
+      </g>
+      <g id="Group_16" data-name="Group 16" transform="translate(0 -234)">
+        <path id="Path_3-2" data-name="Path 3" class="cls-7" d="M607.6,757.168V480.8l24.914-37.323V763.192Z" transform="translate(11 329.256)"/>
+        <path id="Path_4-2" data-name="Path 4" class="cls-7" d="M607.6,814.527v-326.9l24.914-44.147V821.653Z" transform="translate(41 270.795)"/>
+      </g>
+      <path id="Path_2" data-name="Path 2" class="cls-8" d="M687.7,1116.634V523.574L607.6,443.481v686.08Z" transform="translate(80)"/>
+    </g>
+    <g id="Rectangle_13" data-name="Rectangle 13" class="cls-9" transform="translate(0 995)">
+      <rect class="cls-12" width="1920" height="85"/>
+      <rect class="cls-1" x="0.5" y="0.5" width="1919" height="84"/>
+    </g>
+    <g id="Repeat_Grid_1" data-name="Repeat Grid 1" class="cls-10" transform="translate(37.5 1037)">
+      <g transform="translate(-37.5 -1037)">
+        <line id="Line_1" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(42.5 -1037)">
+        <line id="Line_1-2" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(122.5 -1037)">
+        <line id="Line_1-3" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(202.5 -1037)">
+        <line id="Line_1-4" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(282.5 -1037)">
+        <line id="Line_1-5" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(362.5 -1037)">
+        <line id="Line_1-6" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(442.5 -1037)">
+        <line id="Line_1-7" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(522.5 -1037)">
+        <line id="Line_1-8" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(602.5 -1037)">
+        <line id="Line_1-9" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(682.5 -1037)">
+        <line id="Line_1-10" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(762.5 -1037)">
+        <line id="Line_1-11" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(842.5 -1037)">
+        <line id="Line_1-12" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(922.5 -1037)">
+        <line id="Line_1-13" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(1002.5 -1037)">
+        <line id="Line_1-14" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(1082.5 -1037)">
+        <line id="Line_1-15" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(1162.5 -1037)">
+        <line id="Line_1-16" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(1242.5 -1037)">
+        <line id="Line_1-17" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(1322.5 -1037)">
+        <line id="Line_1-18" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(1402.5 -1037)">
+        <line id="Line_1-19" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(1482.5 -1037)">
+        <line id="Line_1-20" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(1562.5 -1037)">
+        <line id="Line_1-21" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(1642.5 -1037)">
+        <line id="Line_1-22" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(1722.5 -1037)">
+        <line id="Line_1-23" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+      <g transform="translate(1802.5 -1037)">
+        <line id="Line_1-24" data-name="Line 1" class="cls-11" x2="60" transform="translate(37.5 1037.5)"/>
+      </g>
+    </g>
+  </g>
+</svg>
