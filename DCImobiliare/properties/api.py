@@ -1,4 +1,4 @@
-from properties.models import Property, Images
+from DCImobiliare.properties.models import Property, Images
 from rest_framework import viewsets, permissions
 from .serializers import PropertySerializer
 from django.core import serializers

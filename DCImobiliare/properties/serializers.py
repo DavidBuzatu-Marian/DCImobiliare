@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from properties.models import Property, Images
+from DCImobiliare.properties.models import Property, Images
 
 
 class ImagesSerializer(serializers.ModelSerializer):
