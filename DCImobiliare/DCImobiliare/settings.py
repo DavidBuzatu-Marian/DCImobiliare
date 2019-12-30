@@ -20,16 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# Read secret key from a file
-with open(os.path.join(BASE_DIR, 'secret', 'secret_key.txt')) as f:
-    SECRET_KEY = f.read().strip()
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'nlt2hu1sdy)f5xojg%0ipuowqt%cixo&x&l(^!=h1_kc16#mfc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sleepy-brushlands-24324.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
