@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'DCImobiliare.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATES = [
     {
