@@ -38,10 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'properties',
+    'DCImobiliare.properties',
     'corsheaders',
     'rest_framework',
-    'frontend'
+    'DCImobiliare.frontend'
 ]
 
 MIDDLEWARE = [
