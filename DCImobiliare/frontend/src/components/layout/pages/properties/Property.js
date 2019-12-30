@@ -89,7 +89,7 @@ export class Property extends Component {
               </div>
               <Carousel>
                 {property.images.map(image => (
-                  <img key={image.id} src={`/static/${image.image}`} />
+                  <img key={image.id} src={image.image} />
                 ))}
               </Carousel>
               <div className="row p-3">
