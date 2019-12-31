@@ -21,12 +21,12 @@ export default class BannerServices extends Component {
         <Title
           title="Despre"
           anchor="#last-td"
-          yValue="40"
+          yValue="100"
           customID="aboutTitle"
         ></Title>
         <CardsContainer
           anchor="#last-td"
-          yValue="180"
+          yValue="100"
           customID="about"
         ></CardsContainer>
         <div className="bg-parallax bg-overlay-black-8 " id="form-toggle"></div>

@@ -92,78 +92,6 @@ input[type="email"]:focus {
   text-decoration: none !important;
 }
 
-/* .background-full-width-section1::before {
-  content: "";
-  position: absolute;
-  background-image: url("/static/Cloud1.svg");
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  top: 75%;
-  animation: shift 2.5s infinite alternate;
-  -webkit-animation: shift 2.5s infinite alternate;
-}
-
-.background-full-width-section1::after {
-  content: "";
-  position: absolute;
-  background-image: url("/static/Cloud2.svg");
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  top: 75%;
-  animation: shift2 1.5s infinite alternate;
-  -webkit-animation: shift2 1.5s infinite alternate;
-}
-
-.bg-clouds::before {
-  content: "";
-  position: absolute;
-  background-image: url("/static/Cloud3.svg");
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  top: 78%;
-  animation: shift3 1.25s infinite alternate;
-  -webkit-animation: shift3 1.25s infinite alternate;
-}
-
-.bg-clouds::after {
-  content: "";
-  position: absolute;
-  background-image: url("/static/Cloud4.svg");
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  top: 50%;
-  animation: shift 1.5s infinite alternate;
-  -webkit-animation: shift 1.5s infinite alternate;
-}
-
-.bg-clouds2::before {
-  content: "";
-  position: absolute;
-  background-image: url("/static/Cloud5.svg");
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  top: 18%;
-  animation: shift2 1.25s infinite alternate;
-  -webkit-animation: shift2 1.25s infinite alternate;
-}
-
-.bg-clouds2::after {
-  content: "";
-  position: absolute;
-  background-image: url("/static/Cloud6.svg");
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  top: 18%;
-  animation: shift4 2.25s infinite alternate;
-  -webkit-animation: shift4 2.25s infinite alternate;
-} */
-
 .overflow-x-hidden {
   overflow-x: hidden;
 }
@@ -341,7 +269,7 @@ input[type="email"]:focus {
 
 @media (max-width: 576px) {
   .buildings-bkg {
-    bottom: 35% !important;
+    bottom: 60% !important;
     right: 50% !important;
   }
 }
