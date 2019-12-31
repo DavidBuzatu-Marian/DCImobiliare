@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'DCImobiliare.properties',
     'corsheaders',
     'rest_framework',
-    'DCImobiliare.frontend'
+    'DCImobiliare.frontend',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -130,11 +131,11 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'media'),
+    os.path.join(BASE_DIR, 'mediafiles'),
 )
 # ENV_PATH = os.path.abspath(os.path.dirname(__file__))
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
-MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
+# MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -151,9 +152,8 @@ EMAIL_HOST_USER = 'david.efno@gmail.com'
 EMAIL_HOST_PASSWORD = 'pzunlczcddkbvgxr'
 
 
-ENV_PATH = os.path.abspath(os.path.dirname(__file__))
-# MEDIA_ROOT = os.path.join(ENV_PATH, 'static', 'media')
-# MEDIA_URL = '/media/'
+# ENV_PATH = os.path.abspath(os.path.dirname(__file__))
+
 # STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
 X_FRAME_OPTIONS = 'DENY'
 SESSION_COOKIE_SECURE = True
@@ -170,6 +170,26 @@ DATABASES['default'].update(db_from_env)
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = 'eu-central-1'  # e.g. us-east-2
+
+AWS_DEFAULT_ACL = 'public-read'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+
+# Tell django-storages the domain to use to refer to static files.
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+MEDIAFILES_LOCATION = 'mediafiles'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+PUBLIC_MEDIA_LOCATION = 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+# Tell the staticfiles app to use S3Boto3 storage when writing the collected static files (when
+# you run `collectstatic`).
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # LOGGING = {
 #     'version': 1,
