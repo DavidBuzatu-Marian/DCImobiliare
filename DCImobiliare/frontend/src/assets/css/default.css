@@ -191,8 +191,8 @@ input[type="email"]:focus {
   }
   .title-extra-large {
     text-align: center !important;
-    font-size: 3.5rem !important;
-    line-height: 3.79rem !important;
+    font-size: 3rem !important;
+    line-height: 2.8rem !important;
   }
   .title-very-large {
     font-size: 3.55rem !important;
@@ -231,6 +231,9 @@ input[type="email"]:focus {
 }
 
 @media (max-width: 992px) {
+  .display-none {
+    display: none;
+  }
   .margin-top-md {
     margin-top: 150px !important;
   }
@@ -258,12 +261,6 @@ input[type="email"]:focus {
   .buildings-bkg {
     bottom: 35% !important;
     right: 15% !important;
-  }
-}
-
-@media (max-width: 992px) {
-  .display-none {
-    display: none;
   }
 }
 
