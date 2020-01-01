@@ -26,22 +26,20 @@ class App extends Component {
     lax.update(window.scrollY);
   }
   render() {
+    const history = createBrowserHistory();
+
+    history.listen(_ => {
+      window.scrollTo(0, 0);
+    });
     return (
       <Router>
         <Fragment>
           <Header />
           <div className="h-100 left-0 position-absolute top-0 w-100">
             <Switch>
+              <Route exact path="/" component={Home} history={history} />
               <Route
-                exact
-                path="/"
-                component={Home}
-                onUpdate={() => window.scrollTo(0, 0)}
-                history={createBrowserHistory()}
-              />
-              <Route
-                onUpdate={() => window.scrollTo(0, 0)}
-                history={createBrowserHistory()}
+                history={history}
                 exact
                 path="/properties/"
                 render={props => (
@@ -53,15 +51,13 @@ class App extends Component {
                 )}
               />
               <Route
-                onUpdate={() => window.scrollTo(0, 0)}
-                history={createBrowserHistory()}
+                history={history}
                 exact
                 path="/properties/:id"
                 render={props => <Property {...props} />}
               />
               <Route
-                onUpdate={() => window.scrollTo(0, 0)}
-                history={createBrowserHistory()}
+                history={history}
                 exact
                 path="/terms-and-conditions/"
                 component={TermsConditions}
