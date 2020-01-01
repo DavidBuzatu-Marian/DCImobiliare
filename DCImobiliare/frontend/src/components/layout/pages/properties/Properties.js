@@ -223,7 +223,7 @@ export class Properties extends Component {
           </div>
         ) : (
           <div className="container" style={{ marginTop: "120px" }}>
-            <div className="row align-items-center margin-sm">
+            <div className="row align-items-center">
               <div className="dropdown">
                 <button
                   className="btn btn-secondary dropdown-toggle"
@@ -302,7 +302,7 @@ export class Properties extends Component {
                 </div>
               </div>
             </div>
-            <div className="row align-items-center margin-sm">
+            <div className="row align-items-center">
               <InfiniteScroll
                 dataLength={this.state.properties.length}
                 next={this.nextData}
