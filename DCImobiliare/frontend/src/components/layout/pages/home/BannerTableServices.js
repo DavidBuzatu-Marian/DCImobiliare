@@ -683,7 +683,7 @@ export default class BannerTableServices extends Component {
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">
+                    <th scope="row" id="last-td">
                       <div className="table-h-no-space table-h-secondary-font-size">
                         Extrasele de carte funciară
                       </div>
@@ -842,7 +842,6 @@ export default class BannerTableServices extends Component {
                       </svg>
                     </td>
                     <td
-                      id="last-td"
                       className={`${
                         this.state.activeRepresentation ? "" : "display-none"
                       }`}

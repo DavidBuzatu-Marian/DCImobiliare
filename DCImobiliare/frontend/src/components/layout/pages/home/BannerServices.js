@@ -29,9 +29,8 @@ export default class BannerServices extends Component {
           yValue="100"
           customID="about"
         ></CardsContainer>
-        <div className="bg-parallax bg-overlay-black-8 " id="form-toggle"></div>
 
-        <div className="h-100 left-0 top-0 w-100 background-full-width-section2">
+        <div className="h-100 left-0 top-0 w-100 background-full-width-section2 mt-5">
           <div className="row align-items-center h-100">
             <div className="col-lg-6 col-xl-7 col-sm-12 col-md-12 col-xs-12 text-center-md">
               <Title

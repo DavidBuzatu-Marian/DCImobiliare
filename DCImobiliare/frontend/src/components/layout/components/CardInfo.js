@@ -7,7 +7,10 @@ export default class CardInfo extends Component {
 
   render() {
     return (
-      <div className="col-lg-4 col-md-4 card card-cascade mb-5 mt-3 no-border p-3 background-presentation">
+      <div
+        className="col-lg-4 col-md-4 card card-cascade mb-5 mt-3 no-border p-3 background-presentation"
+        id={this.props.id}
+      >
         <div className="card-body card-body-cascade text-center p-3 ">
           <img
             src={`${this.props.img}`}
