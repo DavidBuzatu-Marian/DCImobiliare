@@ -8,6 +8,7 @@ import "../assets/css/default.css";
 import { Properties } from "./layout/pages/properties/Properties";
 import { Property } from "./layout/pages/properties/Property";
 import { getProperties, getProperty } from "../actions/properties";
+import { createBrowserHistory } from "history";
 import lax from "lax.js";
 import TermsConditions from "./layout/pages/legal/TermsConditions";
 class App extends Component {
