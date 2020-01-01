@@ -167,6 +167,9 @@
     margin-left: 1rem !important;
     margin-right: 1rem !important;
   }
+  .body-form {
+    padding: 0.25rem !important;
+  }
 
   /* .table-price {
     font-size: 1.35rem !important;

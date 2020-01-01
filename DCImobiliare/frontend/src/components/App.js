@@ -32,8 +32,14 @@ class App extends Component {
           <Header />
           <div className="h-100 left-0 position-absolute top-0 w-100">
             <Switch>
-              <Route exact path="/" component={Home} />
               <Route
+                exact
+                path="/"
+                component={Home}
+                onUpdate={() => window.scrollTo(0, 0)}
+              />
+              <Route
+                onUpdate={() => window.scrollTo(0, 0)}
                 exact
                 path="/properties/"
                 render={props => (
@@ -45,11 +51,13 @@ class App extends Component {
                 )}
               />
               <Route
+                onUpdate={() => window.scrollTo(0, 0)}
                 exact
                 path="/properties/:id"
                 render={props => <Property {...props} />}
               />
               <Route
+                onUpdate={() => window.scrollTo(0, 0)}
                 exact
                 path="/terms-and-conditions/"
                 component={TermsConditions}
