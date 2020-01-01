@@ -37,9 +37,11 @@ class App extends Component {
                 path="/"
                 component={Home}
                 onUpdate={() => window.scrollTo(0, 0)}
+                history={createBrowserHistory()}
               />
               <Route
                 onUpdate={() => window.scrollTo(0, 0)}
+                history={createBrowserHistory()}
                 exact
                 path="/properties/"
                 render={props => (
@@ -52,12 +54,14 @@ class App extends Component {
               />
               <Route
                 onUpdate={() => window.scrollTo(0, 0)}
+                history={createBrowserHistory()}
                 exact
                 path="/properties/:id"
                 render={props => <Property {...props} />}
               />
               <Route
                 onUpdate={() => window.scrollTo(0, 0)}
+                history={createBrowserHistory()}
                 exact
                 path="/terms-and-conditions/"
                 component={TermsConditions}

@@ -159,7 +159,7 @@ export class Form extends Component {
     return (
       <div className={divClass}>
         <form
-          className="text-center border border-light p-5 bodyForm"
+          className="text-center border border-light p-5 body-form"
           onSubmit={this.onSubmit}
         >
           <DjangoCSRFToken />
