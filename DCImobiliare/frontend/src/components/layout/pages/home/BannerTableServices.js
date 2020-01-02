@@ -864,12 +864,14 @@ export default class BannerTableServices extends Component {
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row" id="form-toggle">
-                      <div
-                        className={`table-h-no-space table-h-secondary-font-size ${
-                          this.state.activeRent ? "display-none" : ""
-                        }`}
-                      >
+                    <th
+                      scope="row"
+                      id="form-toggle"
+                      className={`${
+                        this.state.activeRent ? "display-none" : ""
+                      }`}
+                    >
+                      <div className="table-h-no-space table-h-secondary-font-size ">
                         Extrasele de carte funciară
                       </div>
                       <p className="table-p-extra ml-3 mt-3 mb-0">
