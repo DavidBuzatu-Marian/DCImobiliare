@@ -37,10 +37,10 @@ export default class Header extends Component {
     windowHrefSplitted.includes("terms-and-conditions") ||
     windowHrefSplitted.includes("properties")
       ? ""
-      : this.setActiveNavBar(window);
+      : this.setActiveNavbar(window);
   };
 
-  setActiveNavbar() {
+  setActiveNavbar(window) {
     const servicesSection = document.getElementById("servicesTitle");
     const aboutSection = document.getElementById("aboutTitle");
     if (servicesSection.getBoundingClientRect().bottom <= window.innerHeight) {
