@@ -43,9 +43,12 @@ export default class Header extends Component {
   setActiveNavbar(window) {
     const servicesSection = document.getElementById("servicesTitle");
     const aboutSection = document.getElementById("aboutTitle");
-    if (servicesSection.getBoundingClientRect().bottom <= window.innerHeight) {
+    if (
+      servicesSection !== null &&
+      servicesSection.getBoundingClientRect().bottom <= window.innerHeight
+    ) {
       if (
-        aboutSection !== undefined &&
+        aboutSection !== null &&
         aboutSection.getBoundingClientRect().bottom <= window.innerHeight
       ) {
         this.setState({
