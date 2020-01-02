@@ -30,6 +30,7 @@ export class Form extends Component {
     nameValid: false,
     pNumberValid: false,
     messageValid: false,
+    termsCheck: false,
     formValid: false,
     propertyRequest: false,
     propertyId: 0,
@@ -105,6 +106,7 @@ export class Form extends Component {
     let nameValid = this.state.nameValid;
     let pNumberValid = this.state.pNumberValid;
     let messageValid = this.state.messageValid;
+    let termsCheck = this.state.termsCheck;
 
     switch (fieldName) {
       case "email":
@@ -125,7 +127,7 @@ export class Form extends Component {
         fieldValidationErrors.message = messageValid ? "" : " field is empty";
         break;
       case "termsCheck":
-        fieldValidationErrors.termsCheck = this.state.termsCheck
+        fieldValidationErrors.termsCheck = termsCheck
           ? ""
           : " field is required";
       default:
@@ -137,7 +139,8 @@ export class Form extends Component {
         emailValid: emailValid,
         nameValid: nameValid,
         pNumberValid: pNumberValid,
-        messageValid: messageValid
+        messageValid: messageValid,
+        termsCheck: termsCheck
       },
       this.validateForm
     );
