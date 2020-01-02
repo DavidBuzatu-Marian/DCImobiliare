@@ -12,7 +12,7 @@ export default class BannerInfo extends Component {
         <div className="bg-clouds2 bg-overlay-black-8 "></div>
         <div className="h-100 left-0 top-0 w-100 background-full-width-section1">
           <div className="h-100">
-            <div className="row align-items-center h-100">
+            <div className="row align-items-center hv-100">
               <div className="col-lg-6 col-xl-6 buildings p-5">
                 <span className="m-0 mt-3 font-w-700  title-extra-large text-uppercase">
                   Bine ai venit

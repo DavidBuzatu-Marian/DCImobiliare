@@ -405,7 +405,9 @@ export default class BannerTableServices extends Component {
                   <tr>
                     <th
                       scope="row"
-                      className="table-h-no-space table-h-secondary-font-size"
+                      className={`table-h-no-space table-h-secondary-font-size ${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
                     >
                       Recomandare notar și bănci partenere
                     </th>
@@ -725,7 +727,9 @@ export default class BannerTableServices extends Component {
                   <tr>
                     <th
                       scope="row"
-                      className="table-h-no-space table-h-secondary-font-size"
+                      className={`table-h-no-space table-h-secondary-font-size ${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
                     >
                       Fotografii profesionale
                     </th>
@@ -770,7 +774,9 @@ export default class BannerTableServices extends Component {
                   <tr>
                     <th
                       scope="row"
-                      className="table-h-no-space table-h-secondary-font-size"
+                      className={`table-h-no-space table-h-secondary-font-size ${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
                     >
                       Anunț reactualizat periodic
                     </th>
@@ -814,7 +820,9 @@ export default class BannerTableServices extends Component {
                   <tr>
                     <th
                       scope="row"
-                      className="table-h-no-space table-h-secondary-font-size"
+                      className={`table-h-no-space table-h-secondary-font-size ${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
                     >
                       Comision 0% la cumpărător
                     </th>
@@ -857,7 +865,11 @@ export default class BannerTableServices extends Component {
                   </tr>
                   <tr>
                     <th scope="row" id="form-toggle">
-                      <div className="table-h-no-space table-h-secondary-font-size">
+                      <div
+                        className={`table-h-no-space table-h-secondary-font-size ${
+                          this.state.activeRent ? "" : "display-none"
+                        }`}
+                      >
                         Extrasele de carte funciară
                       </div>
                       <p className="table-p-extra ml-3 mt-3 mb-0">
@@ -893,7 +905,9 @@ export default class BannerTableServices extends Component {
                   <tr>
                     <th
                       scope="row"
-                      className="table-h-no-space table-h-secondary-font-size"
+                      className={`table-h-no-space table-h-secondary-font-size ${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
                     >
                       Promovare plătită
                     </th>
@@ -926,7 +940,9 @@ export default class BannerTableServices extends Component {
                   <tr>
                     <th
                       scope="row"
-                      className="table-h-no-space table-h-secondary-font-size"
+                      className={`table-h-no-space table-h-secondary-font-size ${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
                     >
                       Certificat energetic
                     </th>
@@ -959,7 +975,9 @@ export default class BannerTableServices extends Component {
                   <tr>
                     <th
                       scope="row"
-                      className="table-h-no-space table-h-secondary-font-size"
+                      className={`table-h-no-space table-h-secondary-font-size ${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
                     >
                       Certificat fiscal
                     </th>
@@ -992,7 +1010,9 @@ export default class BannerTableServices extends Component {
                   <tr>
                     <th
                       scope="row"
-                      className="table-h-no-space table-h-secondary-font-size"
+                      className={`table-h-no-space table-h-secondary-font-size ${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
                     >
                       Adeverința de la asociația de locatari
                     </th>
