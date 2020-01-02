@@ -77,7 +77,7 @@ export class Property extends Component {
                   <tbody>
                     <tr className="d-flex row">
                       <td className="col-4" style={{ borderTop: "0" }}>
-                        Nr. camere: <br />
+                        Nr. camere:
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -86,7 +86,7 @@ export class Property extends Component {
                         </strong>
                       </td>
                       <td className="col-4" style={{ borderTop: "0" }}>
-                        Nr. bucătării: <br />
+                        Nr. bucătării:
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -95,7 +95,7 @@ export class Property extends Component {
                         </strong>
                       </td>
                       <td className="col-4" style={{ borderTop: "0" }}>
-                        Nr. băi: <br />
+                        Nr. băi:
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -106,7 +106,7 @@ export class Property extends Component {
                     </tr>
                     <tr className="d-flex row">
                       <td className="col-4">
-                        Suprafață utilă(mp): <br />
+                        Suprafață utilă(mp):
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -115,17 +115,16 @@ export class Property extends Component {
                         </strong>
                       </td>
                       <td className="col-4">
-                        Compartimentare: <br />
+                        Nr. locuri parcare:
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
                         >
-                          {property.accomodated}
+                          {property.nr_parking_spots}
                         </strong>
                       </td>
                       <td className="col-4">
                         An construcție:
-                        <br />
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -136,7 +135,7 @@ export class Property extends Component {
                     </tr>
                     <tr className="d-flex row">
                       <td className="col-4">
-                        Confort: <br />
+                        Confort:
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -145,7 +144,7 @@ export class Property extends Component {
                         </strong>
                       </td>
                       <td className="col-4">
-                        Etaj: <br />
+                        Etaj:
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -154,7 +153,7 @@ export class Property extends Component {
                         </strong>
                       </td>
                       <td className="col-4">
-                        Nr. balcoane: <br />
+                        Nr. balcoane:
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -165,13 +164,12 @@ export class Property extends Component {
                     </tr>
                     <tr className="d-flex row">
                       <td className="col-4">
-                        Nr. locuri parcare:
-                        <br />
+                        Compartimentare:
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
                         >
-                          {property.nr_parking_spots}
+                          {property.accomodated}
                         </strong>
                       </td>
                     </tr>
