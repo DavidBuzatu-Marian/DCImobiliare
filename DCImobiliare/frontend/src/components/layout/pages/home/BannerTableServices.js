@@ -406,7 +406,7 @@ export default class BannerTableServices extends Component {
                     <th
                       scope="row"
                       className={`table-h-no-space table-h-secondary-font-size ${
-                        this.state.activeRent ? "" : "display-none"
+                        this.state.activeRent ? "display-none" : ""
                       }`}
                     >
                       Recomandare notar și bănci partenere
@@ -728,7 +728,7 @@ export default class BannerTableServices extends Component {
                     <th
                       scope="row"
                       className={`table-h-no-space table-h-secondary-font-size ${
-                        this.state.activeRent ? "" : "display-none"
+                        this.state.activeRent ? "display-none" : ""
                       }`}
                     >
                       Fotografii profesionale
@@ -775,7 +775,7 @@ export default class BannerTableServices extends Component {
                     <th
                       scope="row"
                       className={`table-h-no-space table-h-secondary-font-size ${
-                        this.state.activeRent ? "" : "display-none"
+                        this.state.activeRent ? "display-none" : ""
                       }`}
                     >
                       Anunț reactualizat periodic
@@ -821,7 +821,7 @@ export default class BannerTableServices extends Component {
                     <th
                       scope="row"
                       className={`table-h-no-space table-h-secondary-font-size ${
-                        this.state.activeRent ? "" : "display-none"
+                        this.state.activeRent ? "display-none" : ""
                       }`}
                     >
                       Comision 0% la cumpărător
@@ -867,7 +867,7 @@ export default class BannerTableServices extends Component {
                     <th scope="row" id="form-toggle">
                       <div
                         className={`table-h-no-space table-h-secondary-font-size ${
-                          this.state.activeRent ? "" : "display-none"
+                          this.state.activeRent ? "display-none" : ""
                         }`}
                       >
                         Extrasele de carte funciară
@@ -906,7 +906,7 @@ export default class BannerTableServices extends Component {
                     <th
                       scope="row"
                       className={`table-h-no-space table-h-secondary-font-size ${
-                        this.state.activeRent ? "" : "display-none"
+                        this.state.activeRent ? "display-none" : ""
                       }`}
                     >
                       Promovare plătită
@@ -941,7 +941,7 @@ export default class BannerTableServices extends Component {
                     <th
                       scope="row"
                       className={`table-h-no-space table-h-secondary-font-size ${
-                        this.state.activeRent ? "" : "display-none"
+                        this.state.activeRent ? "display-none" : ""
                       }`}
                     >
                       Certificat energetic
@@ -976,7 +976,7 @@ export default class BannerTableServices extends Component {
                     <th
                       scope="row"
                       className={`table-h-no-space table-h-secondary-font-size ${
-                        this.state.activeRent ? "" : "display-none"
+                        this.state.activeRent ? "display-none" : ""
                       }`}
                     >
                       Certificat fiscal
@@ -1011,7 +1011,7 @@ export default class BannerTableServices extends Component {
                     <th
                       scope="row"
                       className={`table-h-no-space table-h-secondary-font-size ${
-                        this.state.activeRent ? "" : "display-none"
+                        this.state.activeRent ? "display-none" : ""
                       }`}
                     >
                       Adeverința de la asociația de locatari
