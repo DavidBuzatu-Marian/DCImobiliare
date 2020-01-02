@@ -17,18 +17,21 @@ export default class Header extends Component {
       this.setState({
         propertiesLink: "active",
         servicesLink: "",
+        aboutLink: "",
         homeLink: ""
       });
     } else if (windowHrefSplitted.includes("services")) {
       this.setState({
         servicesLink: "active",
         propertiesLink: "",
+        aboutLink: "",
         homeLink: ""
       });
     } else {
       this.setState({
         homeLink: "active",
         servicesLink: "",
+        aboutLink: "",
         propertiesLink: ""
       });
     }

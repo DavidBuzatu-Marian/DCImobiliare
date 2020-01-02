@@ -77,60 +77,88 @@ export class Property extends Component {
                   <tbody>
                     <tr className="d-flex row">
                       <td className="col-4" style={{ borderTop: "0" }}>
-                        Nr. camere:{" "}
-                        <strong style={{ color: "#000005", float: "right" }}>
+                        Nr. camere: <br />
+                        <strong
+                          className="float-r-ld"
+                          style={{ color: "#000005" }}
+                        >
                           {property.nr_rooms}
                         </strong>
                       </td>
                       <td className="col-4" style={{ borderTop: "0" }}>
-                        Nr. bucătării:{" "}
-                        <strong style={{ color: "#000005", float: "right" }}>
+                        Nr. bucătării: <br />
+                        <strong
+                          className="float-r-ld"
+                          style={{ color: "#000005" }}
+                        >
                           {property.nr_kitchens}
                         </strong>
                       </td>
                       <td className="col-4" style={{ borderTop: "0" }}>
-                        Nr. băi:{" "}
-                        <strong style={{ color: "#000005", float: "right" }}>
+                        Nr. băi: <br />
+                        <strong
+                          className="float-r-ld"
+                          style={{ color: "#000005" }}
+                        >
                           {property.nr_bathrooms}
                         </strong>
                       </td>
                     </tr>
                     <tr className="d-flex row">
                       <td className="col-4">
-                        Suprafață utilă(mp):{" "}
-                        <strong style={{ color: "#000005", float: "right" }}>
+                        Suprafață utilă(mp): <br />
+                        <strong
+                          className="float-r-ld"
+                          style={{ color: "#000005" }}
+                        >
                           {property.surface_mp}
                         </strong>
                       </td>
                       <td className="col-4">
-                        Compartimentare:{" "}
-                        <strong style={{ color: "#000005", float: "right" }}>
+                        Compartimentare: <br />
+                        <strong
+                          className="float-r-ld"
+                          style={{ color: "#000005" }}
+                        >
                           {property.accomodated}
                         </strong>
                       </td>
                       <td className="col-4">
                         An construcție:
-                        <strong style={{ color: "#000005", float: "right" }}>
+                        <br />
+                        <strong
+                          className="float-r-ld"
+                          style={{ color: "#000005" }}
+                        >
                           {property.year}
                         </strong>
                       </td>
                     </tr>
                     <tr className="d-flex row">
                       <td className="col-4">
-                        Confort:{" "}
-                        <strong style={{ color: "#000005", float: "right" }}>
+                        Confort: <br />
+                        <strong
+                          className="float-r-ld"
+                          style={{ color: "#000005" }}
+                        >
                           {property.confort}
                         </strong>
                       </td>
                       <td className="col-4">
-                        Etaj:{" "}
-                        <strong style={{ color: "#000005", float: "right" }}>
+                        Etaj: <br />
+                        <strong
+                          className="float-r-ld"
+                          style={{ color: "#000005" }}
+                        >
                           {property.floor}
                         </strong>
                       </td>
                       <td className="col-4">
-                        Nr. balcoane:{" "}
-                        <strong style={{ color: "#000005", float: "right" }}>
+                        Nr. balcoane: <br />
+                        <strong
+                          className="float-r-ld"
+                          style={{ color: "#000005" }}
+                        >
                           {property.nr_balconies}
                         </strong>
                       </td>
@@ -138,7 +166,11 @@ export class Property extends Component {
                     <tr className="d-flex row">
                       <td className="col-4">
                         Nr. locuri parcare:
-                        <strong style={{ color: "#000005", float: "right" }}>
+                        <br />
+                        <strong
+                          className="float-r-ld"
+                          style={{ color: "#000005" }}
+                        >
                           {property.nr_parking_spots}
                         </strong>
                       </td>

@@ -157,6 +157,15 @@
   text-align: center;
 }
 
+.float-r-ld {
+  float: right !important;
+}
+@media (max-width: 992px) {
+  .float-r-ld {
+    float: none !important;
+  }
+}
+
 @media (max-width: 650px) {
   .view-cascade {
     margin-top: -1.5rem !important;
