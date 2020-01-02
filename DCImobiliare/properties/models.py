@@ -43,7 +43,7 @@ class Property(models.Model):
     nr_bathrooms = models.IntegerField()
     surface_mp = models.IntegerField()
     accomodated = models.CharField(
-        max_length=10, choices=ACCOMODATION_CHOICES, default=DECOMODATED)
+        max_length=20, choices=ACCOMODATION_CHOICES, default=DECOMODATED)
     confort = models.CharField(max_length=10)
     floor = models.CharField(max_length=100)
     year = models.IntegerField()
