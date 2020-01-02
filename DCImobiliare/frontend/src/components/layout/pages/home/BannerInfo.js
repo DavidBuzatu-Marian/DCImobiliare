@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { HashLink as Link } from "react-router-hash-link";
+import { Link as LinkRedirect, HashRouter as Router } from "react-router-dom";
+
 export default class BannerInfo extends Component {
   render() {
     return (

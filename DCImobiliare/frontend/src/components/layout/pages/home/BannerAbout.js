@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import Title from "../../components/Title";
+import CardsContainer from "../../components/CardsContainer";
 export default class BannerAbout extends Component {
   render() {
     return (
