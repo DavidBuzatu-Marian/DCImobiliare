@@ -15,7 +15,7 @@ export default class Header extends Component {
     let windowHrefSplitted = window.location.href.split("/");
     if (windowHrefSplitted.includes("properties")) {
       this.setState({ propertiesLink: "active" });
-    } else if (windowHrefSplitted.includes("#services")) {
+    } else if (windowHrefSplitted.includes("services")) {
       this.setState({ servicesLink: "active" });
     } else {
       this.setState({ homeLink: "active" });
@@ -32,8 +32,50 @@ export default class Header extends Component {
     this.setState({ [e.target.id]: "active" });
   };
 
+  setActiveNavbarLink = () => {
+    let windowHrefSplitted = window.location.href.split("/");
+    windowHrefSplitted.includes("terms-and-conditions") ||
+    windowHrefSplitted.includes("properties")
+      ? ""
+      : this.setActiveNavBar(window);
+  };
+
+  setActiveNavbar() {
+    const servicesSection = document.getElementById("servicesTitle");
+    const aboutSection = document.getElementById("aboutTitle");
+    if (servicesSection.getBoundingClientRect().bottom <= window.innerHeight) {
+      if (aboutSection.getBoundingClientRect().bottom <= window.innerHeight) {
+        this.setState({
+          homeLink: "",
+          servicesLink: "",
+          propertiesLink: "",
+          aboutLink: "active"
+        });
+      } else {
+        this.setState({
+          homeLink: "",
+          servicesLink: "active",
+          propertiesLink: "",
+          aboutLink: ""
+        });
+      }
+    } else {
+      this.setState({
+        homeLink: "active",
+        servicesLink: "",
+        propertiesLink: "",
+        aboutLink: ""
+      });
+    }
+  }
+
   componentDidMount() {
     this.setActiveLink();
+    window.addEventListener("scroll", this.setActiveNavbarLink);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.setActiveNavbarLink);
   }
 
   render() {
@@ -77,15 +119,16 @@ export default class Header extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                id="servicesLink"
-                smooth
-                className={`nav-link ${servicesLink}`}
-                to="/#services"
-                onClick={this.onClick}
-              >
-                Servicii
-              </Link>
+              <Router>
+                <LinkRedirect
+                  className={`nav-link ${servicesLink}`}
+                  to="/services"
+                  onClick={this.onClick}
+                  id="servicesLink"
+                >
+                  Servicii
+                </LinkRedirect>
+              </Router>
             </li>
             <li className="nav-item">
               <Link
