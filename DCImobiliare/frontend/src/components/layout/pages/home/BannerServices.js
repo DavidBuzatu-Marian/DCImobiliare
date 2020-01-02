@@ -7,12 +7,9 @@ import CardForm from "../../components/CardForm";
 export default class BannerServices extends Component {
   render() {
     return (
-      <section
-        id={"services"}
-        className=" p-0 w-100 inline-block mt-10 container"
-      >
+      <section id={"services"} className=" p-0 w-100 inline-block mt-10 ">
         <Title title="Serviciile mele" customID="servicesTitle"></Title>
-        <div className="container">
+        <div className="container text-center">
           <h4 className="text-transform-none">
             Am creat două pachete de colaborare special pentru tine!
           </h4>

@@ -158,7 +158,7 @@ export default class Header extends Component {
                   onClick={this.onClick}
                   id="propertiesLink"
                 >
-                  Cumpără/ Închiriază
+                  Portofoliu proprietăți
                 </LinkRedirect>
               </Router>
             </li>
