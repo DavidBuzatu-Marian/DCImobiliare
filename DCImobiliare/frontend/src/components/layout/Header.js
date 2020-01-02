@@ -93,10 +93,10 @@ export default class Header extends Component {
       ) {
         this.setState({
           homeLink: "",
-          servicesLink: "active",
+          servicesLink: "",
           propertiesLink: "",
           aboutLink: "",
-          contactLink: ""
+          contactLink: "active"
         });
       } else if (
         servicesSection === null &&
@@ -106,21 +106,19 @@ export default class Header extends Component {
         this.setState({
           homeLink: "",
           servicesLink: "",
-          propertiesLink: "active",
-          aboutLink: "",
-          contactLink: ""
-        });
-      } else if (
-        contactSection.getBoundingClientRect().bottom <= window.innerHeight
-      ) {
-        this.setState({
-          homeLink: "",
-          servicesLink: "",
           propertiesLink: "",
           aboutLink: "",
           contactLink: "active"
         });
-      } else {
+      } else if (servicesSection !== null && propertiesSection === null) {
+        this.setState({
+          homeLink: "",
+          servicesLink: "active",
+          propertiesLink: "",
+          aboutLink: "",
+          contactLink: ""
+        });
+      } else if (servicesSection === null && propertiesSection === null) {
         this.setState({
           homeLink: "",
           servicesLink: "",

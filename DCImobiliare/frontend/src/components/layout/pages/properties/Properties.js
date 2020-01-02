@@ -222,7 +222,11 @@ export class Properties extends Component {
             />
           </div>
         ) : (
-          <div className="container" style={{ marginTop: "120px" }}>
+          <div
+            id="properties"
+            className="container"
+            style={{ marginTop: "120px" }}
+          >
             <div className="row align-items-center">
               <div className="dropdown">
                 <button
