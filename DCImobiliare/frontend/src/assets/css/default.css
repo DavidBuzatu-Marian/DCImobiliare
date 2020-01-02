@@ -32,18 +32,20 @@ textarea {
 
 .btn-sell {
   background-color: #f7d4a3 !important;
-  color: #fbe8ff !important;
+  color: #ffffff !important;
 }
 
 .btn-sell:hover {
   background-color: #fbe8cd !important;
-  color: #fbe8ff !important;
+  color: #000000 !important;
 }
 .btn-sell-services {
+  color: #ffffff !important;
   background-color: #005720 !important;
 }
 
 .btn-sell-services:hover {
+  color: #000000 !important;
   background-color: #02804b !important;
 }
 /* 
