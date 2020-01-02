@@ -5,6 +5,7 @@ import { sendEmail, validateForm } from "../../../actions/emails";
 import DjangoCSRFToken from "django-react-csrftoken";
 import { css } from "@emotion/core";
 import BarLoader from "react-spinners/ClipLoader";
+import { Link } from "react-router-dom";
 
 const override = css`
   display: block;
