@@ -29,17 +29,6 @@ export default class Header extends Component {
         homeLink: "",
         contactLink: ""
       });
-    } else if (
-      windowHrefSplitted.includes("properties#contact") ||
-      windowHrefSplitted.includes("services#contact")
-    ) {
-      this.setState({
-        homeLink: "",
-        servicesLink: "",
-        aboutLink: "",
-        propertiesLink: "",
-        contactLink: "active"
-      });
     } else {
       this.setState({
         homeLink: "active",
@@ -96,13 +85,23 @@ export default class Header extends Component {
         });
       }
     } else {
-      this.setState({
-        homeLink: "active",
-        servicesLink: "",
-        propertiesLink: "",
-        aboutLink: "",
-        contactLink: ""
-      });
+      if (contactSection.getBoundingClientRect().bottom <= window.innerHeight) {
+        this.setState({
+          homeLink: "",
+          servicesLink: "",
+          propertiesLink: "",
+          aboutLink: "",
+          contactLink: "active"
+        });
+      } else {
+        this.setState({
+          homeLink: "",
+          servicesLink: "",
+          propertiesLink: "",
+          aboutLink: "active",
+          contactLink: ""
+        });
+      }
     }
   }
 
