@@ -281,13 +281,13 @@ input[type="email"]:focus {
 
   .buildings-bkg {
     bottom: 35% !important;
-    right: 15% !important;
+    right: 8% !important;
   }
 }
 
 @media (max-width: 576px) {
   .buildings-bkg {
-    bottom: 60% !important;
+    bottom: 50% !important;
     right: 50% !important;
   }
 

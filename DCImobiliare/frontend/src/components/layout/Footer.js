@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default class Footer extends Component {
   render() {
     return (
-      <footer className="page-footer font-small cyan darken-3">
+      <footer id="contact" className="page-footer font-small cyan darken-3">
         <div className="container">
           <div className="row text-center-md">
             <div className="col-md-6 py-5">

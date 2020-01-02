@@ -8,11 +8,8 @@ export default class TableCard extends Component {
           <h4 className="card-title">
             <strong>Comision</strong>
           </h4>
-          <p className="card-text">Începând de la</p>
-
           <div className="row table-div mt-3 mb-3">
             <div className="table-price">{this.props.comissionPrice}</div>
-            <div className="table-price-fraction">99</div>
             <div className="table-euro">€</div>
           </div>
           <div>

@@ -130,6 +130,18 @@ export default class Header extends Component {
             <li className="nav-item">
               <Router>
                 <LinkRedirect
+                  className={`nav-link ${propertiesLink}`}
+                  to="/properties"
+                  onClick={this.onClick}
+                  id="propertiesLink"
+                >
+                  Portofoliu proprietăți
+                </LinkRedirect>
+              </Router>
+            </li>
+            <li className="nav-item">
+              <Router>
+                <LinkRedirect
                   className={`nav-link ${servicesLink}`}
                   to="/services"
                   onClick={this.onClick}
@@ -151,16 +163,15 @@ export default class Header extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Router>
-                <LinkRedirect
-                  className={`nav-link ${propertiesLink}`}
-                  to="/properties"
-                  onClick={this.onClick}
-                  id="propertiesLink"
-                >
-                  Portofoliu proprietăți
-                </LinkRedirect>
-              </Router>
+              <Link
+                id="aboutLink"
+                smooth
+                className={`nav-link ${aboutLink}`}
+                to="/#contact"
+                onClick={this.onClick}
+              >
+                Contact
+              </Link>
             </li>
           </ul>
         </div>
