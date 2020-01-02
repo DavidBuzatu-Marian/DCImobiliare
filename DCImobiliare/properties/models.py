@@ -38,8 +38,6 @@ class Property(models.Model):
     sale_type = models.CharField(
         max_length=22, choices=SALE_CHOICES, default=SALE)
     zone = models.CharField(default="Zona", max_length=100)
-    coordinatesLatitude = models.FloatField(default="0")
-    coordinatesLongitude = models.FloatField(default="0")
     nr_rooms = models.IntegerField()
     nr_kitchens = models.IntegerField()
     nr_bathrooms = models.IntegerField()
