@@ -34,7 +34,7 @@ export default class BannerInfo extends Component {
                 </Link>
                 <Router>
                   <LinkRedirect
-                    class="btn btn-info mt-3 mx-1 btn-shadow-custom"
+                    className="btn btn-info mt-3 mx-1 btn-shadow-custom"
                     to="/services"
                   >
                     Vreau să vând/ dau în chirie
@@ -42,7 +42,7 @@ export default class BannerInfo extends Component {
                 </Router>
                 <Router>
                   <LinkRedirect
-                    class="btn btn-info mt-3 mx-1 btn-shadow-custom"
+                    className="btn btn-sell mt-3 mx-1 btn-shadow-custom"
                     to="/properties"
                   >
                     Vreau să cumpăr/ închiriez

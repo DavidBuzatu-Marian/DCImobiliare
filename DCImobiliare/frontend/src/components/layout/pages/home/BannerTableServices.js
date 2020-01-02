@@ -683,7 +683,7 @@ export default class BannerTableServices extends Component {
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row" id="last-td">
+                    <th scope="row" id="form-toggle">
                       <div className="table-h-no-space table-h-secondary-font-size">
                         Extrasele de carte funciară
                       </div>
