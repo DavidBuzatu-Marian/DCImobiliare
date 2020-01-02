@@ -52,7 +52,7 @@ export class Property extends Component {
             />
           </div>
         ) : (
-          <div className="container p-4" style={{ marginTop: "140px" }}>
+          <div className="container p-4" style={{ marginTop: "4rem" }}>
             <div className="row align-items-center">
               <div className="row display-inline p-3">
                 <h3>{property.title}</h3>

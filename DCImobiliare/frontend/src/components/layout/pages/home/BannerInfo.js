@@ -30,6 +30,22 @@ export default class BannerInfo extends Component {
 
                   <span className="bg-base-color d-block mt-4 sep-line-extra-thick-long"></span>
                 </Link>
+                <Router>
+                  <LinkRedirect
+                    class="btn btn-info mt-3 mx-1 btn-shadow-custom"
+                    to="/services"
+                  >
+                    Vreau să vând/ dau în chirie
+                  </LinkRedirect>
+                </Router>
+                <Router>
+                  <LinkRedirect
+                    class="btn btn-info mt-3 mx-1 btn-shadow-custom"
+                    to="/properties"
+                  >
+                    Vreau să cumpăr/ închiriez
+                  </LinkRedirect>
+                </Router>
               </div>
               <div className="col-lg-6 col-xl-6 buildings-bkg">
                 <img src="/static/buildings-bkg.svg"></img>

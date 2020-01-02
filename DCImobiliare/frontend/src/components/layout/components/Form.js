@@ -151,7 +151,7 @@ export class Form extends Component {
       ? "col-lg-8 col-sm-12 col-md-12"
       : "";
     const divClass = propertyRequest
-      ? "col mt-5 shadow p-3 mb-5 bg-white rounded margin-auto-md"
+      ? "col mt-1 shadow p-3 mb-5 bg-white rounded margin-auto-md"
       : "";
     const titleText = propertyRequest
       ? "Solicită mai multe informații"

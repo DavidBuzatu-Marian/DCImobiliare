@@ -11,6 +11,7 @@ import { getProperties, getProperty } from "../actions/properties";
 import { createBrowserHistory } from "history";
 import lax from "lax.js";
 import TermsConditions from "./layout/pages/legal/TermsConditions";
+import BannerServices from "./layout/pages/home/BannerServices";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -39,6 +40,12 @@ class App extends Component {
           <div className="h-100 left-0 position-absolute top-0 w-100">
             <Switch>
               <Route exact path="/" component={Home} history={history} />
+              <Route
+                history={history}
+                exact
+                path="/services/"
+                component={BannerServices}
+              />
               <Route
                 history={history}
                 exact

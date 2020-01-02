@@ -3,7 +3,6 @@ import BannerTableServices from "./BannerTableServices";
 
 import Title from "../../components/Title";
 import CardForm from "../../components/CardForm";
-import CardsContainer from "../../components/CardsContainer";
 
 export default class BannerServices extends Component {
   render() {
@@ -18,17 +17,6 @@ export default class BannerServices extends Component {
           yValue="100"
           anchor="#servicesTitle"
         ></BannerTableServices>
-        <Title
-          title="Despre"
-          anchor="#last-td"
-          yValue="100"
-          customID="aboutTitle"
-        ></Title>
-        <CardsContainer
-          anchor="#last-td"
-          yValue="100"
-          customID="about"
-        ></CardsContainer>
 
         <div className="h-100 left-0 top-0 w-100 background-full-width-section2 mt-5">
           <div className="row align-items-center h-100">

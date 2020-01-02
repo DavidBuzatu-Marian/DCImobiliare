@@ -41,15 +41,15 @@ export default class Header extends Component {
     return (
       <nav
         id="navbar"
-        className="navbar navbar-expand-md navbar-light bg-light fixed-top"
+        className="navbar navbar-expand-md navbar-light bg-light fixed-top p-3"
         style={{ zIndex: "1", width: "100%", border: "none" }}
       >
         <img
           className="navbar-grand "
           src={"/static/logo.png"}
           alt="DCImobiliare"
-          height="80px"
-          width="80px"
+          height="64px"
+          width="64px"
         />
 
         <button

@@ -25,6 +25,18 @@
 textarea {
   resize: none;
 }
+.btn-shadow-custom {
+  box-shadow: 0 20px 30px 0px rgba(0, 0, 0, 0.1),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.btn-sell {
+  background-color: #f7d4a3 !important;
+}
+
+.btn-sell:hover {
+  background-color: #fbe8cd !important;
+}
 /* 
 .active {
   color: aqua;
