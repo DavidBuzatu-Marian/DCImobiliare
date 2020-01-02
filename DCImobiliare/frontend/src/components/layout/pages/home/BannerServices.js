@@ -13,10 +13,10 @@ export default class BannerServices extends Component {
       >
         <Title title="Serviciile mele" customID="servicesTitle"></Title>
         <div className="container">
-          <h4 style={(textTransform = "none")}>
+          <h4 className="text-transform-none">
             Am creat două pachete de colaborare special pentru tine!
           </h4>
-          <h4 className="mt-3" style={(textTransform = "none")}>
+          <h4 className="mt-3 text-transform-none">
             Vezi mai jos cele două pachete (<strong>intermediere</strong> și{" "}
             <strong>reprezentare</strong>) și alege-l pe cel potrivit pentru
             tine.

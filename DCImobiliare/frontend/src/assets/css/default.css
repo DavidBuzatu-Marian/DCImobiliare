@@ -192,6 +192,13 @@ input[type="email"]:focus {
   top: 0 !important;
 }
 
+.text-transform-none {
+  text-transform: none !important;
+}
+.display-none {
+  text-align: center !important;
+}
+
 @media (max-width: 1500px) {
   .title-extra-large {
     font-size: 3rem !important;
