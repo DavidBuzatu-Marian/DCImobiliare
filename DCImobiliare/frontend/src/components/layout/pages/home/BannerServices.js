@@ -34,7 +34,7 @@ export default class BannerServices extends Component {
           <div className="row align-items-center h-100">
             <div className="col-lg-6 col-xl-7 col-sm-12 col-md-12 col-xs-12 text-center-md">
               <Title
-                title="Servicii profesionale, la pret real"
+                title="Servicii profesioniste, la comisioane mai mici"
                 anchor="#form-toggle"
                 textColor="text-white"
                 yValue="100"

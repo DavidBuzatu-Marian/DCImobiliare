@@ -21,7 +21,7 @@ export default class BannerInfo extends Component {
                   to="/#services"
                 >
                   <span className="letter-spacing-2 text-large text-uppercase display-inline">
-                    Bine ați venit la Daniel Chițu Imobiliare
+                    Bine ați venit
                   </span>
 
                   <h2 className=" m-0 mt-3 font-w-700  title-extra-large text-uppercase">

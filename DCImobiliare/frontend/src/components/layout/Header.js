@@ -5,12 +5,10 @@ import { HashLink as Link } from "react-router-hash-link";
 
 export default class Header extends Component {
   state = {
-    isHidden: false,
     homeLink: "",
     servicesLink: "",
     propertiesLink: "",
-    aboutLink: "",
-    isTransparent: true
+    aboutLink: ""
   };
 
   setActiveLink = () => {
@@ -24,64 +22,6 @@ export default class Header extends Component {
     }
   };
 
-  hideBar = () => {
-    let windowHrefSplitted = window.location.href.split("/");
-    windowHrefSplitted.includes("terms-and-conditions") ||
-    windowHrefSplitted.includes("properties")
-      ? ""
-      : this.setActiveNavBar(window);
-
-    const { isHidden } = this.state;
-    window.scrollY == 0
-      ? this.setState({
-          isTransparent: true
-        })
-      : this.setState({
-          isTransparent: false
-        });
-
-    window.scrollY > this.prev
-      ? !isHidden &&
-        this.setState({
-          isHidden: true
-        })
-      : isHidden &&
-        this.setState({
-          isHidden: false
-        });
-
-    this.prev = window.scrollY;
-  };
-
-  setActiveNavBar(window) {
-    const servicesSection = document.getElementById("servicesTitle");
-    const aboutSection = document.getElementById("aboutTitle");
-    if (servicesSection.getBoundingClientRect().bottom <= window.innerHeight) {
-      if (aboutSection.getBoundingClientRect().bottom <= window.innerHeight) {
-        this.setState({
-          homeLink: "",
-          servicesLink: "",
-          propertiesLink: "",
-          aboutLink: "active"
-        });
-      } else {
-        this.setState({
-          homeLink: "",
-          servicesLink: "active",
-          propertiesLink: "",
-          aboutLink: ""
-        });
-      }
-    } else {
-      this.setState({
-        homeLink: "active",
-        servicesLink: "",
-        propertiesLink: "",
-        aboutLink: ""
-      });
-    }
-  }
-
   onClick = e => {
     this.setState({
       homeLink: "",
@@ -94,28 +34,18 @@ export default class Header extends Component {
 
   componentDidMount() {
     this.setActiveLink();
-    window.addEventListener("scroll", this.hideBar);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.hideBar);
   }
 
   render() {
     const { homeLink, servicesLink, propertiesLink, aboutLink } = this.state;
-    const classHidden = this.state.isHidden ? "hidden" : "";
-
-    const classImgVisible = this.state.isTransparent
-      ? "display-gone"
-      : "display-visible";
     return (
       <nav
         id="navbar"
-        className={` ${classHidden} navbar navbar-expand-md navbar-light bg-light fixed-top `}
+        className="navbar navbar-expand-md navbar-light bg-light fixed-top"
         style={{ zIndex: "1", width: "100%", border: "none" }}
       >
         <img
-          className={`navbar-grand ${classImgVisible}`}
+          className="navbar-grand "
           src={"/static/logo.png"}
           alt="DCImobiliare"
           height="80px"

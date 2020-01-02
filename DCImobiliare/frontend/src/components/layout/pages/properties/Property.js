@@ -67,7 +67,7 @@ export class Property extends Component {
             />
           </div>
         ) : (
-          <div className="container" style={{ marginTop: "140px" }}>
+          <div className="container p-4" style={{ marginTop: "140px" }}>
             <div className="row align-items-center">
               <div className="row display-inline p-3">
                 <h3>{property.title}</h3>
@@ -100,68 +100,68 @@ export class Property extends Component {
                 <h3 className="border-bottom">Caracteristici</h3>
                 <table className="table">
                   <tbody>
-                    <tr>
-                      <td style={{ borderTop: "0" }}>
+                    <tr className="d-flex">
+                      <td className="col-4" style={{ borderTop: "0" }}>
                         Nr. camere:{" "}
                         <strong style={{ color: "#000005", float: "right" }}>
                           {property.nr_rooms}
                         </strong>
                       </td>
-                      <td style={{ borderTop: "0" }}>
+                      <td className="col-4" style={{ borderTop: "0" }}>
                         Nr. bucătării:{" "}
                         <strong style={{ color: "#000005", float: "right" }}>
                           {property.nr_kitchens}
                         </strong>
                       </td>
-                      <td style={{ borderTop: "0" }}>
+                      <td className="col-4" style={{ borderTop: "0" }}>
                         Nr. băi:{" "}
                         <strong style={{ color: "#000005", float: "right" }}>
                           {property.nr_bathrooms}
                         </strong>
                       </td>
                     </tr>
-                    <tr>
-                      <td>
+                    <tr className="d-flex">
+                      <td className="col-4">
                         Suprafață utilă(mp):{" "}
                         <strong style={{ color: "#000005", float: "right" }}>
                           {property.surface_mp}
                         </strong>
                       </td>
-                      <td>
+                      <td className="col-4">
                         Compartimentare:{" "}
                         <strong style={{ color: "#000005", float: "right" }}>
                           {property.accomodated}
                         </strong>
                       </td>
-                      <td>
+                      <td className="col-4">
                         An construcție:
                         <strong style={{ color: "#000005", float: "right" }}>
                           {property.year}
                         </strong>
                       </td>
                     </tr>
-                    <tr>
-                      <td>
+                    <tr className="d-flex">
+                      <td className="col-4">
                         Confort:{" "}
                         <strong style={{ color: "#000005", float: "right" }}>
                           {property.confort}
                         </strong>
                       </td>
-                      <td>
+                      <td className="col-4">
                         Etaj:{" "}
                         <strong style={{ color: "#000005", float: "right" }}>
                           {property.floor}
                         </strong>
                       </td>
-                      <td>
+                      <td className="col-4">
                         Nr. balcoane:{" "}
                         <strong style={{ color: "#000005", float: "right" }}>
                           {property.nr_balconies}
                         </strong>
                       </td>
                     </tr>
-                    <tr>
-                      <td>
+                    <tr className="d-flex">
+                      <td className="col-4">
                         Nr. locuri parcare:
                         <strong style={{ color: "#000005", float: "right" }}>
                           {property.nr_parking_spots}
