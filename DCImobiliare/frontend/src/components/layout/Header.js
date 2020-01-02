@@ -63,6 +63,8 @@ export default class Header extends Component {
   setActiveNavbar(window) {
     const aboutSection = document.getElementById("aboutTitle");
     const contactSection = document.getElementById("contact");
+    const servicesSection = document.getElementById("services");
+    const propertiesSection = document.getElementById("properties");
     if (
       aboutSection !== null &&
       aboutSection.getBoundingClientRect().bottom <= window.innerHeight
@@ -85,7 +87,32 @@ export default class Header extends Component {
         });
       }
     } else {
-      if (contactSection.getBoundingClientRect().bottom <= window.innerHeight) {
+      if (
+        servicesSection !== null &&
+        servicesSection.getBoundingClientRect().bottom <= window.innerHeight
+      ) {
+        this.setState({
+          homeLink: "",
+          servicesLink: "active",
+          propertiesLink: "",
+          aboutLink: "",
+          contactLink: ""
+        });
+      } else if (
+        servicesSection === null &&
+        propertiesSection !== null &&
+        propertiesSection.getBoundingClientRect().bottom <= window.innerHeight
+      ) {
+        this.setState({
+          homeLink: "",
+          servicesLink: "",
+          propertiesLink: "active",
+          aboutLink: "",
+          contactLink: ""
+        });
+      } else if (
+        contactSection.getBoundingClientRect().bottom <= window.innerHeight
+      ) {
         this.setState({
           homeLink: "",
           servicesLink: "",
