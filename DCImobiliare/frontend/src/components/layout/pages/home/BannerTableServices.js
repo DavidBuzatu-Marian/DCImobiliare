@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import TableCard from "../../components/TableCard";
-import lax from "lax.js";
-import ReactDOM from "react-dom";
 export default class BannerTableServices extends Component {
   constructor(props) {
     super(props);
     this.state = {
       service: 0,
       activeIntermediary: true,
-      activeRepresentation: false
+      activeRepresentation: false,
+      activeRent: false
     };
     this.showTableRow = this.showTableRow.bind(this);
   }
@@ -17,36 +16,31 @@ export default class BannerTableServices extends Component {
     this.setState({
       service: service,
       activeIntermediary: service == 0,
-      activeRepresentation: service == 1
+      activeRepresentation: service == 1,
+      activeRent: service === 2
     });
   }
 
-  componentDidMount() {
-    this.el = ReactDOM.findDOMNode(this);
-    lax.addElement(this.el);
-  }
-
-  componentWillUnmount() {
-    lax.removeElement(this.el);
-  }
-
   render() {
-    const serviceHeaders = ["Intermediere", "Reprezentare"];
+    const serviceHeaders = ["Intermediere", "Reprezentare", "Chirie"];
     const serviceDetail = [
       "Pachetul minim pentru a începe o vânzare",
-      "Uitați de toate grijile actelor și demersurile nenumărate pentru a încheia o tranzacție"
+      "Uitați de toate grijile actelor și demersurile nenumărate pentru a încheia o tranzacție",
+      "Mă ocup de tot procesul pentru a-ți închiria apartamentul. Între timp, dacă găsești chiar tu pe cineva, îl poți închiria și fără mine."
     ];
-    const comissionPrices = ["599", "1199"];
+    const comissionPrices = ["600", "1200", "0"];
+    const comissionPercents = ["1.5%", "3%", "50%"];
+    const comissionDetails = [
+      "din prețul de vânzare",
+      "din prețul de vânzare",
+      "din prima lună de chirie"
+    ];
     return (
       <section
         id={"servicesTable"}
-        className="overflow-hidden p-0 w-100 inline-block mt-10 mb-5 lax line"
+        className="overflow-hidden p-0 w-100 inline-block mt-10 mb-5"
         style={{ marginTop: "-6px !important" }}
-        data-lax-translate-y={`0 0, 400 ${this.props.yValue}`}
-        data-lax-anchor={this.props.anchor}
       >
-        <div className="bg-parallax bg-overlay-black-8 "></div>
-
         <div className="h-100 left-0 top-0">
           <div className="container">
             <div className="d-sm-block d-md-block d-lg-none d-xl-none">
@@ -72,12 +66,24 @@ export default class BannerTableServices extends Component {
                       Reprezentare
                     </button>
                   </li>
+                  <li className="nav-item">
+                    <button
+                      className={`nav-link btn btn-secondary btn-table-option ${
+                        this.state.activeRent ? "active" : ""
+                      }`}
+                      onClick={() => this.showTableRow(2)}
+                    >
+                      Chirie
+                    </button>
+                  </li>
                 </ul>
               </div>
               <TableCard
                 serviceName={serviceHeaders[this.state.service]}
                 serviceDetail={serviceDetail[this.state.service]}
                 comissionPrice={comissionPrices[this.state.service]}
+                comissionPercents={comissionPercents[this.state.service]}
+                comissionDetails={comissionDetails[this.state.service]}
               ></TableCard>
             </div>
             <div className="row table-responsive">
@@ -112,8 +118,22 @@ export default class BannerTableServices extends Component {
                         <h2 className="no-caps">Reprezentare</h2>
                       </div>
                       <p className="mt-4">
-                        Uitați de toate grijile actelor și demersurile
-                        nenumărate pentru a încheia o tranzacție
+                        Uită de toate grijile actelor și demersurile nenumărate
+                        pentru a încheia o tranzacție
+                      </p>
+                    </td>
+                    <td
+                      scope="col"
+                      className="padding-table-head"
+                      style={{ width: "37.5%" }}
+                    >
+                      <div>
+                        <h2 className="no-caps">Chirie</h2>
+                      </div>
+                      <p className="mt-4">
+                        Mă ocup de tot procesul pentru a-ți închiria
+                        apartamentul. Între timp, dacă găsești chiar tu pe
+                        cineva, îl poți închiria și fără mine.
                       </p>
                     </td>
                   </tr>
@@ -130,13 +150,22 @@ export default class BannerTableServices extends Component {
                         </p>
                       </div>
                       <div className="row table-div">
-                        <div className="table-price">599</div>
-                        <div className="table-price-fraction">99</div>
+                        <div className="table-price">600</div>
+                        <div className="table-price-fraction">00</div>
                         <div className="table-euro">€</div>
                       </div>
                       <div>
                         <p className="table-h-font-size text-center">
                           pentru proprietăți sub 40.000€
+                        </p>
+                      </div>
+                      <div className="row table-div">
+                        <div className="table-price">1.5%</div>
+                        <div className="table-euro">din prețul de vânzare</div>
+                      </div>
+                      <div>
+                        <p className="table-h-font-size text-center">
+                          pentru proprietăți peste 40.000€
                         </p>
                       </div>
                     </td>
@@ -147,13 +176,35 @@ export default class BannerTableServices extends Component {
                         </p>
                       </div>
                       <div className="row table-div">
-                        <div className="table-price">1199</div>
-                        <div className="table-price-fraction">99</div>
+                        <div className="table-price">1200</div>
+                        <div className="table-price-fraction">00</div>
                         <div className="table-euro">€</div>
                       </div>
                       <div>
                         <p className="table-h-font-size text-center">
                           pentru proprietăți sub 40.000€
+                        </p>
+                      </div>
+                      <div className="row table-div">
+                        <div className="table-price">3%</div>
+                        <div className="table-euro">din prețul de vânzare</div>
+                      </div>
+                      <div>
+                        <p className="table-h-font-size text-center">
+                          pentru proprietăți peste 40.000€
+                        </p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p className="table-h-font-size text-center">La</p>
+                      </div>
+                      <div className="row table-div">
+                        <div className="table-price">50%</div>
+                      </div>
+                      <div>
+                        <p className="table-h-font-size text-center">
+                          din prima lună de chirie
                         </p>
                       </div>
                     </td>
@@ -211,13 +262,33 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--yes"
+                        width="16.0000038"
+                        height="12.2530823"
+                        viewBox="0 0 16.0000038 12.2530823"
+                      >
+                        <path
+                          fill="#006E7A"
+                          d="M13.646 0l-7.456 7.81-4.089-3.468-2.101 2.468 5.266 4.456 1.165.987 1.063-1.101 8.506-8.911z"
+                        ></path>
+                      </svg>
+                    </td>
                   </tr>
                   <tr>
-                    <th
-                      scope="row"
-                      className="table-h-no-space table-h-secondary-font-size"
-                    >
-                      Contracte gestionate personal
+                    <th scope="row">
+                      <div className="table-h-no-space table-h-secondary-font-size">
+                        Acte
+                      </div>
+                      <p className="table-p-extra ml-3 mt-3 mb-0">
+                        GESTIONATE PERSONAL
+                      </p>
                     </th>
                     <td
                       className={`${
@@ -240,6 +311,24 @@ export default class BannerTableServices extends Component {
                     <td
                       className={`${
                         this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--yes"
+                        width="16.0000038"
+                        height="12.2530823"
+                        viewBox="0 0 16.0000038 12.2530823"
+                      >
+                        <path
+                          fill="#006E7A"
+                          d="M13.646 0l-7.456 7.81-4.089-3.468-2.101 2.468 5.266 4.456 1.165.987 1.063-1.101 8.506-8.911z"
+                        ></path>
+                      </svg>
+                    </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
                       }`}
                     >
                       <svg
@@ -307,6 +396,24 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--yes"
+                        width="16.0000038"
+                        height="12.2530823"
+                        viewBox="0 0 16.0000038 12.2530823"
+                      >
+                        <path
+                          fill="#006E7A"
+                          d="M13.646 0l-7.456 7.81-4.089-3.468-2.101 2.468 5.266 4.456 1.165.987 1.063-1.101 8.506-8.911z"
+                        ></path>
+                      </svg>
+                    </td>
                   </tr>
 
                   <tr>
@@ -349,6 +456,24 @@ export default class BannerTableServices extends Component {
                         <path
                           fill="#006E7A"
                           d="M13.646 0l-7.456 7.81-4.089-3.468-2.101 2.468 5.266 4.456 1.165.987 1.063-1.101 8.506-8.911z"
+                        ></path>
+                      </svg>
+                    </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--no"
+                        width="11"
+                        height="11"
+                        viewBox="0 0 11 11"
+                      >
+                        <path
+                          fill="#DBD9D2"
+                          d="M8.725 10.755c.294.295.582.301.864.019l1.19-1.192c.294-.295.294-.589 0-.884l-3.091-3.095 3.072-3.076c.294-.295.301-.583.019-.865l-1.44-1.442c-.294-.295-.589-.295-.883 0l-3.072 3.076-3.072-3.076c-.294-.295-.589-.295-.883 0l-1.19 1.192c-.282.282-.275.57.019.865l3.072 3.076-3.11 3.114c-.294.295-.294.589 0 .884l1.44 1.442c.282.282.57.276.864-.019l3.11-3.114 3.091 3.095z"
                         ></path>
                       </svg>
                     </td>
@@ -396,6 +521,24 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--yes"
+                        width="16.0000038"
+                        height="12.2530823"
+                        viewBox="0 0 16.0000038 12.2530823"
+                      >
+                        <path
+                          fill="#006E7A"
+                          d="M13.646 0l-7.456 7.81-4.089-3.468-2.101 2.468 5.266 4.456 1.165.987 1.063-1.101 8.506-8.911z"
+                        ></path>
+                      </svg>
+                    </td>
                   </tr>
                   <tr>
                     <th
@@ -403,7 +546,7 @@ export default class BannerTableServices extends Component {
                       className="table-h-no-space table-h-secondary-font-size"
                     >
                       <div className="table-h-no-space table-h-secondary-font-size">
-                        Clientelă
+                        Clienți cumpărători
                       </div>
                       <p className="table-p-extra ml-3 mt-3 mb-0">
                         Prin sursele de promovare
@@ -420,18 +563,7 @@ export default class BannerTableServices extends Component {
                         this.state.activeIntermediary ? "" : "display-none"
                       }`}
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="icon icon--yes"
-                        width="16.0000038"
-                        height="12.2530823"
-                        viewBox="0 0 16.0000038 12.2530823"
-                      >
-                        <path
-                          fill="#006E7A"
-                          d="M13.646 0l-7.456 7.81-4.089-3.468-2.101 2.468 5.266 4.456 1.165.987 1.063-1.101 8.506-8.911z"
-                        ></path>
-                      </svg>
+                      <p>Prin sursele proprii de promovare</p>
                     </td>
                     <td
                       className={`${
@@ -451,6 +583,24 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--yes"
+                        width="16.0000038"
+                        height="12.2530823"
+                        viewBox="0 0 16.0000038 12.2530823"
+                      >
+                        <path
+                          fill="#006E7A"
+                          d="M13.646 0l-7.456 7.81-4.089-3.468-2.101 2.468 5.266 4.456 1.165.987 1.063-1.101 8.506-8.911z"
+                        ></path>
+                      </svg>
+                    </td>
                   </tr>
                   <tr>
                     <th
@@ -458,7 +608,7 @@ export default class BannerTableServices extends Component {
                       className="table-h-no-space table-h-secondary-font-size"
                     >
                       <div className="table-h-no-space table-h-secondary-font-size">
-                        Comunicări
+                        Informare permanentă
                       </div>
                       <p className="table-p-extra ml-3 mt-3 mb-0">
                         Numărul de accesări al anunțului, de apeluri/ mesaje
@@ -489,6 +639,24 @@ export default class BannerTableServices extends Component {
                     <td
                       className={`${
                         this.state.activeRepresentation ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--yes"
+                        width="16.0000038"
+                        height="12.2530823"
+                        viewBox="0 0 16.0000038 12.2530823"
+                      >
+                        <path
+                          fill="#006E7A"
+                          d="M13.646 0l-7.456 7.81-4.089-3.468-2.101 2.468 5.266 4.456 1.165.987 1.063-1.101 8.506-8.911z"
+                        ></path>
+                      </svg>
+                    </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
                       }`}
                     >
                       <svg
@@ -548,6 +716,24 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--yes"
+                        width="16.0000038"
+                        height="12.2530823"
+                        viewBox="0 0 16.0000038 12.2530823"
+                      >
+                        <path
+                          fill="#006E7A"
+                          d="M13.646 0l-7.456 7.81-4.089-3.468-2.101 2.468 5.266 4.456 1.165.987 1.063-1.101 8.506-8.911z"
+                        ></path>
+                      </svg>
+                    </td>
                   </tr>
                   <tr>
                     <th
@@ -589,6 +775,24 @@ export default class BannerTableServices extends Component {
                         <path
                           fill="#006E7A"
                           d="M13.646 0l-7.456 7.81-4.089-3.468-2.101 2.468 5.266 4.456 1.165.987 1.063-1.101 8.506-8.911z"
+                        ></path>
+                      </svg>
+                    </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--no"
+                        width="11"
+                        height="11"
+                        viewBox="0 0 11 11"
+                      >
+                        <path
+                          fill="#DBD9D2"
+                          d="M8.725 10.755c.294.295.582.301.864.019l1.19-1.192c.294-.295.294-.589 0-.884l-3.091-3.095 3.072-3.076c.294-.295.301-.583.019-.865l-1.44-1.442c-.294-.295-.589-.295-.883 0l-3.072 3.076-3.072-3.076c-.294-.295-.589-.295-.883 0l-1.19 1.192c-.282.282-.275.57.019.865l3.072 3.076-3.11 3.114c-.294.295-.294.589 0 .884l1.44 1.442c.282.282.57.276.864-.019l3.11-3.114 3.091 3.095z"
                         ></path>
                       </svg>
                     </td>
@@ -637,6 +841,24 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--no"
+                        width="11"
+                        height="11"
+                        viewBox="0 0 11 11"
+                      >
+                        <path
+                          fill="#DBD9D2"
+                          d="M8.725 10.755c.294.295.582.301.864.019l1.19-1.192c.294-.295.294-.589 0-.884l-3.091-3.095 3.072-3.076c.294-.295.301-.583.019-.865l-1.44-1.442c-.294-.295-.589-.295-.883 0l-3.072 3.076-3.072-3.076c-.294-.295-.589-.295-.883 0l-1.19 1.192c-.282.282-.275.57.019.865l3.072 3.076-3.11 3.114c-.294.295-.294.589 0 .884l1.44 1.442c.282.282.57.276.864-.019l3.11-3.114 3.091 3.095z"
+                        ></path>
+                      </svg>
+                    </td>
                   </tr>
                   <tr>
                     <th
@@ -681,6 +903,24 @@ export default class BannerTableServices extends Component {
                         ></path>
                       </svg>
                     </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--no"
+                        width="11"
+                        height="11"
+                        viewBox="0 0 11 11"
+                      >
+                        <path
+                          fill="#DBD9D2"
+                          d="M8.725 10.755c.294.295.582.301.864.019l1.19-1.192c.294-.295.294-.589 0-.884l-3.091-3.095 3.072-3.076c.294-.295.301-.583.019-.865l-1.44-1.442c-.294-.295-.589-.295-.883 0l-3.072 3.076-3.072-3.076c-.294-.295-.589-.295-.883 0l-1.19 1.192c-.282.282-.275.57.019.865l3.072 3.076-3.11 3.114c-.294.295-.294.589 0 .884l1.44 1.442c.282.282.57.276.864-.019l3.11-3.114 3.091 3.095z"
+                        ></path>
+                      </svg>
+                    </td>
                   </tr>
                   <tr>
                     <th scope="row" id="form-toggle">
@@ -716,6 +956,24 @@ export default class BannerTableServices extends Component {
                     >
                       Gratuite
                     </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--no"
+                        width="11"
+                        height="11"
+                        viewBox="0 0 11 11"
+                      >
+                        <path
+                          fill="#DBD9D2"
+                          d="M8.725 10.755c.294.295.582.301.864.019l1.19-1.192c.294-.295.294-.589 0-.884l-3.091-3.095 3.072-3.076c.294-.295.301-.583.019-.865l-1.44-1.442c-.294-.295-.589-.295-.883 0l-3.072 3.076-3.072-3.076c-.294-.295-.589-.295-.883 0l-1.19 1.192c-.282.282-.275.57.019.865l3.072 3.076-3.11 3.114c-.294.295-.294.589 0 .884l1.44 1.442c.282.282.57.276.864-.019l3.11-3.114 3.091 3.095z"
+                        ></path>
+                      </svg>
+                    </td>
                   </tr>
                   <tr>
                     <th
@@ -748,6 +1006,24 @@ export default class BannerTableServices extends Component {
                       }`}
                     >
                       Gratuit
+                    </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--no"
+                        width="11"
+                        height="11"
+                        viewBox="0 0 11 11"
+                      >
+                        <path
+                          fill="#DBD9D2"
+                          d="M8.725 10.755c.294.295.582.301.864.019l1.19-1.192c.294-.295.294-.589 0-.884l-3.091-3.095 3.072-3.076c.294-.295.301-.583.019-.865l-1.44-1.442c-.294-.295-.589-.295-.883 0l-3.072 3.076-3.072-3.076c-.294-.295-.589-.295-.883 0l-1.19 1.192c-.282.282-.275.57.019.865l3.072 3.076-3.11 3.114c-.294.295-.294.589 0 .884l1.44 1.442c.282.282.57.276.864-.019l3.11-3.114 3.091 3.095z"
+                        ></path>
+                      </svg>
                     </td>
                   </tr>
                   <tr>
@@ -782,6 +1058,24 @@ export default class BannerTableServices extends Component {
                     >
                       Gratuit
                     </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--no"
+                        width="11"
+                        height="11"
+                        viewBox="0 0 11 11"
+                      >
+                        <path
+                          fill="#DBD9D2"
+                          d="M8.725 10.755c.294.295.582.301.864.019l1.19-1.192c.294-.295.294-.589 0-.884l-3.091-3.095 3.072-3.076c.294-.295.301-.583.019-.865l-1.44-1.442c-.294-.295-.589-.295-.883 0l-3.072 3.076-3.072-3.076c-.294-.295-.589-.295-.883 0l-1.19 1.192c-.282.282-.275.57.019.865l3.072 3.076-3.11 3.114c-.294.295-.294.589 0 .884l1.44 1.442c.282.282.57.276.864-.019l3.11-3.114 3.091 3.095z"
+                        ></path>
+                      </svg>
+                    </td>
                   </tr>
                   <tr>
                     <th
@@ -815,6 +1109,24 @@ export default class BannerTableServices extends Component {
                     >
                       Gratuit
                     </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--no"
+                        width="11"
+                        height="11"
+                        viewBox="0 0 11 11"
+                      >
+                        <path
+                          fill="#DBD9D2"
+                          d="M8.725 10.755c.294.295.582.301.864.019l1.19-1.192c.294-.295.294-.589 0-.884l-3.091-3.095 3.072-3.076c.294-.295.301-.583.019-.865l-1.44-1.442c-.294-.295-.589-.295-.883 0l-3.072 3.076-3.072-3.076c-.294-.295-.589-.295-.883 0l-1.19 1.192c-.282.282-.275.57.019.865l3.072 3.076-3.11 3.114c-.294.295-.294.589 0 .884l1.44 1.442c.282.282.57.276.864-.019l3.11-3.114 3.091 3.095z"
+                        ></path>
+                      </svg>
+                    </td>
                   </tr>
                   <tr>
                     <th
@@ -847,6 +1159,24 @@ export default class BannerTableServices extends Component {
                       }`}
                     >
                       Gratuit
+                    </td>
+                    <td
+                      className={`${
+                        this.state.activeRent ? "" : "display-none"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon--no"
+                        width="11"
+                        height="11"
+                        viewBox="0 0 11 11"
+                      >
+                        <path
+                          fill="#DBD9D2"
+                          d="M8.725 10.755c.294.295.582.301.864.019l1.19-1.192c.294-.295.294-.589 0-.884l-3.091-3.095 3.072-3.076c.294-.295.301-.583.019-.865l-1.44-1.442c-.294-.295-.589-.295-.883 0l-3.072 3.076-3.072-3.076c-.294-.295-.589-.295-.883 0l-1.19 1.192c-.282.282-.275.57.019.865l3.072 3.076-3.11 3.114c-.294.295-.294.589 0 .884l1.44 1.442c.282.282.57.276.864-.019l3.11-3.114 3.091 3.095z"
+                        ></path>
+                      </svg>
                     </td>
                   </tr>
                 </tbody>

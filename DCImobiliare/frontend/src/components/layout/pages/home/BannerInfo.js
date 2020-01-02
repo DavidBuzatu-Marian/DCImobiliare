@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { HashLink as Link } from "react-router-hash-link";
 import { Link as LinkRedirect, HashRouter as Router } from "react-router-dom";
 
 export default class BannerInfo extends Component {
@@ -16,22 +14,15 @@ export default class BannerInfo extends Component {
           <div className="h-100">
             <div className="row align-items-center h-100">
               <div className="col-lg-6 col-xl-6 buildings p-5">
-                <Link
-                  className="no-decoration"
-                  id="servicesLink"
-                  smooth
-                  to="/#services"
-                >
-                  <span className="letter-spacing-2 text-large text-uppercase display-inline">
-                    Bine ați venit
-                  </span>
+                <span className="m-0 mt-3 font-w-700  title-extra-large text-uppercase">
+                  Bine ai venit
+                </span>
 
-                  <h2 className=" m-0 mt-3 font-w-700  title-extra-large text-uppercase">
-                    Află mai multe despre serviciile mele
-                  </h2>
+                <h2 className="letter-spacing-2 text-large text-uppercase mt-4 ml-2">
+                  Cu ce te pot ajuta?
+                </h2>
 
-                  <span className="bg-base-color d-block mt-4 sep-line-extra-thick-long"></span>
-                </Link>
+                <span className="bg-base-color d-block mt-4 sep-line-extra-thick-long"></span>
                 <Router>
                   <LinkRedirect
                     className="btn btn-sell-services mt-3 mx-1 btn-shadow-custom"
@@ -42,7 +33,7 @@ export default class BannerInfo extends Component {
                 </Router>
                 <Router>
                   <LinkRedirect
-                    className="btn btn-sell mt-3 mx-1 btn-shadow-custom"
+                    className="btn btn-sell-services mt-3 mx-1 btn-shadow-custom"
                     to="/properties"
                   >
                     Vreau să cumpăr/ închiriez

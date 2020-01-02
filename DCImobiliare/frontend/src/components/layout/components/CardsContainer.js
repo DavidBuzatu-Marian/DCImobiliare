@@ -1,25 +1,10 @@
 import React, { Component } from "react";
 import CardInfo from "./CardInfo";
-import lax from "lax.js";
-import ReactDOM from "react-dom";
 
 export default class CardsContainer extends Component {
-  componentDidMount() {
-    this.el = ReactDOM.findDOMNode(this);
-    lax.addElement(this.el);
-  }
-
-  componentWillUnmount() {
-    lax.removeElement(this.el);
-  }
   render() {
     return (
-      <div
-        id={this.props.customID}
-        className="container mt-5rem lax line"
-        data-lax-translate-y={`0 0, 400 ${this.props.yValue}`}
-        data-lax-anchor={this.props.anchor}
-      >
+      <div id={this.props.customID} className="container mt-5rem">
         <div className="row">
           <CardInfo
             title={"Despre mine"}

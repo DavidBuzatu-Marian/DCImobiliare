@@ -9,23 +9,11 @@ import { Properties } from "./layout/pages/properties/Properties";
 import { Property } from "./layout/pages/properties/Property";
 import { getProperties, getProperty } from "../actions/properties";
 import { createBrowserHistory } from "history";
-import lax from "lax.js";
 import TermsConditions from "./layout/pages/legal/TermsConditions";
 import BannerServices from "./layout/pages/home/BannerServices";
 class App extends Component {
   constructor(props) {
     super(props);
-    lax.setup();
-
-    document.addEventListener(
-      "scroll",
-      function(x) {
-        lax.update(window.scrollY);
-      },
-      false
-    );
-
-    lax.update(window.scrollY);
   }
   render() {
     const history = createBrowserHistory();

@@ -5,17 +5,8 @@ export default class BannerAbout extends Component {
   render() {
     return (
       <section id={"aboutSection"} className="p-0 w-100 inline-block mt-3">
-        <Title
-          title="Despre"
-          anchor="#home"
-          yValue="100"
-          customID="aboutTitle"
-        ></Title>
-        <CardsContainer
-          anchor="#aboutTitle"
-          yValue="100"
-          customID="about"
-        ></CardsContainer>
+        <Title title="Despre mine" customID="aboutTitle"></Title>
+        <CardsContainer customID="about"></CardsContainer>
       </section>
     );
   }
