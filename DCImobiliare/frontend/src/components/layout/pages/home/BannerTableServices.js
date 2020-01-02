@@ -46,7 +46,7 @@ export default class BannerTableServices extends Component {
             <div className="d-sm-block d-md-block d-lg-none d-xl-none">
               <div>
                 <ul className="nav justify-content-center ">
-                  <li className="nav-item">
+                  <li className="nav-item m-0">
                     <button
                       className={`nav-link btn btn-secondary btn-table-option ${
                         this.state.activeIntermediary ? "active" : ""
@@ -56,7 +56,7 @@ export default class BannerTableServices extends Component {
                       Intermediere
                     </button>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item m-0">
                     <button
                       className={`nav-link btn btn-secondary btn-table-option ${
                         this.state.activeRepresentation ? "active" : ""
@@ -66,7 +66,7 @@ export default class BannerTableServices extends Component {
                       Reprezentare
                     </button>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item m-0">
                     <button
                       className={`nav-link btn btn-secondary btn-table-option ${
                         this.state.activeRent ? "active" : ""
@@ -163,8 +163,8 @@ export default class BannerTableServices extends Component {
                         <div className="table-price">1.5%</div>
                       </div>
                       <div className="table-euro">din prețul de vânzare</div>
-                      <div>
-                        <p className="card-text text-center">
+                      <div className="mt-3">
+                        <p className="table-h-font-size text-center">
                           pentru proprietăți peste 40.000€
                         </p>
                       </div>
@@ -189,8 +189,8 @@ export default class BannerTableServices extends Component {
                         <div className="table-price">3%</div>
                       </div>
                       <div className="table-euro">din prețul de vânzare</div>
-                      <div>
-                        <p className="card-text text-center">
+                      <div className="mt-3">
+                        <p className="table-h-font-size text-center">
                           pentru proprietăți peste 40.000€
                         </p>
                       </div>
