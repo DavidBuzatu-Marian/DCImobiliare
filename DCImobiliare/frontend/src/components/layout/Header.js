@@ -36,7 +36,7 @@ export default class Header extends Component {
     let windowHrefSplitted = window.location.href.split("/");
     windowHrefSplitted.includes("terms-and-conditions") ||
     windowHrefSplitted.includes("properties")
-      ? ""
+      ? this.setActiveLink()
       : this.setActiveNavbar(window);
   };
 

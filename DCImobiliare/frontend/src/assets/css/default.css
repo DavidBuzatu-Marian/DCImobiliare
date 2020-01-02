@@ -32,17 +32,21 @@ textarea {
 
 .btn-sell {
   background-color: #f7d4a3 !important;
+  color: #fbe8ff !important;
 }
 
 .btn-sell:hover {
   background-color: #fbe8cd !important;
+  color: #fbe8ff !important;
 }
 .btn-sell-services {
   background-color: #005720 !important;
+  color: #fbe8ff !important;
 }
 
 .btn-sell-services:hover {
-  background-color: #029658 !important;
+  background-color: #02804b !important;
+  color: #fbe8ff !important;
 }
 /* 
 .active {
