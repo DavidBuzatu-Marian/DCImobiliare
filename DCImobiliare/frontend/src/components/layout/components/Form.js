@@ -248,6 +248,7 @@ export class Form extends Component {
                   <label className="custom-control-label" htmlFor="termsCheck">
                     Sunt de acord cu
                     <Link to={`/terms-and-conditions/`} target="_blank">
+                      {" "}
                       termenii și condițiile
                     </Link>
                   </label>

@@ -46,49 +46,26 @@ export default class Header extends Component {
 
   setActiveNavbarLink = () => {
     let windowHrefSplitted = window.location.href.split("/");
-    windowHrefSplitted.includes("terms-and-conditions") ||
-    windowHrefSplitted.includes("properties")
+    windowHrefSplitted.includes("services") ||
+    windowHrefSplitted.includes("properties") ||
+    windowHrefSplitted.includes("terms-and-conditions")
       ? this.setActiveLink()
       : this.setActiveNavbar(window);
   };
 
   setActiveNavbar(window) {
-    const servicesSection = document.getElementById("servicesTitle");
     const aboutSection = document.getElementById("aboutTitle");
     if (
-      servicesSection !== null &&
-      servicesSection.getBoundingClientRect().bottom <= window.innerHeight
+      aboutSection !== null &&
+      aboutSection.getBoundingClientRect().bottom <= window.innerHeight
     ) {
-      if (
-        aboutSection !== null &&
-        aboutSection.getBoundingClientRect().bottom <= window.innerHeight
-      ) {
-        this.setState({
-          homeLink: "",
-          servicesLink: "",
-          propertiesLink: "",
-          aboutLink: "active"
-        });
-      } else {
-        this.setState({
-          homeLink: "",
-          servicesLink: "active",
-          propertiesLink: "",
-          aboutLink: ""
-        });
-      }
+      this.setState({
+        homeLink: "",
+        servicesLink: "",
+        propertiesLink: "",
+        aboutLink: "active"
+      });
     } else {
-      if (
-        aboutSection !== null &&
-        aboutSection.getBoundingClientRect().bottom <= window.innerHeight
-      ) {
-        this.setState({
-          homeLink: "",
-          servicesLink: "",
-          propertiesLink: "",
-          aboutLink: "active"
-        });
-      }
       this.setState({
         homeLink: "active",
         servicesLink: "",
