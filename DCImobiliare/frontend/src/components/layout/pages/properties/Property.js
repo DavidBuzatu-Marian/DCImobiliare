@@ -3,11 +3,8 @@ import { connect } from "react-redux";
 import axios from "axios";
 import { Carousel } from "react-responsive-carousel";
 import { sendEmail } from "../../../../actions/emails";
-import { Link, animateScroll as scroll } from "react-scroll";
 import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 
-import L from "leaflet";
 import { Form } from "../../components/Form";
 import { css } from "@emotion/core";
 import BarLoader from "react-spinners/ClipLoader";
@@ -16,14 +13,6 @@ const override = css`
   display: block;
   margin: 0 auto;
 `;
-
-delete L.Icon.Default.prototype._getIconUrl;
-
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-  iconUrl: require("leaflet/dist/images/marker-icon.png"),
-  shadowUrl: require("leaflet/dist/images/marker-shadow.png")
-});
 
 export class Property extends Component {
   constructor(props) {
@@ -50,10 +39,6 @@ export class Property extends Component {
 
   render() {
     const property = this.state.property;
-    const location = [
-      property.coordinatesLatitude,
-      property.coordinatesLongitude
-    ];
     return (
       <Fragment>
         {this.state.isLoading ? (
@@ -72,16 +57,6 @@ export class Property extends Component {
               <div className="row display-inline p-3">
                 <h3>{property.title}</h3>
                 <h5 className="fontw-300">{property.zone}</h5>
-                <Link
-                  className="link"
-                  to="map"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={400}
-                >
-                  Vezi Harta
-                </Link>
                 <h1 className="mt-5 price-font-presentation">
                   {property.sale_type} -{" "}
                   <strong>{property.price.toLocaleString()} EUR</strong>
@@ -100,7 +75,7 @@ export class Property extends Component {
                 <h3 className="border-bottom">Caracteristici</h3>
                 <table className="table">
                   <tbody>
-                    <tr className="d-flex">
+                    <tr className="d-flex row">
                       <td className="col-4" style={{ borderTop: "0" }}>
                         Nr. camere:{" "}
                         <strong style={{ color: "#000005", float: "right" }}>
@@ -120,7 +95,7 @@ export class Property extends Component {
                         </strong>
                       </td>
                     </tr>
-                    <tr className="d-flex">
+                    <tr className="d-flex row">
                       <td className="col-4">
                         Suprafață utilă(mp):{" "}
                         <strong style={{ color: "#000005", float: "right" }}>
@@ -140,7 +115,7 @@ export class Property extends Component {
                         </strong>
                       </td>
                     </tr>
-                    <tr className="d-flex">
+                    <tr className="d-flex row">
                       <td className="col-4">
                         Confort:{" "}
                         <strong style={{ color: "#000005", float: "right" }}>
@@ -160,7 +135,7 @@ export class Property extends Component {
                         </strong>
                       </td>
                     </tr>
-                    <tr className="d-flex">
+                    <tr className="d-flex row">
                       <td className="col-4">
                         Nr. locuri parcare:
                         <strong style={{ color: "#000005", float: "right" }}>
@@ -171,24 +146,6 @@ export class Property extends Component {
                   </tbody>
                 </table>
               </div>
-            </div>
-            <div className="row py-3" id={"map"}>
-              <h3 className="border-bottom">Localizare hartă</h3>
-              <Map
-                center={location}
-                zoom={16}
-                style={{ width: "100%", height: "400px" }}
-              >
-                <TileLayer
-                  attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                  url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
-                ></TileLayer>
-                <Marker position={location}>
-                  <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
-                  </Popup>
-                </Marker>
-              </Map>
             </div>
             <div className="row align-items-center margin-sm">
               <Form
