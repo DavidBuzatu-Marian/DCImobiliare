@@ -124,7 +124,7 @@ export class Form extends Component {
         fieldValidationErrors.pNumber = pNumberValid ? "" : " field is empty";
         break;
       case "message":
-        messageValid = value.length > 0;
+        messageValid = value.length > 0 || this.state.messageDefault.length > 0;
         fieldValidationErrors.message = messageValid ? "" : " field is empty";
         break;
       case "termsCheck":

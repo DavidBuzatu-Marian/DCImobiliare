@@ -77,7 +77,7 @@ export class Property extends Component {
                   <tbody>
                     <tr className="d-flex row">
                       <td className="col-4" style={{ borderTop: "0" }}>
-                        Nr. camere:
+                        Nr. camere:{" "}
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -86,7 +86,7 @@ export class Property extends Component {
                         </strong>
                       </td>
                       <td className="col-4" style={{ borderTop: "0" }}>
-                        Nr. bucătării:
+                        Nr. bucătării:{" "}
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -95,7 +95,7 @@ export class Property extends Component {
                         </strong>
                       </td>
                       <td className="col-4" style={{ borderTop: "0" }}>
-                        Nr. băi:
+                        Nr. băi:{" "}
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -106,7 +106,7 @@ export class Property extends Component {
                     </tr>
                     <tr className="d-flex row">
                       <td className="col-4">
-                        Suprafață utilă(mp):
+                        Suprafață utilă(mp):{" "}
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -115,7 +115,7 @@ export class Property extends Component {
                         </strong>
                       </td>
                       <td className="col-4">
-                        Nr. locuri parcare:
+                        Nr. locuri parcare:{" "}
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -124,7 +124,7 @@ export class Property extends Component {
                         </strong>
                       </td>
                       <td className="col-4">
-                        An construcție:
+                        An construcție:{" "}
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -135,7 +135,7 @@ export class Property extends Component {
                     </tr>
                     <tr className="d-flex row">
                       <td className="col-4">
-                        Confort:
+                        Confort:{" "}
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -144,7 +144,7 @@ export class Property extends Component {
                         </strong>
                       </td>
                       <td className="col-4">
-                        Etaj:
+                        Etaj:{" "}
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -153,7 +153,7 @@ export class Property extends Component {
                         </strong>
                       </td>
                       <td className="col-4">
-                        Nr. balcoane:
+                        Nr. balcoane:{" "}
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
@@ -163,8 +163,8 @@ export class Property extends Component {
                       </td>
                     </tr>
                     <tr className="d-flex row">
-                      <td className="col-4">
-                        Compartimentare:
+                      <td className="col-6">
+                        Compartimentare:{" "}
                         <strong
                           className="float-r-ld"
                           style={{ color: "#000005" }}
