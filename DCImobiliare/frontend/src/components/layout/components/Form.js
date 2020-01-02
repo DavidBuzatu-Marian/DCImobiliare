@@ -96,6 +96,7 @@ export class Form extends Component {
       nameValid: false,
       pNumberValid: false,
       messageValid: false,
+      termsCheck: false,
       formValid: false
     });
   };
@@ -242,7 +243,7 @@ export class Form extends Component {
                     id="termsCheck"
                     name="termsCheck"
                     defaultChecked={false}
-                    onChange={this.onChange}
+                    onChange={this.onCheckChange}
                   />
                   <label className="custom-control-label" htmlFor="termsCheck">
                     Sunt de acord cu
