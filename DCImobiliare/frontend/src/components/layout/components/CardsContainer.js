@@ -58,7 +58,7 @@ export default class CardsContainer extends Component {
             anchor="#servicesTitle"
           ></CardInfo>
           <CardInfo
-            title={"Clienții tăi"}
+            title={"Clienții mei"}
             body={
               "Imi place ca totul să fie perfect, astfel că indiferent dacă te intereseaza să vinzi sau să dai în chirie, voi preselecta cu mare atenție clienții potențiali şi ii voi alege pe cei mai potriviți pentru tine."
             }

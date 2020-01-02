@@ -41,12 +41,10 @@ textarea {
 }
 .btn-sell-services {
   background-color: #005720 !important;
-  color: #fbe8ff !important;
 }
 
 .btn-sell-services:hover {
   background-color: #02804b !important;
-  color: #fbe8ff !important;
 }
 /* 
 .active {
@@ -291,6 +289,15 @@ input[type="email"]:focus {
   .buildings-bkg {
     bottom: 60% !important;
     right: 50% !important;
+  }
+
+  .p-5-sm {
+    padding: 3rem !important;
+  }
+
+  .m-x-sm {
+    margin-left: 24px !important;
+    margin-right: 24px !important;
   }
 }
 

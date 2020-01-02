@@ -14,11 +14,23 @@ export default class Header extends Component {
   setActiveLink = () => {
     let windowHrefSplitted = window.location.href.split("/");
     if (windowHrefSplitted.includes("properties")) {
-      this.setState({ propertiesLink: "active" });
+      this.setState({
+        propertiesLink: "active",
+        servicesLink: "",
+        homeLink: ""
+      });
     } else if (windowHrefSplitted.includes("services")) {
-      this.setState({ servicesLink: "active" });
+      this.setState({
+        servicesLink: "active",
+        propertiesLink: "",
+        homeLink: ""
+      });
     } else {
-      this.setState({ homeLink: "active" });
+      this.setState({
+        homeLink: "active",
+        servicesLink: "",
+        propertiesLink: ""
+      });
     }
   };
 
@@ -66,6 +78,17 @@ export default class Header extends Component {
         });
       }
     } else {
+      if (
+        aboutSection !== null &&
+        aboutSection.getBoundingClientRect().bottom <= window.innerHeight
+      ) {
+        this.setState({
+          homeLink: "",
+          servicesLink: "",
+          propertiesLink: "",
+          aboutLink: "active"
+        });
+      }
       this.setState({
         homeLink: "active",
         servicesLink: "",

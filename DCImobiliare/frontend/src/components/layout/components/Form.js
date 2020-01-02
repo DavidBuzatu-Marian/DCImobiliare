@@ -18,7 +18,13 @@ export class Form extends Component {
     email: "",
     message: "",
     messageDefault: "",
-    formErrors: { email: "", name: "", pNumber: "", message: "" },
+    formErrors: {
+      email: "",
+      name: "",
+      pNumber: "",
+      message: "",
+      termsCheck: ""
+    },
     emailValid: false,
     nameValid: false,
     pNumberValid: false,
@@ -43,6 +49,13 @@ export class Form extends Component {
 
   static propTypes = {
     sendEmail: PropTypes.func.isRequired
+  };
+
+  onCheckChange = e => {
+    e.persist();
+    this.setState({ [e.target.name]: e.target.checked }, () => {
+      this.validateField(e.target.name, e.target.checked);
+    });
   };
 
   onChange = e => {
@@ -70,7 +83,13 @@ export class Form extends Component {
       email: "",
       message: "",
       messageDefault: "",
-      formErrors: { email: "", name: "", pNumber: "", message: "" },
+      formErrors: {
+        email: "",
+        name: "",
+        pNumber: "",
+        message: "",
+        termsCheck: ""
+      },
       emailValid: false,
       nameValid: false,
       pNumberValid: false,
@@ -104,6 +123,10 @@ export class Form extends Component {
         messageValid = value.length > 0;
         fieldValidationErrors.message = messageValid ? "" : " field is empty";
         break;
+      case "termsCheck":
+        fieldValidationErrors.termsCheck = this.state.termsCheck
+          ? ""
+          : " field is required";
       default:
         break;
     }
@@ -126,7 +149,8 @@ export class Form extends Component {
         this.state.emailValid &&
         this.state.nameValid &&
         this.state.pNumberValid &&
-        this.state.messageValid
+        this.state.messageValid &&
+        this.state.termsCheck
     });
   }
 
@@ -204,9 +228,26 @@ export class Form extends Component {
                   onChange={this.onChange}
                 />
               </div>
-              <small id="emailHelp" className="form-text text-muted mb-4">
-                Nu vom dezvălui nimănui detaliile dumneavoastră!
-              </small>
+              <div className="form-group">
+                <div className="custom-control custom-checkbox required">
+                  <input
+                    type="checkbox"
+                    className={`custom-control-input ${this.errorClass(
+                      this.state.formErrors.termsCheck
+                    )}`}
+                    id="termsCheck"
+                    name="termsCheck"
+                    defaultChecked={false}
+                    onChange={this.onChange}
+                  />
+                  <label className="custom-control-label" htmlFor="termsCheck">
+                    Sunt de acord cu
+                    <Link to={`/terms-and-conditions/`} target="_blank">
+                      termenii și condițiile
+                    </Link>
+                  </label>
+                </div>
+              </div>
             </div>
             <div className={`${dividedFormMessage}`}>
               <div className="form-group">
