@@ -18,21 +18,24 @@ export default class Header extends Component {
         propertiesLink: "active",
         servicesLink: "",
         aboutLink: "",
-        homeLink: ""
+        homeLink: "",
+        contactLink: ""
       });
     } else if (windowHrefSplitted.includes("services")) {
       this.setState({
         servicesLink: "active",
         propertiesLink: "",
         aboutLink: "",
-        homeLink: ""
+        homeLink: "",
+        contactLink: ""
       });
     } else {
       this.setState({
         homeLink: "active",
         servicesLink: "",
         aboutLink: "",
-        propertiesLink: ""
+        propertiesLink: "",
+        contactLink: ""
       });
     }
   };
@@ -42,7 +45,8 @@ export default class Header extends Component {
       homeLink: "",
       servicesLink: "",
       propertiesLink: "",
-      aboutLink: ""
+      aboutLink: "",
+      contactLink: ""
     });
     this.setState({ [e.target.id]: "active" });
   };
@@ -58,22 +62,35 @@ export default class Header extends Component {
 
   setActiveNavbar(window) {
     const aboutSection = document.getElementById("aboutTitle");
+    const contactSection = document.getElementById("contact");
     if (
       aboutSection !== null &&
       aboutSection.getBoundingClientRect().bottom <= window.innerHeight
     ) {
-      this.setState({
-        homeLink: "",
-        servicesLink: "",
-        propertiesLink: "",
-        aboutLink: "active"
-      });
+      if (contactSection.getBoundingClientRect().bottom <= window.innerHeight) {
+        this.setState({
+          homeLink: "",
+          servicesLink: "",
+          propertiesLink: "",
+          aboutLink: "",
+          contactLink: "active"
+        });
+      } else {
+        this.setState({
+          homeLink: "",
+          servicesLink: "",
+          propertiesLink: "",
+          aboutLink: "active",
+          contactLink: ""
+        });
+      }
     } else {
       this.setState({
         homeLink: "active",
         servicesLink: "",
         propertiesLink: "",
-        aboutLink: ""
+        aboutLink: "",
+        contactLink: ""
       });
     }
   }
@@ -88,7 +105,13 @@ export default class Header extends Component {
   }
 
   render() {
-    const { homeLink, servicesLink, propertiesLink, aboutLink } = this.state;
+    const {
+      homeLink,
+      servicesLink,
+      propertiesLink,
+      aboutLink,
+      contactLink
+    } = this.state;
     return (
       <nav
         id="navbar"
@@ -164,10 +187,10 @@ export default class Header extends Component {
             </li>
             <li className="nav-item">
               <Link
-                id="aboutLink"
+                id="contactLink"
                 smooth
-                className={`nav-link ${aboutLink}`}
-                to="/#contact"
+                className={`nav-link ${contactLink}`}
+                to="#contact"
                 onClick={this.onClick}
               >
                 Contact
