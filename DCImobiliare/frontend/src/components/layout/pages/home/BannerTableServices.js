@@ -100,7 +100,7 @@ export default class BannerTableServices extends Component {
                     <td
                       scope="col"
                       className="padding-table-head"
-                      style={{ width: "37.5%" }}
+                      style={{ width: "25%" }}
                     >
                       <div>
                         <h2 className="no-caps">Intermediere</h2>
@@ -112,7 +112,7 @@ export default class BannerTableServices extends Component {
                     <td
                       scope="col"
                       className="padding-table-head"
-                      style={{ width: "37.5%" }}
+                      style={{ width: "25%" }}
                     >
                       <div>
                         <h2 className="no-caps">Reprezentare</h2>
@@ -125,7 +125,7 @@ export default class BannerTableServices extends Component {
                     <td
                       scope="col"
                       className="padding-table-head"
-                      style={{ width: "37.5%" }}
+                      style={{ width: "25%" }}
                     >
                       <div>
                         <h2 className="no-caps">Chirie</h2>
@@ -161,10 +161,10 @@ export default class BannerTableServices extends Component {
                       </div>
                       <div className="row table-div">
                         <div className="table-price">1.5%</div>
-                        <div className="table-euro">din prețul de vânzare</div>
                       </div>
+                      <div className="table-euro">din prețul de vânzare</div>
                       <div>
-                        <p className="table-h-font-size text-center">
+                        <p className="card-text text-center">
                           pentru proprietăți peste 40.000€
                         </p>
                       </div>
@@ -187,10 +187,10 @@ export default class BannerTableServices extends Component {
                       </div>
                       <div className="row table-div">
                         <div className="table-price">3%</div>
-                        <div className="table-euro">din prețul de vânzare</div>
                       </div>
+                      <div className="table-euro">din prețul de vânzare</div>
                       <div>
-                        <p className="table-h-font-size text-center">
+                        <p className="card-text text-center">
                           pentru proprietăți peste 40.000€
                         </p>
                       </div>
@@ -216,6 +216,7 @@ export default class BannerTableServices extends Component {
                     >
                       Beneficii
                     </th>
+                    <td className="bordered-detail"></td>
                     <td className="bordered-detail"></td>
                     <td className="bordered-detail"></td>
                   </tr>

@@ -25,7 +25,7 @@ export default class TableCard extends Component {
             <div className="table-euro">{this.props.comissionDetails}</div>
           </div>
           <div>
-            <p className="table-h-font-size text-center">
+            <p className="card-text text-center">
               pentru proprietăți peste 40.000€
             </p>
           </div>
@@ -35,7 +35,6 @@ export default class TableCard extends Component {
           <h4 className="card-title">
             <strong>Comision</strong>
           </h4>
-          <p className="card-text">La</p>
 
           <div className="row table-div">
             <div className="table-price">{this.props.comissionPercents}</div>
