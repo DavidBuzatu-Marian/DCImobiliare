@@ -29,7 +29,10 @@ export default class Header extends Component {
         homeLink: "",
         contactLink: ""
       });
-    } else if (windowHrefSplitted.includes("contact")) {
+    } else if (
+      windowHrefSplitted.includes("properties#contact") ||
+      windowHrefSplitted.includes("services#contact")
+    ) {
       this.setState({
         homeLink: "",
         servicesLink: "",

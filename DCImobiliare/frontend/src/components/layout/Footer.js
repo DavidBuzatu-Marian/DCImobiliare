@@ -8,7 +8,7 @@ export default class Footer extends Component {
       <footer id="contact" className="page-footer font-small cyan darken-3">
         <div className="container">
           <div className="row text-center-md">
-            <div className="col py-5">
+            <div className="col text-center py-5">
               <div className="mb-3  py-2">
                 <h5>Găsiți-mă pe:</h5>
                 <div className="mt-1 p-1">
