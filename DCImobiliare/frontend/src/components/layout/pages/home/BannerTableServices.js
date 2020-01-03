@@ -521,18 +521,10 @@ export default class BannerTableServices extends Component {
                       <p className="table-p-extra ml-3 mt-3 mb-0">
                         Prin sursele de promovare
                       </p>
-                      <p
-                        className={`table-p-extra ml-3 mb-0 ${
-                          this.state.activeIntermediary ? "display-none" : ""
-                        }`}
-                      >
+                      <p className="table-p-extra ml-3 mb-0 ">
                         Prin colaborări cu alți agenți/ agenții
                       </p>
-                      <p
-                        className={`table-p-extra ml-3 ${
-                          this.state.activeIntermediary ? "display-none" : ""
-                        }`}
-                      >
+                      <p className="table-p-extra ml-3 ">
                         Prin băncile partenere
                       </p>
                     </th>

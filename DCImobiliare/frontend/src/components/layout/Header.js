@@ -93,10 +93,10 @@ export default class Header extends Component {
       ) {
         this.setState({
           homeLink: "",
-          servicesLink: "",
+          servicesLink: "active",
           propertiesLink: "",
           aboutLink: "",
-          contactLink: "active"
+          contactLink: ""
         });
       } else if (
         servicesSection === null &&
@@ -106,25 +106,37 @@ export default class Header extends Component {
         this.setState({
           homeLink: "",
           servicesLink: "",
-          propertiesLink: "",
+          propertiesLink: "active",
           aboutLink: "",
-          contactLink: "active"
+          contactLink: ""
         });
       } else if (servicesSection !== null && propertiesSection === null) {
         this.setState({
           homeLink: "",
-          servicesLink: "active",
+          servicesLink: "",
           propertiesLink: "",
           aboutLink: "",
-          contactLink: ""
+          contactLink: "active"
         });
-      } else if (servicesSection === null && propertiesSection === null) {
+      } else if (
+        servicesSection === null &&
+        propertiesSection === null &&
+        aboutSection.getBoundingClientRect() <= window.innerHeight
+      ) {
         this.setState({
           homeLink: "",
           servicesLink: "",
           propertiesLink: "",
           aboutLink: "active",
           contactLink: ""
+        });
+      } else {
+        this.setState({
+          homeLink: "",
+          servicesLink: "",
+          propertiesLink: "",
+          aboutLink: "",
+          contactLink: "active"
         });
       }
     }
@@ -174,7 +186,12 @@ export default class Header extends Component {
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+            >
+              >
               <Link
                 id="homeLink"
                 smooth
@@ -185,7 +202,12 @@ export default class Header extends Component {
                 Acasă
               </Link>
             </li>
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+            >
+              >
               <Router>
                 <LinkRedirect
                   className={`nav-link ${propertiesLink}`}
@@ -197,7 +219,12 @@ export default class Header extends Component {
                 </LinkRedirect>
               </Router>
             </li>
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+            >
+              >
               <Router>
                 <LinkRedirect
                   className={`nav-link ${servicesLink}`}
@@ -209,7 +236,12 @@ export default class Header extends Component {
                 </LinkRedirect>
               </Router>
             </li>
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+            >
+              >
               <Link
                 id="aboutLink"
                 smooth
@@ -220,7 +252,12 @@ export default class Header extends Component {
                 Despre
               </Link>
             </li>
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+            >
+              >
               <Link
                 id="contactLink"
                 smooth
