@@ -10,7 +10,7 @@ export default class Footer extends Component {
           <div className="row text-center-md">
             <div className="col text-center py-5">
               <div className="mb-3  py-2">
-                <h5>Găsiți-mă pe:</h5>
+                <h5>Mă poți găsi și pe:</h5>
                 <div className="mt-1 p-1">
                   <a
                     className="fb-ic"
