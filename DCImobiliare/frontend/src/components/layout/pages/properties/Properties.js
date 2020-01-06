@@ -136,12 +136,13 @@ export class Properties extends Component {
       .then(res => {
         let properties = res.data;
         properties.sort(this.sortByPriceAsc);
+        conso;
         this.setState({
           isLoading: false,
           allProperties: properties,
           filteredProperties: properties,
           properties: [...properties.slice(0, this.state.loadingLimit)],
-          hasMore: properties.length > 0
+          hasMore: properties && properties.length
         });
       })
       .catch(err => console.log(err));
