@@ -140,7 +140,8 @@ export class Properties extends Component {
           isLoading: false,
           allProperties: properties,
           filteredProperties: properties,
-          properties: [...properties.slice(0, this.state.loadingLimit)]
+          properties: [...properties.slice(0, this.state.loadingLimit)],
+          hasMore: properties.length > 0
         });
       })
       .catch(err => console.log(err));
