@@ -136,7 +136,11 @@ export class Properties extends Component {
       .then(res => {
         let properties = res.data;
         properties.sort(this.sortByPriceAsc);
-        conso;
+        console.log(
+          properties,
+          properties.length && properties,
+          properties.length
+        );
         this.setState({
           isLoading: false,
           allProperties: properties,
