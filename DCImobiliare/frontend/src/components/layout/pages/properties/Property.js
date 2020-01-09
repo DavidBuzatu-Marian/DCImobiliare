@@ -39,6 +39,8 @@ export class Property extends Component {
 
   render() {
     const property = this.state.property;
+    const details =
+      property.details !== undefined ? property.details.split(/\r?\n/) : [];
     return (
       <Fragment>
         {this.state.isLoading ? (
@@ -67,11 +69,11 @@ export class Property extends Component {
                   <img key={image.id} src={image.image} />
                 ))}
               </Carousel>
-              <div className="row p-3">
+              <div className="row p-3" style={{ display: "block" }}>
                 <h3 className="border-bottom">Detalii</h3>
-                {property.details.split(/\r?\n/).map(function(item, i) {
-                  return <p key={i}>{item}</p>;
-                })}
+                {details.map(detail => (
+                  <p>{detail}</p>
+                ))}
               </div>
               <div className="row p-3">
                 <h3 className="border-bottom">Caracteristici</h3>
