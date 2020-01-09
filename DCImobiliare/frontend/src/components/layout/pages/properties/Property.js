@@ -71,6 +71,7 @@ export class Property extends Component {
               <div className="row p-3">
                 <h3 className="border-bottom">Detalii</h3>
                 {details.split("\n").map((item, i) => {
+                  console.log(item, details.split("\n"));
                   return <p key={i}>{item}</p>;
                 })}
               </div>
