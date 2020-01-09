@@ -40,7 +40,6 @@ export class Property extends Component {
   render() {
     const property = this.state.property;
     const details = property.details;
-    if (details !== undefined) console.log(details.split("\n"));
     return (
       <Fragment>
         {this.state.isLoading ? (
