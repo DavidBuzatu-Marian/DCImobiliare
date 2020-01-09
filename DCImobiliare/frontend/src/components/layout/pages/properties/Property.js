@@ -39,6 +39,7 @@ export class Property extends Component {
 
   render() {
     const property = this.state.property;
+    const details = property.details;
     return (
       <Fragment>
         {this.state.isLoading ? (
@@ -69,7 +70,9 @@ export class Property extends Component {
               </Carousel>
               <div className="row p-3">
                 <h3 className="border-bottom">Detalii</h3>
-                <p>{property.details}</p>
+                {details.split("\n").map((item, i) => {
+                  return <p key={i}>{item}</p>;
+                })}
               </div>
               <div className="row p-3">
                 <h3 className="border-bottom">Caracteristici</h3>
