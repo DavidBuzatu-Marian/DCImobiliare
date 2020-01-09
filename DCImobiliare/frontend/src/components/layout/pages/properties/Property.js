@@ -40,7 +40,7 @@ export class Property extends Component {
   render() {
     const property = this.state.property;
     const details =
-      property.details !== undefined ? property.details.split(/\r?\n/) : [];
+      property.details !== undefined ? property.details.split("\\n") : [];
     return (
       <Fragment>
         {this.state.isLoading ? (
@@ -71,8 +71,8 @@ export class Property extends Component {
               </Carousel>
               <div className="row p-3" style={{ display: "block" }}>
                 <h3 className="border-bottom">Detalii</h3>
-                {details.map(detail => (
-                  <p>{detail}</p>
+                {details.map((detail, idx) => (
+                  <p id={idx}>{detail}</p>
                 ))}
               </div>
               <div className="row p-3">
