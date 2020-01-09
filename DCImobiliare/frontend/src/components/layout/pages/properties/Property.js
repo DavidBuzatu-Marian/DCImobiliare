@@ -39,10 +39,9 @@ export class Property extends Component {
 
   render() {
     const property = this.state.property;
-    console.log(typeof property.details);
     const details =
       property.details !== undefined
-        ? property.details.split("\n").map((item, i) => {
+        ? property.details.split('\n').map((item, i) => {
             return <p key={i}>{item}</p>;
           })
         : "";
