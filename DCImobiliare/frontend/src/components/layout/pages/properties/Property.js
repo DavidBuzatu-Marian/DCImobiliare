@@ -41,9 +41,7 @@ export class Property extends Component {
     const property = this.state.property;
     const details =
       property.details !== undefined
-        ? property.details.split('\n').map((item, i) => {
-            return <p key={i}>{item}</p>;
-          })
+        ? property.details.split("\r\n").map((item, i) => <p key={i}>{item}</p>)
         : "";
     return (
       <Fragment>
