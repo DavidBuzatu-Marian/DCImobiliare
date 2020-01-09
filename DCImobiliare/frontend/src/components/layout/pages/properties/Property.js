@@ -39,12 +39,6 @@ export class Property extends Component {
 
   render() {
     const property = this.state.property;
-    const details =
-      property.details !== undefined
-        ? property.details.split(/\r?\n/).map((item, i) => {
-            return <p key={i}>{item}</p>;
-          })
-        : "";
     return (
       <Fragment>
         {this.state.isLoading ? (
@@ -75,9 +69,9 @@ export class Property extends Component {
               </Carousel>
               <div className="row p-3">
                 <h3 className="border-bottom">Detalii</h3>
-                {details.map(detail => (
-                  <p>{detail}</p>
-                ))}
+                {property.details.split(/\r?\n/).map((item, i) => {
+                  return <p key={i}>{item}</p>;
+                })}
               </div>
               <div className="row p-3">
                 <h3 className="border-bottom">Caracteristici</h3>
