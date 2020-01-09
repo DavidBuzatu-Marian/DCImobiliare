@@ -45,6 +45,9 @@ export class Property extends Component {
             return <p key={i}>{item}</p>;
           })
         : "";
+    if (property.details !== undefined) {
+      console.log(property.details);
+    }
     return (
       <Fragment>
         {this.state.isLoading ? (
