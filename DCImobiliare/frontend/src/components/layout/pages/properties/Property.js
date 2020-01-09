@@ -69,7 +69,7 @@ export class Property extends Component {
               </Carousel>
               <div className="row p-3">
                 <h3 className="border-bottom">Detalii</h3>
-                {property.details.split(/\r?\n/).map((item, i) => {
+                {property.details.split(/\r?\n/).map(function(item, i) {
                   return <p key={i}>{item}</p>;
                 })}
               </div>
