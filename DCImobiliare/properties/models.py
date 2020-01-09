@@ -34,7 +34,7 @@ class Property(models.Model):
 
     nrViews = models.IntegerField(default=0)
     title = models.CharField(max_length=150)
-    details = models.CharField(max_length=500)
+    details = models.CharField(max_length=2500)
     sale_type = models.CharField(
         max_length=22, choices=SALE_CHOICES, default=SALE)
     zone = models.CharField(default="Zona", max_length=100)
