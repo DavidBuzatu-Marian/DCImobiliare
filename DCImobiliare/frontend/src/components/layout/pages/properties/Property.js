@@ -73,6 +73,7 @@ export class Property extends Component {
                 {details.split("\n").map((item, i) => {
                   return <p key={i}>{item}</p>;
                 })}
+                s
               </div>
               <div className="row p-3">
                 <h3 className="border-bottom">Caracteristici</h3>
