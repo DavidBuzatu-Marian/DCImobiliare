@@ -70,10 +70,9 @@ export class Property extends Component {
               </Carousel>
               <div className="row p-3">
                 <h3 className="border-bottom">Detalii</h3>
-                {details.split("\n").map((item, i) => {
-                  return <p key={i}>{item}</p>;
-                })}
-                s
+                {details.split("\n").map((item, i) => (
+                  <p key={i}>{item}</p>
+                ))}
               </div>
               <div className="row p-3">
                 <h3 className="border-bottom">Caracteristici</h3>
