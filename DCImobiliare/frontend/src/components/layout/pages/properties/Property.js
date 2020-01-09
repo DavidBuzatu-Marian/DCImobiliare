@@ -45,9 +45,6 @@ export class Property extends Component {
             return <p key={i}>{item}</p>;
           })
         : "";
-    if (property.details !== undefined) {
-      console.log(property.details);
-    }
     return (
       <Fragment>
         {this.state.isLoading ? (
@@ -78,7 +75,9 @@ export class Property extends Component {
               </Carousel>
               <div className="row p-3">
                 <h3 className="border-bottom">Detalii</h3>
-                {details}
+                {details.map(detail => (
+                  <p>{detail}</p>
+                ))}
               </div>
               <div className="row p-3">
                 <h3 className="border-bottom">Caracteristici</h3>
