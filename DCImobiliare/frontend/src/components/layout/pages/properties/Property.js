@@ -69,7 +69,7 @@ export class Property extends Component {
                   <img key={image.id} src={image.image} />
                 ))}
               </Carousel>
-              <div className="row p-3" style={{ display: "block" }}>
+              <div className="row p-3 w-100">
                 <h3 className="border-bottom">Detalii</h3>
                 {details.map((detail, idx) => (
                   <p id={idx}>{detail}</p>
