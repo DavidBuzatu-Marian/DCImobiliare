@@ -25,7 +25,12 @@ export default class Card extends Component {
   }
 
   truncateDetails(details) {
-    return details.substring(0, maxParagrapghLen) + "...";
+    const detTruncated = details.substring(0, maxParagrapghLen) + "...";
+    return detTruncated.split("\\n").map((text, idx) => (
+      <p className="w-100" id={idx}>
+        {text}
+      </p>
+    ));
   }
 
   render() {
